@@ -10,7 +10,11 @@ namespace YGOCardGame
     {
         static void Main(string[] args)
         {
-            System.Console.WriteLine("Hello World");
+            Console.WriteLine("Hello World");
+
+            // Keep the console window open in debug mode.
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
         }
     }
 }
