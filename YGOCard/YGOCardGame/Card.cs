@@ -31,6 +31,11 @@ namespace YGOCardGame
             this.Type = type;
         }
 
+        public void setName(String cardName)
+        {
+            Name = cardName;
+        }
+
         public string getName()
         {
             return Name;
