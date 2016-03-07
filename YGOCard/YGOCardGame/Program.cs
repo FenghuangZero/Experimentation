@@ -30,25 +30,28 @@ namespace YGOCardGame
 
             // Describe cards in deck.
             /*
-            for (int i = 0; i < deck.Length; i++)
+            foreach (MonsterCard m in deck)
             {
-                Console.WriteLine(deck[i].Name);
-                Console.WriteLine(deck[i].Description);
-                Console.WriteLine("Attack: " + deck[i].Attack);
-                Console.WriteLine("Defence: " + deck[i].Defence);
+                Console.WriteLine(m.Name);
+                Console.WriteLine(m.Description);
+                Console.WriteLine("Attack: " + m.Attack);
+                Console.WriteLine("Defence: " + m.Defence);
             }
             */
 
             //Mock Duel
-            Console.WriteLine("Player 1 summons " + deck[1].Name);
-            Console.WriteLine("Player 1 attacks player 2 with " + deck[1].Name);
-            player2.LifePoints -= deck[1].Attack;
+            player1.summon(deck[1]);
+            Console.WriteLine("Player 1 summons " + player1.MonsterZone[0].Name);
+            Console.WriteLine("Player 1 attacks player 2 with " + player1.MonsterZone[0].Name);
+            player2.LifePoints -= player1.MonsterZone[0].Attack;
             Console.WriteLine("Player 2 has " + player2.LifePoints + " life points.");
-            Console.WriteLine("Player 2 summons " + deck[0].Name);
-            Console.WriteLine("Player 2 attacks player 1's " + deck[1].Name + " with " + deck[0].Name);
-            player1.LifePoints -= (deck[0].Attack - deck[1].Attack);
+            player2.summon(deck[0]);
+            Console.WriteLine("Player 2 summons " + player2.MonsterZone[0].Name);
+            Console.WriteLine("Player 2 attacks player 1's " + player1.MonsterZone[0].Name + " with " + player2.MonsterZone[0].Name);
+            player1.LifePoints -= (player2.MonsterZone[0].Attack - player1.MonsterZone[0].Attack);
             Console.WriteLine("Player 1 has " + player1.LifePoints);
-            Console.WriteLine(deck[1].Name + " is destroyed.");
+            Console.WriteLine(player1.MonsterZone[0].Name + " is destroyed.");
+            player1.MonsterZone[0] = null;
 
             // Keep the console window open in debug mode.
             Console.WriteLine("Press any key to exit.");
