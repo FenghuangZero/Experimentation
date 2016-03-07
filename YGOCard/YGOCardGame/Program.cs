@@ -12,21 +12,19 @@ namespace YGOCardGame
         {
             Console.WriteLine("Hello World");
 
-            var syllable = "ha";
-            var laugh = "";
-            for (var i = 0; i < 10; i++)
+            Card[] deck = new Card[2];
+
+            deck[0] = new Card("Blue-Eyes White Dragon", "This legendary dragon is a powerful engine of destruction. Virtually invincible, very few have faced this awesome creature and lived to tell the tale.", 89631139, "Dragon");
+            //deck[0].setName("Red-Eyes Black Dragon");
+            deck[1] = new Card("Dark Magician", "The ultimate wizard in terms of attack and defense.", 46986414, "Spellcaster");
+
+            // Describe cards in deck.
+            for (int i = 0; i < deck.Length; i++)
             {
-                laugh += syllable;
-                Console.WriteLine(laugh);
+                Console.WriteLine(deck[i].getName());
+                Console.WriteLine(deck[i].getDesc());
             }
-            foreach (var ch in laugh)
-            {
-                if (ch == 'h')
-                    Console.Write("H");
-                else
-                    Console.Write(ch);
-            }
-            Console.WriteLine();
+
             // Keep the console window open in debug mode.
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
