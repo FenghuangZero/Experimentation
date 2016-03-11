@@ -18,6 +18,7 @@ namespace YGOCardGame
         public int Defence { get; set; }
         public int Level { get; set; }
         public string Position { get; set; }
+        public string Location { get; set; }
 
         // Constructors
         public Card()
@@ -31,7 +32,8 @@ namespace YGOCardGame
             Attack = 0;
             Defence = 0;
             Level = 0;
-
+            Position = "";
+            Location = "";
         }
         public Card(string cardName, string cardDesc, int cardNum, string cardType, string cardAttribute)
         {

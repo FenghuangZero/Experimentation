@@ -24,6 +24,7 @@ namespace YGOCardGame
                 if (Hand[i] == null)
                 {
                     Hand[i] = Deck[0];
+                    Hand[i].Position = ("Hand[" + i + "");
                     Console.WriteLine(this.Name + " drew " + Hand[i].Name);
                     for (int j = 0; j < (Deck.Length - 1); j++)
                     {
@@ -46,7 +47,8 @@ namespace YGOCardGame
                 if (MonsterZone[i] == null)
                 {
                     MonsterZone[i] = monster;
-                    monster.Position = "Attack";
+                    MonsterZone[i].Position = "Attack";
+                    MonsterZone[i].Location = ("MonsterZone[" + i + "]");
                     Console.WriteLine(this.Name + " summons " + this.MonsterZone[i].Name + " in " + monster.Position + " position.");
                     break;
                 }
@@ -63,7 +65,8 @@ namespace YGOCardGame
                 if (MonsterZone[i] == null)
                 {
                     MonsterZone[i] = monster;
-                    monster.Position = "Defence";
+                    MonsterZone[i].Position = "Defence";
+                    MonsterZone[i].Location = ("MonsterZone[" + i + "]");
                     Console.WriteLine(this.Name + " summons " + "a monster in face down" + monster.Position + " position.");
                     break;
                 }
@@ -105,13 +108,13 @@ namespace YGOCardGame
                     Console.WriteLine(opponent.Name + " takes " + damage + " points of damage");
                     Console.WriteLine(opponent.Name + "'s Life points are " + opponent.LifePoints);
                     Console.WriteLine(defender.Name + " was destroyed.");
-                    defender = null;
+                    opponent.discardToGraveyard(defender);
                 }
                 else if (attacker.Attack == defender.Attack)
                 {
                     Console.WriteLine("Both monsters were destroyed.");
-                    attacker = null;
-                    defender = null;
+                    this.discardToGraveyard(attacker);
+                    opponent.discardToGraveyard(defender);
                 }
                 else
                 {
@@ -120,7 +123,7 @@ namespace YGOCardGame
                     Console.WriteLine(this.Name + " takes " + damage + " points of damage");
                     Console.WriteLine(this.Name + "'s Life points are " + this.LifePoints);
                     Console.WriteLine(attacker.Name + " was destroyed.");
-                    attacker = null;
+                    this.discardToGraveyard(attacker);
                 }
             }
             else
@@ -128,7 +131,7 @@ namespace YGOCardGame
                 if (attacker.Attack > defender.Defence)
                 {
                     Console.WriteLine(defender.Name + " was destroyed.");
-                    defender = null;
+                    opponent.discardToGraveyard(defender);
                 }
                 else if (attacker.Attack == defender.Defence)
                 {
@@ -144,6 +147,20 @@ namespace YGOCardGame
             }
         }
 
+        public void discardToGraveyard(Card card)
+        {
+            for (int i = 0; i < Graveyard.Length;)
+            {
+                if (Graveyard[i] == null)
+                {
+                    Graveyard[i] = card;
+                    Graveyard[i].Position = ("Graveyard[" + i + "]");
+                    break;
+                }
+                else
+                    i++;
+            }
+        }
         // Constructors
         public Player()
         {
