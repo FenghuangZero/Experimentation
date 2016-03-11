@@ -13,7 +13,13 @@ namespace YGOCardGame
         public string Description { get; set; }
         public int Number { get; set; }
         public string Type { get; set; }
+        public string Attribute { get; set; }
+        public int Attack { get; set; }
+        public int Defence { get; set; }
+        public int Level { get; set; }
+        public string Position { get; set; }
 
+        // Constructors
         public Card()
         {
             Name = "";
@@ -21,33 +27,25 @@ namespace YGOCardGame
             Description = "";
             Number = 0;
             Type = "";
+            Attribute = "";
+            Attack = 0;
+            Defence = 0;
+            Level = 0;
+
         }
-        public Card(string cardName, string cardDesc, int cardNum, string cardType)
+        public Card(string cardName, string cardDesc, int cardNum, string cardType, string cardAttribute)
         {
             this.Name = cardName;
             Image = "";
             this.Description = cardDesc;
             this.Number = cardNum;
             this.Type = cardType;
-        }
-    }
-
-    public class MonsterCard : Card
-    {
-        public string Attribute { get; set; }
-        public int Attack { get; set; }
-        public int Defence { get; set; }
-        public int Level { get; set; }
-
-        public MonsterCard()
-        {
-            Attribute = "";
+            this.Attribute = cardAttribute;
             Attack = 0;
             Defence = 0;
             Level = 0;
         }
-
-        public MonsterCard(string cardName, string cardDesc, int cardNum, string cardType, string cardAttribute, int cardAttack, int cardDefence, int cardLevel)
+        public Card(string cardName, string cardDesc, int cardNum, string cardType, string cardAttribute, int cardAttack, int cardDefence, int cardLevel)
         {
             this.Name = cardName;
             Image = "";
@@ -57,30 +55,7 @@ namespace YGOCardGame
             this.Attribute = cardAttribute;
             this.Attack = cardAttack;
             this.Defence = cardDefence;
-            this.Level = cardLevel;
-        }
-    }
-
-    public class SpellCard : Card
-    {
-        public string Property { get; set; }
-        public string Effect { get; set; }
-
-        public SpellCard()
-        {
-            Property = "";
-            Effect = "";
-        }
-
-        public SpellCard(string cardName, string cardDesc, int cardNum, string cardType, string cardProp, string cardEffect)
-        {
-            this.Name = cardName;
-            Image = "";
-            this.Description = cardDesc;
-            this.Number = cardNum;
-            this.Type = cardType;
-            this.Property = cardProp;
-            this.Effect = cardEffect;
+            this.Level = cardDefence;
         }
     }
 }

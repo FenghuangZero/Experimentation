@@ -10,12 +10,13 @@ namespace YGOCardGame
     {
         public string Name { get; set; }
         public int LifePoints { get; set; }
-        public MonsterCard[] MonsterZone = new MonsterCard[5];
-        public SpellCard[] SpellZone = new SpellCard[5];
-        public MonsterCard[] Deck = new MonsterCard[40];
-        public MonsterCard[] Hand = new MonsterCard[8];
-        public MonsterCard[] Graveyard = new MonsterCard[40];
+        public Card[] MonsterZone = new Card[5];
+        public Card[] SpellZone = new Card[5];
+        public Card[] Deck = new Card[60];
+        public Card[] Hand = new Card[60];
+        public Card[] Graveyard = new Card[75];
 
+        // Methods
         public void draw()
         {
             for (int i = 0; i < 8;)
@@ -23,29 +24,30 @@ namespace YGOCardGame
                 if (Hand[i] == null)
                 {
                     Hand[i] = Deck[0];
-
-                    /*for (int j = 0; j < Deck.Length; j++)
+                    Console.WriteLine(this.Name + " drew " + Hand[i].Name);
+                    for (int j = 0; j < (Deck.Length - 1); j++)
                     {
-                        if (j < Deck.Length)
-                        {
-                            Deck[j] = Deck[j + 1];
-                        }
-                        else
-                            Deck[j] = null;
-                    }*/
+                        this.Deck[j] = this.Deck[j + 1];
+                    }
+                    this.Deck[Deck.Length - 1] = null;
+                    break;
                 }
                 else
+                {
                     i++;
+                }
             }
         }
 
-        public void summon(MonsterCard monster)
+        public void summon(Card monster)
         {
             for (int i = 0; i < 5;)
             {
                 if (MonsterZone[i] == null)
                 {
                     MonsterZone[i] = monster;
+                    monster.Position = "Attack";
+                    Console.WriteLine(this.Name + " summons " + this.MonsterZone[i].Name + " in " + monster.Position + " position.");
                     break;
                 }
                 else
@@ -54,9 +56,108 @@ namespace YGOCardGame
             }
         }
 
+        public void set(Card monster)
+        {
+            for (int i = 0; i < 5;)
+            {
+                if (MonsterZone[i] == null)
+                {
+                    MonsterZone[i] = monster;
+                    monster.Position = "Defence";
+                    Console.WriteLine(this.Name + " summons " + "a monster in face down" + monster.Position + " position.");
+                    break;
+                }
+                else
+                    i++;
+
+            }
+        }
+
+        public void switchPosition(Card monster)
+        {
+            if (monster.Position == "Attack")
+            {
+                monster.Position = "Defence";
+            }
+            else if (monster.Position == "Defence")
+            {
+                monster.Position = "Attack";
+            }
+            Console.WriteLine(this.Name + " switches " + monster.Name + " to " + monster.Position + "position.");
+        }
+
+        public void attackDirectly(Card attacker, Player opponent)
+        {
+            Console.WriteLine(this.Name + " attacks " + opponent.Name + " directly with " + attacker.Name + ".");
+            opponent.LifePoints -= attacker.Attack;
+            Console.WriteLine(opponent.Name + "'s life points are " + opponent.LifePoints + ".");
+        }
+
+        public void attackMonster(Card attacker, Player opponent, Card defender)
+        {
+            Console.WriteLine(this.Name + " attacks " + opponent.Name + "'s " + defender.Name + " with " + attacker.Name + ".");
+            if (defender.Position == "Attack")
+            {
+                if (attacker.Attack > defender.Attack)
+                {
+                    int damage = attacker.Attack - defender.Attack;
+                    opponent.LifePoints -= damage;
+                    Console.WriteLine(opponent.Name + " takes " + damage + " points of damage");
+                    Console.WriteLine(opponent.Name + "'s Life points are " + opponent.LifePoints);
+                    Console.WriteLine(defender.Name + " was destroyed.");
+                    defender = null;
+                }
+                else if (attacker.Attack == defender.Attack)
+                {
+                    Console.WriteLine("Both monsters were destroyed.");
+                    attacker = null;
+                    defender = null;
+                }
+                else
+                {
+                    int damage = defender.Attack - attacker.Attack;
+                    this.LifePoints -= damage;
+                    Console.WriteLine(this.Name + " takes " + damage + " points of damage");
+                    Console.WriteLine(this.Name + "'s Life points are " + this.LifePoints);
+                    Console.WriteLine(attacker.Name + " was destroyed.");
+                    attacker = null;
+                }
+            }
+            else
+            {
+                if (attacker.Attack > defender.Defence)
+                {
+                    Console.WriteLine(defender.Name + " was destroyed.");
+                    defender = null;
+                }
+                else if (attacker.Attack == defender.Defence)
+                {
+                    Console.WriteLine(defender.Name + " endured.");
+                }
+                else
+                {
+                    int damage = defender.Defence - attacker.Attack;
+                    this.LifePoints -= damage;
+                    Console.WriteLine(this.Name + " takes " + damage + " ponts of damage");
+                    Console.WriteLine(this.Name + "'s Life points are " + this.LifePoints);
+                }
+            }
+        }
+
+        // Constructors
         public Player()
         {
             Name = "";
+            LifePoints = 8000;
+            for (int i = 0; i < 5; i++)
+            {
+                MonsterZone[i] = null;
+                SpellZone[i] = null;
+            }
+        }
+        public Player(string name)
+        {
+            Name = name;
             LifePoints = 8000;
             for (int i = 0; i < 5; i++)
             {
