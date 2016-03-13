@@ -35,6 +35,7 @@ namespace YGOCardGame
             Position = "";
             Location = "";
         }
+
         public Card(string cardName, string cardDesc, int cardNum, string cardType, string cardAttribute)
         {
             this.Name = cardName;
@@ -47,6 +48,7 @@ namespace YGOCardGame
             Defence = 0;
             Level = 0;
         }
+
         public Card(string cardName, string cardDesc, int cardNum, string cardType, string cardAttribute, int cardAttack, int cardDefence, int cardLevel)
         {
             this.Name = cardName;

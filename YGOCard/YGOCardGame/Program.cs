@@ -13,7 +13,7 @@ namespace YGOCardGame
         {
             Console.WriteLine("Hello World");
 
-            Card[] trunk = new Card[40];
+            Card[] trunk = new Card[130];
             Player player1 = new Player("Player 1");
             Player player2 = new Player("Player 2");
             
@@ -29,7 +29,7 @@ namespace YGOCardGame
             var dbLevel = doc.Descendants("Level");
 
             // Load cards from XML
-            for (int i = 0; i < 40; i++)
+            for (int i = 0; i < 87; i++)
             {
                 trunk[i] = new Card();
                 trunk[i].Name = dbName.ElementAt(i).Value;
@@ -47,64 +47,13 @@ namespace YGOCardGame
 
             //Mock Duel
             player1.draw();
-            player1.summon(player1.Hand[0]);
-            player1.Hand[0] = null;
-            player1.attackDirectly(player1.MonsterZone[0], player2);
+            player1.summon(player1.Hand, 0);
+            player1.attackDirectly(player1.MonsterZone, 0, player2);
             player2.draw();
-            player2.summon(player2.Hand[0]);
-            player2.Hand[0] = null;
-            player2.attackMonster(player2.MonsterZone[0], player1, player1.MonsterZone[0]);
-            player1.MonsterZone[0] = null;
+            player2.summon(player2.Hand, 0);
+            player2.attackMonster(player2.MonsterZone, 0, player1, player1.MonsterZone, 0);
             Console.WriteLine("Player 1 has drawn Exodia. Player 1 Wins.");
 
-            Console.WriteLine("Cards in Player 1's deck:");
-            foreach( Card card in player1.Deck)
-            {
-                if (card != null)
-                    Console.WriteLine(card.Name);
-            }
-            Console.WriteLine("Cards in Player 2's deck:");
-            foreach (Card card in player2.Deck)
-            {
-                if (card != null)
-                    Console.WriteLine(card.Name);
-            }
-            Console.WriteLine("Cards in Player 1's hand:");
-            foreach (Card card in player1.Hand)
-            {
-                if (card != null)
-                    Console.WriteLine(card.Name);
-            }
-            Console.WriteLine("Cards in Player 2's hand:");
-            foreach (Card card in player2.Hand)
-            {
-                if (card != null)
-                    Console.WriteLine(card.Name);
-            }
-            Console.WriteLine("Cards on Player 1's field:");
-            foreach (Card card in player1.MonsterZone)
-            {
-                if (card != null)
-                    Console.WriteLine(card.Name);
-            }
-            Console.WriteLine("Cards on Player 2's field:");
-            foreach (Card card in player2.MonsterZone)
-            {
-                if (card != null)
-                    Console.WriteLine(card.Name);
-            }
-            Console.WriteLine("Cards in Player 1's graveyard:");
-            foreach (Card card in player1.Graveyard)
-            {
-                if (card != null)
-                    Console.WriteLine(card.Name);
-            }
-            Console.WriteLine("Cards in Player 2's graveyard:");
-            foreach (Card card in player2.Graveyard)
-            {
-                if (card != null)
-                    Console.WriteLine(card.Name);
-            }
             // Keep the console window open in debug mode.
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
