@@ -8,17 +8,17 @@ namespace YGOCardGame
 {
     public class Card
     {
-        public string Name { get; set; }
-        public string Image { get; set; }
-        public string Description { get; set; }
-        public int Number { get; set; }
-        public string Type { get; set; }
-        public string Attribute { get; set; }
-        public int Attack { get; set; }
-        public int Defence { get; set; }
-        public int Level { get; set; }
-        public string Position { get; set; }
-        public string Location { get; set; }
+        public string Name { get; set; } = "";
+        public string Image { get; set; } = "";
+        public string Description { get; set; } = "";
+        public int Number { get; set; } = 0;
+        public string Type { get; set; } = "";
+        public string Attribute { get; set; } = "";
+        public int Attack { get; set; } = 0;
+        public int Defence { get; set; } = 0;
+        public int Level { get; set; } = 0;
+        public string Position { get; set; } = "";
+        public string Location { get; set; } = "";
 
         // Constructors
         public Card()

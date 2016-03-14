@@ -11,36 +11,15 @@ namespace YGOCardGame
     {
         static void Main(string[] args)
         {
+            UserInterface game = new UserInterface();
             Console.WriteLine("Hello World");
 
             Card[] trunk = new Card[130];
             Player player1 = new Player("Player 1");
             Player player2 = new Player("Player 2");
-            
-            XDocument doc = XDocument.Load("YGOCardDB.xml");
+            XmlHandler cardDB = new XmlHandler();
 
-            var dbName = doc.Descendants("Name");
-            var dbDescription = doc.Descendants("Description");
-            var dbNumber = doc.Descendants("Number");
-            var dbType = doc.Descendants("Type");
-            var dbAttribute = doc.Descendants("Attribute");
-            var dbAttack = doc.Descendants("Attack");
-            var dbDefence = doc.Descendants("Defence");
-            var dbLevel = doc.Descendants("Level");
-
-            // Load cards from XML
-            for (int i = 0; i < 87; i++)
-            {
-                trunk[i] = new Card();
-                trunk[i].Name = dbName.ElementAt(i).Value;
-                trunk[i].Description = dbDescription.ElementAt(i).Value;
-                trunk[i].Number = Int32.Parse(dbNumber.ElementAt(i).Value);
-                trunk[i].Type = dbType.ElementAt(i).Value;
-                trunk[i].Attribute = dbAttribute.ElementAt(i).Value;
-                trunk[i].Attack = Int32.Parse(dbAttack.ElementAt(i).Value);
-                trunk[i].Defence = Int32.Parse(dbDefence.ElementAt(i).Value);
-                trunk[i].Level = Int32.Parse(dbLevel.ElementAt(i).Value);
-            }
+            cardDB.loadXml(trunk);
 
             player2.Deck[0] = trunk[1];
             player1.Deck[0] = trunk[5];
