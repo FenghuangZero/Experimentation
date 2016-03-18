@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.Windows;
 
 namespace YGOCardGame
 {
@@ -11,7 +14,6 @@ namespace YGOCardGame
     {
         static void Main(string[] args)
         {
-            UserInterface game = new UserInterface();
             Console.WriteLine("Hello World");
 
             Card[] trunk = new Card[130];
