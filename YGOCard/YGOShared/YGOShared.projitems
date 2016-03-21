@@ -14,7 +14,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)XmlHandler.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)YGOCardDB.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)YGOCardDB.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)YGOCardDB.xsd" />
