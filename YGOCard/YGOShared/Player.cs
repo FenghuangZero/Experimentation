@@ -19,7 +19,9 @@ namespace YGOCardGame
         // Methods
         public void draw()
         {
-            //Console.WriteLine(this.Name + " drew " + Deck[0].Name);
+#if CONSOLE
+            Console.WriteLine(this.Name + " drew " + Deck[0].Name);
+#endif
             this.move(Deck, Hand, Deck[0], 0);            
             for (int i = 0; i < (Deck.Length - 1); i++)
             {
@@ -31,88 +33,118 @@ namespace YGOCardGame
 
         public void summon(Card[] monster, int indexLocation)
         {
-            monster[indexLocation].Position = "Attack";
-            //Console.WriteLine(this.Name + " summons " + monster[indexLocation].Name + " in " + monster[indexLocation].Position + " position.");
+            monster[indexLocation].FaceUp = true;
+            monster[indexLocation].Horizontal = false;
+#if CONSOLE
+            Console.WriteLine("{0} summons {1} in attack position.", this.Name, monster[indexLocation].Name);
+#endif
             this.move(Hand, MonsterZone, monster[indexLocation], indexLocation);            
         }
 
         public void set(Card[] monster, int indexLocation)
         {
-            monster[indexLocation].Position = "Defence";
-            //Console.WriteLine(this.Name + " summons " + "a monster in face down" + monster[indexLocation].Position + " position.");
+            monster[indexLocation].FaceUp = false;
+            monster[indexLocation].Horizontal = true;
+#if CONSOLE
+            Console.WriteLine("{0} summons a monster in face down defence position.", this.Name);
+#endif
             this.move(Hand, MonsterZone, monster[indexLocation], indexLocation);            
         }
 
         public void switchPosition(Card monster)
         {
-            if (monster.Position == "Attack")
+            switch (monster.Horizontal)
             {
-                monster.Position = "Defence";
+                case false:
+                    monster.Horizontal = true;
+#if CONSOLE
+                    Console.WriteLine("{0} switches {1} to defence position.", this.Name, monster.Name);
+#endif
+                    break;
+                case true:
+                    monster.Horizontal = false;
+#if CONSOLE
+                    Console.WriteLine("{0} switches {1} to defence position.", this.Name, monster.Name);
+#endif
+                    break;
             }
-            else if (monster.Position == "Defence")
-            {
-                monster.Position = "Attack";
-            }
-            //Console.WriteLine(this.Name + " switches " + monster.Name + " to " + monster.Position + "position.");
         }
 
         public void attackDirectly(Card[] attacker, int attackerIndex, Player opponent)
         {
-            //Console.WriteLine(this.Name + " attacks " + opponent.Name + " directly with " + attacker[attackerIndex].Name + ".");
+#if CONSOLE
+            Console.WriteLine("{0} attack {1} directly with {2}.", this.Name, opponent.Name, attacker[attackerIndex].Name);
+#endif
             opponent.LifePoints -= attacker[attackerIndex].Attack;
-            //Console.WriteLine(opponent.Name + "'s life points are " + opponent.LifePoints + ".");
+#if CONSOLE
+            Console.WriteLine("{0}'s life points are {1}.", opponent.Name, opponent.LifePoints);
+#endif
         }
 
         public void attackMonster(Card[] attacker, int attackerIndex, Player opponent, Card[] defender, int defenderIndex)
         {
-            //Console.WriteLine(this.Name + " attacks " + opponent.Name + "'s " + defender[defenderIndex].Name + " with " + attacker[attackerIndex].Name + ".");
-            if (defender[defenderIndex].Position == "Attack")
+#if CONSOLE
+            Console.WriteLine("{0} attacks {1}'s {2} with {3}.", this.Name, opponent.Name, defender[defenderIndex].Name, attacker[attackerIndex].Name);
+#endif
+            switch (defender[defenderIndex].Horizontal)
             {
-                if (attacker[attackerIndex].Attack > defender[defenderIndex].Attack)
-                {
-                    int damage = attacker[attackerIndex].Attack - defender[defenderIndex].Attack;
-                    opponent.LifePoints -= damage;
-                    //Console.WriteLine(opponent.Name + " takes " + damage + " points of damage");
-                    //Console.WriteLine(opponent.Name + "'s Life points are " + opponent.LifePoints);
-                    //Console.WriteLine(defender[defenderIndex].Name + " was destroyed.");
-                    opponent.move(opponent.MonsterZone, opponent.Graveyard, defender[defenderIndex], defenderIndex);
-                }
-                else if (attacker[attackerIndex].Attack == defender[defenderIndex].Attack)
-                {
-                    //Console.WriteLine("Both monsters were destroyed.");
-
-                    this.move(this.MonsterZone, this.Graveyard, attacker[attackerIndex], attackerIndex);
-                    opponent.move(opponent.MonsterZone, opponent.Graveyard, defender[defenderIndex], defenderIndex);
-                }
-                else
-                {
-                    int damage = defender[defenderIndex].Attack - attacker[attackerIndex].Attack;
-                    this.LifePoints -= damage;
-                    //Console.WriteLine(this.Name + " takes " + damage + " points of damage");
-                    //Console.WriteLine(this.Name + "'s Life points are " + this.LifePoints);
-                    //Console.WriteLine(attacker[attackerIndex].Name + " was destroyed.");
-                    this.move(this.MonsterZone, this.Graveyard, attacker[attackerIndex], attackerIndex);
-                }
-            }
-            else
-            {
-                if (attacker[attackerIndex].Attack > defender[defenderIndex].Defence)
-                {
-                    //Console.WriteLine(defender[defenderIndex].Name + " was destroyed.");
-                    opponent.move(opponent.MonsterZone, opponent.Graveyard, defender[defenderIndex], defenderIndex);
-                }
-                else if (attacker[attackerIndex].Attack == defender[defenderIndex].Defence)
-                {
-                    //Console.WriteLine(defender[defenderIndex].Name + " endured.");
-                }
-                else
-                {
-                    int damage = defender[defenderIndex].Defence - attacker[attackerIndex].Attack;
-                    this.LifePoints -= damage;
-                    //Console.WriteLine(this.Name + " takes " + damage + " ponts of damage");
-                    //Console.WriteLine(this.Name + "'s Life points are " + this.LifePoints);
-                }
-            }
+                case false:
+                    if (attacker[attackerIndex].Attack > defender[defenderIndex].Attack)
+                    {
+                        int damage = attacker[attackerIndex].Attack - defender[defenderIndex].Attack;
+                        opponent.LifePoints -= damage;
+#if CONSOLE
+                        Console.WriteLine("{0} takes {1} points of damage.", opponent.Name, damage);
+                        Console.WriteLine("{0}'s life points are {1}.", opponent.Name, opponent.LifePoints);
+                        Console.WriteLine("{0} was destroyed.", defender[defenderIndex].Name);
+#endif
+                        opponent.move(opponent.MonsterZone, opponent.Graveyard, defender[defenderIndex], defenderIndex);
+                    }
+                    else if (attacker[attackerIndex].Attack == defender[defenderIndex].Attack)
+                    {
+#if CONSOLE
+                        Console.WriteLine("Both monsters were destroyed.");
+#endif
+                        this.move(this.MonsterZone, this.Graveyard, attacker[attackerIndex], attackerIndex);
+                        opponent.move(opponent.MonsterZone, opponent.Graveyard, defender[defenderIndex], defenderIndex);
+                    }
+                    else
+                    {
+                        int damage = defender[defenderIndex].Attack - attacker[attackerIndex].Attack;
+                        this.LifePoints -= damage;
+#if CONSOLE
+                        Console.WriteLine("{0} takes {1} points of damage.", this.Name, damage);
+                        Console.WriteLine("{0}'s life points are {1}.", this.Name, this.LifePoints);
+                        Console.WriteLine("{0} was destroyed.", attacker[attackerIndex].Name);
+#endif
+                        this.move(this.MonsterZone, this.Graveyard, attacker[attackerIndex], attackerIndex);
+                    }
+                    break;
+                case true:
+                    if (attacker[attackerIndex].Attack > defender[defenderIndex].Defence)
+                    {
+#if CONSOLE
+                        Console.WriteLine("{0} was destroyed.", defender[defenderIndex].Name);
+#endif
+                        opponent.move(opponent.MonsterZone, opponent.Graveyard, defender[defenderIndex], defenderIndex);
+                    }
+                    else if (attacker[attackerIndex].Attack == defender[defenderIndex].Defence)
+                    {
+#if CONSOLE
+                        Console.WriteLine("{0} endured.", defender[defenderIndex].Name);
+#endif
+                    }
+                    else
+                    {
+                        int damage = defender[defenderIndex].Defence - attacker[attackerIndex].Attack;
+                        this.LifePoints -= damage;
+#if CONSOLE
+                        Console.WriteLine("{0} takes {1} points of damage.", this.Name, damage);
+                        Console.WriteLine("{0}'s life points are {1}.", this.Name, this.LifePoints);
+#endif
+                    }
+                    break;
+            }           
         }
 
         public void move(Card[] startLocation, Card[] endLocation, Card card, int startLocationIndex)

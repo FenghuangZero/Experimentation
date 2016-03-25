@@ -17,7 +17,8 @@ namespace YGOCardGame
         public int Attack { get; set; } = 0;
         public int Defence { get; set; } = 0;
         public int Level { get; set; } = 0;
-        public string Position { get; set; } = "";
+        public bool FaceUp { get; set; } = false;
+        public bool Horizontal { get; set; } = false;
         public string Location { get; set; } = "";
 
         // Constructors
@@ -32,27 +33,23 @@ namespace YGOCardGame
             Attack = 0;
             Defence = 0;
             Level = 0;
-            Position = "";
+            FaceUp = false;
+            Horizontal = false;
             Location = "";
         }
 
         public Card(string cardName, string cardDesc, int cardNum, string cardType, string cardAttribute)
         {
             this.Name = cardName;
-            Image = "";
             this.Description = cardDesc;
             this.Number = cardNum;
             this.Type = cardType;
             this.Attribute = cardAttribute;
-            Attack = 0;
-            Defence = 0;
-            Level = 0;
         }
 
         public Card(string cardName, string cardDesc, int cardNum, string cardType, string cardAttribute, int cardAttack, int cardDefence, int cardLevel)
         {
             this.Name = cardName;
-            Image = "";
             this.Description = cardDesc;
             this.Number = cardNum;
             this.Type = cardType;
