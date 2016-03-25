@@ -5,8 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
-using System.Windows;
+using YGOShared;
 
 namespace YGOCardGame
 {
@@ -14,14 +13,16 @@ namespace YGOCardGame
     {
         static void Main(string[] args)
         {
+            
             Console.WriteLine("Hello World");
 
             Card[] trunk = new Card[130];
             Player player1 = new Player("Player 1");
             Player player2 = new Player("Player 2");
             XmlHandler cardDB = new XmlHandler();
-
+            
             cardDB.loadXml(trunk);
+            cardDB.downloadDB();
 
             player2.Deck[0] = trunk[1];
             player1.Deck[0] = trunk[5];
