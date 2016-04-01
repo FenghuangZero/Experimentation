@@ -22,12 +22,12 @@ namespace YGOShared
 #if CONSOLE
             Console.WriteLine(this.Name + " drew " + Deck[0].Name);
 #endif
-            this.move(Deck, Hand, Deck[0], 0);            
+            move(Deck, Hand, Deck[0], 0);            
             for (int i = 0; i < (Deck.Length - 1); i++)
             {
-                this.Deck[i] = this.Deck[i + 1];
+                Deck[i] = Deck[i + 1];
             }
-            this.Deck[Deck.Length - 1] = null;
+            Deck[Deck.Length - 1] = null;
         }
 
 
@@ -38,7 +38,7 @@ namespace YGOShared
 #if CONSOLE
             Console.WriteLine("{0} summons {1} in attack position.", this.Name, monster[indexLocation].Name);
 #endif
-            this.move(Hand, MonsterZone, monster[indexLocation], indexLocation);            
+            move(Hand, MonsterZone, monster[indexLocation], indexLocation);            
         }
 
         public void set(Card[] monster, int indexLocation)
@@ -48,7 +48,7 @@ namespace YGOShared
 #if CONSOLE
             Console.WriteLine("{0} summons a monster in face down defence position.", this.Name);
 #endif
-            this.move(Hand, MonsterZone, monster[indexLocation], indexLocation);            
+            move(Hand, MonsterZone, monster[indexLocation], indexLocation);            
         }
 
         public void switchPosition(Card monster)
@@ -91,7 +91,7 @@ namespace YGOShared
                 case false:
                     if (attacker[attackerIndex].Attack > defender[defenderIndex].Attack)
                     {
-                        int damage = attacker[attackerIndex].Attack - defender[defenderIndex].Attack;
+                        var damage = attacker[attackerIndex].Attack - defender[defenderIndex].Attack;
                         opponent.LifePoints -= damage;
 #if CONSOLE
                         Console.WriteLine("{0} takes {1} points of damage.", opponent.Name, damage);
@@ -105,19 +105,19 @@ namespace YGOShared
 #if CONSOLE
                         Console.WriteLine("Both monsters were destroyed.");
 #endif
-                        this.move(this.MonsterZone, this.Graveyard, attacker[attackerIndex], attackerIndex);
+                        move(MonsterZone, Graveyard, attacker[attackerIndex], attackerIndex);
                         opponent.move(opponent.MonsterZone, opponent.Graveyard, defender[defenderIndex], defenderIndex);
                     }
                     else
                     {
-                        int damage = defender[defenderIndex].Attack - attacker[attackerIndex].Attack;
-                        this.LifePoints -= damage;
+                        var damage = defender[defenderIndex].Attack - attacker[attackerIndex].Attack;
+                        LifePoints -= damage;
 #if CONSOLE
                         Console.WriteLine("{0} takes {1} points of damage.", this.Name, damage);
                         Console.WriteLine("{0}'s life points are {1}.", this.Name, this.LifePoints);
                         Console.WriteLine("{0} was destroyed.", attacker[attackerIndex].Name);
 #endif
-                        this.move(this.MonsterZone, this.Graveyard, attacker[attackerIndex], attackerIndex);
+                        move(MonsterZone, Graveyard, attacker[attackerIndex], attackerIndex);
                     }
                     break;
                 case true:
@@ -136,8 +136,8 @@ namespace YGOShared
                     }
                     else
                     {
-                        int damage = defender[defenderIndex].Defence - attacker[attackerIndex].Attack;
-                        this.LifePoints -= damage;
+                        var damage = defender[defenderIndex].Defence - attacker[attackerIndex].Attack;
+                        LifePoints -= damage;
 #if CONSOLE
                         Console.WriteLine("{0} takes {1} points of damage.", this.Name, damage);
                         Console.WriteLine("{0}'s life points are {1}.", this.Name, this.LifePoints);

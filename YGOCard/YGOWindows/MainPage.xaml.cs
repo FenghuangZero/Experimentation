@@ -26,13 +26,13 @@ namespace YGOWindows
         Card[] trunk = new Card[130];
         Player player1 = new Player("Player 1");
         Player player2 = new Player("Player 2");
-        XmlHandler cardDB = new XmlHandler();
+        //XmlHandler cardDB = new XmlHandler();
 
         public MainPage()
         {
             this.InitializeComponent();           
 
-            cardDB.loadXml(trunk);
+//cardDB.loadXml(trunk);
 
             player2.Deck[0] = trunk[1];
             player1.Deck[0] = trunk[5];

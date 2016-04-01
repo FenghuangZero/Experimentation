@@ -48,36 +48,121 @@ namespace YGOShared
 
             XDocument doc = new XDocument(new XElement("CardDB"));
             
-            for (int i = 4007; i < 4009; i++)
+            for (int i = 4007; i < 4060; i++)
             {
-                string webOut = website.DownloadString("card_search.action?ope=2&cid=" + i);
+                var name = "";
+                var attribute = "";
+                var level = "";
+                var monsterType = "";
+                var attack = "";
+                var defence = "";
+                var cardText = "";
+                var webOut = website.DownloadString("card_search.action?ope=2&cid=" + i);
 
-                int start = webOut.IndexOf("<article");
-                int finish = webOut.LastIndexOf("</article>") + "<article>".Length;
+                var start = webOut.IndexOf("<article");
+                var finish = webOut.LastIndexOf("</article>") + "<article>".Length;
                 webOut = webOut.Substring(start, finish - start);
-
                 start = webOut.IndexOf("<h1>") + "<h1>".Length;
                 finish = webOut.IndexOf("</h1>");
-                string name = webOut.Substring(start, finish - start);
-                name = name.Trim();
+                try
+                {
+                    name = webOut.Substring(start, finish - start);
+                    name = name.Trim();
+                }
+                catch { }
 
-                start = webOut.IndexOf("<td valign=\"top\">");
-                finish = webOut.LastIndexOf("<script");
-                webOut = webOut.Substring(start, finish - start);
+                try
+                {
+                    attribute = extractElement(webOut, "<b>Attribute</b>");
+                }
 
-                Console.WriteLine(webOut);
+                catch { }
 
+                try
+                {
+                    level = extractElement(webOut, "<b>Level</b>");
+                }
+
+                catch { }
+
+                try
+                {
+                    monsterType = extractElement(webOut, "<b>Monster Type</b>");
+                }
+                catch { }
+
+                try
+                {
+                    attack = extractElement(webOut, "<b>ATK</b>");
+                }
+                catch{ }
+
+                try
+                {
+                    attack = extractElement(webOut, "<b>ATK</b>");
+                }
+                catch { }
+
+                try
+                {
+                    defence = extractElement(webOut, "<b>DEF</b>");
+                }
+                catch { }
+
+                try
+                {
+                    cardText = extractElement(webOut, "<b>Card Text</b>");
+                }
+                catch { }                
+                
                 doc.Root.Add(new XElement("id_" + i, new XElement("Name", name),
-                new XElement("Attribute", "LIGHT"),
-                new XElement("Level", 8),
-                new XElement("Monster_Type", "Dragon"),
-                new XElement("ATK", 3000),
-                new XElement("DEF", 2500),
-                new XElement("Card_Text", "This legendary dragon is a powerful engine of destruction. Virtually invincible, very few have faced this awesome creature and lived to tell the tale.")));
+                new XElement("Attribute", attribute),
+                new XElement("Level", level),
+                new XElement("Monster_Type", monsterType),
+                new XElement("ATK", attack),
+                new XElement("DEF", defence),
+                new XElement("Card_Text", cardText)));
                 
             }
 
             doc.Save("CardDB.xml");
+        }
+
+        public string extractElement(string webOut, string el)
+        {
+            var start = webOut.IndexOf(el);
+            var finish = 0;
+            string element = "";
+
+            webOut = webOut.Substring(start);
+            if(webOut.IndexOf("</div>") < webOut.IndexOf("</span>"))
+            {
+                start = webOut.IndexOf("</div>");
+                webOut = webOut.Substring(start + 6);
+                finish = webOut.IndexOf("</div>");
+                element = webOut.Substring(0, finish);
+                element = element.Trim();
+            }
+            else
+            {
+                start = webOut.IndexOf("</span>");
+                webOut = webOut.Substring(start + 7);
+                if (webOut.IndexOf("<span class=\"item_box_value\">") < webOut.IndexOf("</div>"))
+                {
+                    start = webOut.IndexOf("<span class=\"item_box_value\">");
+                    webOut = webOut.Substring(start + 28);
+                    finish = webOut.IndexOf("</span>");
+                    element = webOut.Substring(start, finish - 11);
+                    element = element.Trim();
+                }
+                else
+                {
+                    finish = webOut.IndexOf("</div>");
+                    element = webOut.Substring(0, finish);
+                    element = element.Trim();
+                }
+            }
+            return element;
         }
         public XmlHandler()
         { }
