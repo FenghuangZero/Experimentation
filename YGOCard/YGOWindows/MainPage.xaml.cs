@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Net;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -24,32 +25,20 @@ namespace YGOWindows
     public sealed partial class MainPage : Page
     {
         Card[] trunk = new Card[130];
-        Player player1 = new Player("Player 1");
-        Player player2 = new Player("Player 2");
-        //XmlHandler cardDB = new XmlHandler();
-
+        XmlHandler cardDB = new XmlHandler();
+        
+        
+        /// <summary>
+        /// Initializes the page.
+        /// </summary>
         public MainPage()
         {
-            this.InitializeComponent();           
+            this.InitializeComponent();
 
-//cardDB.loadXml(trunk);
-
-            player2.Deck[0] = trunk[1];
-            player1.Deck[0] = trunk[5];
+            cardDB.loadXml(trunk);
+            Duel gameOn = new Duel(trunk);
             
-            //Mock Duel
-            player1.draw();
-            player1.summon(player1.Hand, 0);
-            player1.attackDirectly(player1.MonsterZone, 0, player2);
-            player2.draw();
-            player2.summon(player2.Hand, 0);
-            player2.attackMonster(player2.MonsterZone, 0, player1, player1.MonsterZone, 0);
         }
-
-        private void deckButton_Click(object sender, RoutedEventArgs e)
-        {
-            player1.draw();
-            p1hand1textBlock.Text = player1.Hand[0].Name;
-        }
+        
     }
 }

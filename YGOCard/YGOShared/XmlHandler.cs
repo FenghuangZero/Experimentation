@@ -1,63 +1,81 @@
 ﻿using System;
+using System.Xml;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using System.Net;
+using System.Net.Http;
+
 
 namespace YGOShared
 {
+    /// <summary>
+    /// Creates an object to control the database of cards.
+    /// </summary>
     class XmlHandler
     {
-        public Card[] loadXml(Card[] trunk)
+
+        HttpClient website = new HttpClient();
+        Uri uri = new Uri("http://www.db.yugioh-card.com/yugiohdb/");
+        //http://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=NUMBER
+        //This is the address to list individual cards. Replace 'NUMBER' with any int from 4007 to 12272 inclusive
+
+
+        /// <summary>
+        /// Loads the database from a pre-existing Xml file.
+        /// </summary>
+        /// <param name="t">The object which will store the database while loaded.</param>
+        /// <returns></returns>
+        public Card[] loadXml(Card[] t)
         {
             XDocument doc = XDocument.Load("YGOCardDB.xml");
 
             var dbName = doc.Descendants("Name");
-            var dbDescription = doc.Descendants("Description");
-            var dbNumber = doc.Descendants("Number");
-            var dbType = doc.Descendants("Type");
             var dbAttribute = doc.Descendants("Attribute");
+            var dbLevel = doc.Descendants("Level");
+            var dbType = doc.Descendants("Type");
             var dbAttack = doc.Descendants("Attack");
             var dbDefence = doc.Descendants("Defence");
-            var dbLevel = doc.Descendants("Level");
+            var dbText = doc.Descendants("Description");
 
             // Load cards from XML
             for (int i = 0; i < 126; i++)
             {
-                trunk[i] = new Card();
-                trunk[i].Name = dbName.ElementAt(i).Value;
-                trunk[i].Description = dbDescription.ElementAt(i).Value;
-                trunk[i].Number = int.Parse(dbNumber.ElementAt(i).Value);
-                trunk[i].Type = dbType.ElementAt(i).Value;
-                trunk[i].Attribute = dbAttribute.ElementAt(i).Value;
-                trunk[i].Attack = int.Parse(dbAttack.ElementAt(i).Value);
-                trunk[i].Defence = int.Parse(dbDefence.ElementAt(i).Value);
-                trunk[i].Level = int.Parse(dbLevel.ElementAt(i).Value);
+                t[i] = new Card();
+                t[i].Name = dbName.ElementAt(i).Value;
+                t[i].Attribute = dbAttribute.ElementAt(i).Value;
+                t[i].Level = int.Parse(dbLevel.ElementAt(i).Value);
+                t[i].Type = dbType.ElementAt(i).Value;
+                t[i].Attack = int.Parse(dbAttack.ElementAt(i).Value);
+                t[i].Defence = int.Parse(dbDefence.ElementAt(i).Value);
+                t[i].Text = dbText.ElementAt(i).Value;
             }
-            return trunk;
+            return t;
         }
-        public void downloadDB()
+
+        /// <summary>
+        /// Downloads a web page that details a card at the given index number.
+        /// </summary>
+        public async void downloadDB()
         {
-            WebClient website = new WebClient();
-            website.BaseAddress = ("http://www.db.yugioh-card.com/yugiohdb/");
-
-            //http://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=NUMBER
-            //This is the address to list individual cards. Replace 'NUMBER' with any int from 4007 to 12272 inclusive
-
             XDocument doc = new XDocument(new XElement("CardDB"));
             
             for (int i = 4007; i < 4060; i++)
             {
                 var name = "";
                 var attribute = "";
+                var icon = "";
                 var level = "";
+                var rank = "";
                 var monsterType = "";
                 var attack = "";
                 var defence = "";
                 var cardText = "";
-                var webOut = website.DownloadString("card_search.action?ope=2&cid=" + i);
+                Uri iUri = new Uri(uri + "card_search.action?ope=2&cid=" + i);
+                var download = this.getWebsiteStringAsync(iUri);
+
+                var webOut = await download;
 
                 var start = webOut.IndexOf("<article");
                 var finish = webOut.LastIndexOf("</article>") + "<article>".Length;
@@ -69,20 +87,34 @@ namespace YGOShared
                     name = webOut.Substring(start, finish - start);
                     name = name.Trim();
                 }
-                catch { }
+                catch (ArgumentOutOfRangeException)
+                {
+                    //When a webpage displays no card, skip.
+                    continue;
+                }
 
                 try
                 {
                     attribute = extractElement(webOut, "<b>Attribute</b>");
                 }
+                catch { }
 
+                try
+                {
+                    icon = extractElement(webOut, "<b>Icon</b>");
+                }
                 catch { }
 
                 try
                 {
                     level = extractElement(webOut, "<b>Level</b>");
                 }
+                catch { }
 
+                try
+                {
+                    rank = extractElement(webOut, "<b>Rank</b>");
+                }
                 catch { }
 
                 try
@@ -125,9 +157,15 @@ namespace YGOShared
                 
             }
 
-            doc.Save("CardDB.xml");
+            doc.Save("CardDB");
         }
 
+        /// <summary>
+        /// Reads the HTML page and extracts information about a card.
+        /// </summary>
+        /// <param name="webOut">A string representation of the HTML</param>
+        /// <param name="el">The tag that indicates the location on the page containing the required information.</param>
+        /// <returns></returns>
         public string extractElement(string webOut, string el)
         {
             var start = webOut.IndexOf(el);
@@ -164,7 +202,19 @@ namespace YGOShared
             }
             return element;
         }
+
+
+        public async Task<string> getWebsiteStringAsync(Uri u)
+        {
+            string w = await website.GetStringAsync(u);
+            return w;
+        }
+        /// <summary>
+        /// Initializes the object.
+        /// </summary>
         public XmlHandler()
-        { }
+        {
+            website.BaseAddress = uri;
+        }
     }
 }

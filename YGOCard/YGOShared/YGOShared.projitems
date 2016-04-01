@@ -10,11 +10,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Card.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Duel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Player.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)XmlHandler.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="$(MSBuildThisFileDirectory)YGOCardDB.xml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)YGOCardDB.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)YGOCardDB.xsd" />
