@@ -171,35 +171,41 @@ namespace YGOShared
             var start = webOut.IndexOf(el);
             var finish = 0;
             string element = "";
-
-            webOut = webOut.Substring(start);
-            if(webOut.IndexOf("</div>") < webOut.IndexOf("</span>"))
+            try
             {
-                start = webOut.IndexOf("</div>");
-                webOut = webOut.Substring(start + 6);
-                finish = webOut.IndexOf("</div>");
-                element = webOut.Substring(0, finish);
-                element = element.Trim();
-            }
-            else
-            {
-                start = webOut.IndexOf("</span>");
-                webOut = webOut.Substring(start + 7);
-                if (webOut.IndexOf("<span class=\"item_box_value\">") < webOut.IndexOf("</div>"))
+                webOut = webOut.Substring(start);
+                if (webOut.IndexOf("</div>") < webOut.IndexOf("</span>"))
                 {
-                    start = webOut.IndexOf("<span class=\"item_box_value\">");
-                    webOut = webOut.Substring(start + 28);
-                    finish = webOut.IndexOf("</span>");
-                    element = webOut.Substring(start, finish - 11);
+                    start = webOut.IndexOf("</div>");
+                    webOut = webOut.Substring(start + 6);
+                    if (webOut.IndexOf("<div") < webOut.IndexOf("</div>"))
+                        finish = webOut.IndexOf("<div");
+                    else
+                        finish = webOut.IndexOf("</div>");
+                    element = webOut.Substring(0, finish);
                     element = element.Trim();
                 }
                 else
                 {
-                    finish = webOut.IndexOf("</div>");
-                    element = webOut.Substring(0, finish);
-                    element = element.Trim();
-                }
+                    start = webOut.IndexOf("</span>");
+                    webOut = webOut.Substring(start + 7);
+                    if (webOut.IndexOf("<span class=\"item_box_value\">") < webOut.IndexOf("</div>"))
+                    {
+                        start = webOut.IndexOf("<span class=\"item_box_value\">");
+                        webOut = webOut.Substring(start + 28);
+                        finish = webOut.IndexOf("</span>");
+                        element = webOut.Substring(start, finish - 11);
+                        element = element.Trim();
+                    }
+                    else
+                    {
+                        finish = webOut.IndexOf("</div>");
+                        element = webOut.Substring(0, finish);
+                        element = element.Trim();
+                    }
+                }                
             }
+            catch { }
             return element;
         }
 
