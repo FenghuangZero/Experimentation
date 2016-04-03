@@ -21,7 +21,7 @@ namespace YGOCardGame
         {
             Card[] trunk = new Card[130];
             XmlHandler cardDB = new XmlHandler();
-            //cardDB.downloadDB();         
+            //cardDB.downloadDB();
             cardDB.loadXml(trunk);
 
             Duel gameOn = new Duel(trunk);

@@ -29,7 +29,7 @@ namespace YGOShared
         /// <returns></returns>
         public Card[] loadXml(Card[] t)
         {
-            XDocument doc = XDocument.Load("YGOCardDB.xml");
+            XDocument doc = XDocument.Load("YGOCardDB1.xml");
 
             var dbName = doc.Descendants("Name");
             var dbAttribute = doc.Descendants("Attribute");
@@ -64,14 +64,6 @@ namespace YGOShared
             for (int i = 4007; i < 4060; i++)
             {
                 var name = "";
-                var attribute = "";
-                var icon = "";
-                var level = "";
-                var rank = "";
-                var monsterType = "";
-                var attack = "";
-                var defence = "";
-                var cardText = "";
                 Uri iUri = new Uri(uri + "card_search.action?ope=2&cid=" + i);
                 var download = this.getWebsiteStringAsync(iUri);
 
@@ -92,72 +84,10 @@ namespace YGOShared
                     //When a webpage displays no card, skip.
                     continue;
                 }
-
-                try
-                {
-                    attribute = extractElement(webOut, "<b>Attribute</b>");
-                }
-                catch { }
-
-                try
-                {
-                    icon = extractElement(webOut, "<b>Icon</b>");
-                }
-                catch { }
-
-                try
-                {
-                    level = extractElement(webOut, "<b>Level</b>");
-                }
-                catch { }
-
-                try
-                {
-                    rank = extractElement(webOut, "<b>Rank</b>");
-                }
-                catch { }
-
-                try
-                {
-                    monsterType = extractElement(webOut, "<b>Monster Type</b>");
-                }
-                catch { }
-
-                try
-                {
-                    attack = extractElement(webOut, "<b>ATK</b>");
-                }
-                catch{ }
-
-                try
-                {
-                    attack = extractElement(webOut, "<b>ATK</b>");
-                }
-                catch { }
-
-                try
-                {
-                    defence = extractElement(webOut, "<b>DEF</b>");
-                }
-                catch { }
-
-                try
-                {
-                    cardText = extractElement(webOut, "<b>Card Text</b>");
-                }
-                catch { }                
-                
-                doc.Root.Add(new XElement("id_" + i, new XElement("Name", name),
-                new XElement("Attribute", attribute),
-                new XElement("Level", level),
-                new XElement("Monster_Type", monsterType),
-                new XElement("ATK", attack),
-                new XElement("DEF", defence),
-                new XElement("Card_Text", cardText)));
-                
+                //this.addElements(webOut, name, i);
             }
 
-            doc.Save("CardDB");
+            //doc.Save("CardDB.xml");
         }
 
         /// <summary>
@@ -171,44 +101,92 @@ namespace YGOShared
             var start = webOut.IndexOf(el);
             var finish = 0;
             string element = "";
-
-            webOut = webOut.Substring(start);
-            if(webOut.IndexOf("</div>") < webOut.IndexOf("</span>"))
+            try
             {
-                start = webOut.IndexOf("</div>");
-                webOut = webOut.Substring(start + 6);
-                finish = webOut.IndexOf("</div>");
-                element = webOut.Substring(0, finish);
-                element = element.Trim();
-            }
-            else
-            {
-                start = webOut.IndexOf("</span>");
-                webOut = webOut.Substring(start + 7);
-                if (webOut.IndexOf("<span class=\"item_box_value\">") < webOut.IndexOf("</div>"))
+                webOut = webOut.Substring(start);
+                if (webOut.IndexOf("</div>") < webOut.IndexOf("</span>"))
                 {
-                    start = webOut.IndexOf("<span class=\"item_box_value\">");
-                    webOut = webOut.Substring(start + 28);
-                    finish = webOut.IndexOf("</span>");
-                    element = webOut.Substring(start, finish - 11);
+                    start = webOut.IndexOf("</div>");
+                    webOut = webOut.Substring(start + 6);
+                    if (webOut.IndexOf("<div") < webOut.IndexOf("</div>"))
+                    {
+                        finish = webOut.IndexOf("<div");
+                    }
+                    else
+                    {
+                        finish = webOut.IndexOf("</div>");
+                    }
+                    element = webOut.Substring(0, finish);
                     element = element.Trim();
                 }
                 else
                 {
-                    finish = webOut.IndexOf("</div>");
-                    element = webOut.Substring(0, finish);
-                    element = element.Trim();
+                    start = webOut.IndexOf("</span>");
+                    webOut = webOut.Substring(start + 7);
+                    if (webOut.IndexOf("<span class=\"item_box_value\">") < webOut.IndexOf("</div>"))
+                    {
+                        start = webOut.IndexOf("<span class=\"item_box_value\">");
+                        webOut = webOut.Substring(start + 28);
+                        finish = webOut.IndexOf("</span>");
+                        element = webOut.Substring(start, finish - 11);
+                        element = element.Trim();
+                    }
+                    else
+                    {
+                        finish = webOut.IndexOf("</div>");
+                        element = webOut.Substring(0, finish);
+                        element = element.Trim();
+                    }
                 }
             }
+            catch { }
+           
             return element;
         }
 
-
+        /// <summary>
+        /// An asyncronous task to download the string of a website.
+        /// </summary>
+        /// <param name="u">The Uri of the website.</param>
+        /// <returns></returns>
         public async Task<string> getWebsiteStringAsync(Uri u)
         {
             string w = await website.GetStringAsync(u);
             return w;
         }
+
+        /*public void addElements(string webOut, string name, int i)
+        {
+            var attribute = "";
+            var icon = "";
+            var level = "";
+            var rank = "";
+            var monsterType = "";
+            var attack = "";
+            var defence = "";
+            var cardText = "";
+
+            attribute = extractElement(webOut, "<b>Attribute</b>");
+            icon = extractElement(webOut, "<b>Icon</b>");
+            level = extractElement(webOut, "<b>Level</b>");
+            rank = extractElement(webOut, "<b>Rank</b>");
+            monsterType = extractElement(webOut, "<b>Monster Type</b>");
+            attack = extractElement(webOut, "<b>ATK</b>");
+            attack = extractElement(webOut, "<b>ATK</b>");
+            defence = extractElement(webOut, "<b>DEF</b>");
+            cardText = extractElement(webOut, "<b>Card Text</b>");
+
+            doc.Root.Add(new XElement("id_" + i, new XElement("Name", name),
+                new XElement("Icon", icon),
+                new XElement("Attribute", attribute),
+                new XElement("Level", level),
+                new XElement("Rank", rank),
+                new XElement("Monster_Type", monsterType),
+                new XElement("ATK", attack),
+                new XElement("DEF", defence),
+                new XElement("Card_Text", cardText)));
+        }*/
+
         /// <summary>
         /// Initializes the object.
         /// </summary>
