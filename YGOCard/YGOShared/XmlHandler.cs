@@ -92,60 +92,15 @@ namespace YGOShared
                     //When a webpage displays no card, skip.
                     continue;
                 }
-
-                try
-                {
-                    attribute = extractElement(webOut, "<b>Attribute</b>");
-                }
-                catch { }
-
-                try
-                {
-                    icon = extractElement(webOut, "<b>Icon</b>");
-                }
-                catch { }
-
-                try
-                {
-                    level = extractElement(webOut, "<b>Level</b>");
-                }
-                catch { }
-
-                try
-                {
-                    rank = extractElement(webOut, "<b>Rank</b>");
-                }
-                catch { }
-
-                try
-                {
-                    monsterType = extractElement(webOut, "<b>Monster Type</b>");
-                }
-                catch { }
-
-                try
-                {
-                    attack = extractElement(webOut, "<b>ATK</b>");
-                }
-                catch{ }
-
-                try
-                {
-                    attack = extractElement(webOut, "<b>ATK</b>");
-                }
-                catch { }
-
-                try
-                {
-                    defence = extractElement(webOut, "<b>DEF</b>");
-                }
-                catch { }
-
-                try
-                {
-                    cardText = extractElement(webOut, "<b>Card Text</b>");
-                }
-                catch { }                
+                attribute = extractElement(webOut, "<b>Attribute</b>");
+                icon = extractElement(webOut, "<b>Icon</b>");
+                level = extractElement(webOut, "<b>Level</b>");
+                rank = extractElement(webOut, "<b>Rank</b>");
+                monsterType = extractElement(webOut, "<b>Monster Type</b>");
+                attack = extractElement(webOut, "<b>ATK</b>");
+                attack = extractElement(webOut, "<b>ATK</b>");
+                defence = extractElement(webOut, "<b>DEF</b>");
+                cardText = extractElement(webOut, "<b>Card Text</b>");                             
                 
                 doc.Root.Add(new XElement("id_" + i, new XElement("Name", name),
                 new XElement("Attribute", attribute),
