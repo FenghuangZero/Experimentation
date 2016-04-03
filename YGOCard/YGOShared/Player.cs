@@ -99,7 +99,7 @@ namespace YGOShared
 #if CONSOLE
             Console.WriteLine("{0} attack {1} directly with {2}.", this.Name, o.Name, a[ai].Name);
 #endif
-            o.LifePoints -= a[ai].Attack;
+            o.LifePoints -= a[ai].ATK;
 #if CONSOLE
             Console.WriteLine("{0}'s life points are {1}.", o.Name, o.LifePoints);
 #endif
@@ -121,9 +121,9 @@ namespace YGOShared
             switch (d[di].Horizontal)
             {
                 case false:
-                    if (a[ai].Attack > d[di].Attack)
+                    if (a[ai].ATK > d[di].ATK)
                     {
-                        var damage = a[ai].Attack - d[di].Attack;
+                        var damage = a[ai].ATK - d[di].ATK;
                         o.LifePoints -= damage;
 #if CONSOLE
                         Console.WriteLine("{0} takes {1} points of damage.", o.Name, damage);
@@ -132,7 +132,7 @@ namespace YGOShared
 #endif
                         o.move(o.MonsterZone, o.Graveyard, d[di], di);
                     }
-                    else if (a[ai].Attack == d[di].Attack)
+                    else if (a[ai].ATK == d[di].ATK)
                     {
 #if CONSOLE
                         Console.WriteLine("Both monsters were destroyed.");
@@ -142,7 +142,7 @@ namespace YGOShared
                     }
                     else
                     {
-                        var damage = d[di].Attack - a[ai].Attack;
+                        var damage = d[di].ATK - a[ai].ATK;
                         LifePoints -= damage;
 #if CONSOLE
                         Console.WriteLine("{0} takes {1} points of damage.", this.Name, damage);
@@ -153,14 +153,14 @@ namespace YGOShared
                     }
                     break;
                 case true:
-                    if (a[ai].Attack > d[di].Defence)
+                    if (a[ai].ATK > d[di].DEF)
                     {
 #if CONSOLE
                         Console.WriteLine("{0} was destroyed.", d[di].Name);
 #endif
                         o.move(o.MonsterZone, o.Graveyard, d[di], di);
                     }
-                    else if (a[ai].Attack == d[di].Defence)
+                    else if (a[ai].ATK == d[di].DEF)
                     {
 #if CONSOLE
                         Console.WriteLine("{0} endured.", d[di].Name);
@@ -168,7 +168,7 @@ namespace YGOShared
                     }
                     else
                     {
-                        var damage = d[di].Defence - a[ai].Attack;
+                        var damage = d[di].DEF - a[ai].ATK;
                         LifePoints -= damage;
 #if CONSOLE
                         Console.WriteLine("{0} takes {1} points of damage.", this.Name, damage);

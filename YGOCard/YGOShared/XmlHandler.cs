@@ -46,10 +46,10 @@ namespace YGOShared
                 t[i].Name = dbName.ElementAt(i).Value;
                 t[i].Attribute = dbAttribute.ElementAt(i).Value;
                 t[i].Level = int.Parse(dbLevel.ElementAt(i).Value);
-                t[i].Type = dbType.ElementAt(i).Value;
-                t[i].Attack = int.Parse(dbAttack.ElementAt(i).Value);
-                t[i].Defence = int.Parse(dbDefence.ElementAt(i).Value);
-                t[i].Text = dbText.ElementAt(i).Value;
+                t[i].MonsterType = dbType.ElementAt(i).Value;
+                t[i].ATK = int.Parse(dbAttack.ElementAt(i).Value);
+                t[i].DEF = int.Parse(dbDefence.ElementAt(i).Value);
+                t[i].CardText = dbText.ElementAt(i).Value;
             }
             return t;
         }
@@ -61,7 +61,7 @@ namespace YGOShared
         {
             XDocument doc = new XDocument(new XElement("CardDB"));
             
-            for (int i = 4007; i < 4060; i++)
+            for (int i = 4007; i < 4081; i++)
             {
                 var name = "";
                 var attribute = "";
@@ -73,19 +73,11 @@ namespace YGOShared
                 var defence = "";
                 var cardText = "";
                 Uri iUri = new Uri(uri + "card_search.action?ope=2&cid=" + i);
-                var download = this.getWebsiteStringAsync(iUri);
+                var webOut = await this.getWebsiteStringAsync(iUri);
 
-                var webOut = await download;
-
-                var start = webOut.IndexOf("<article");
-                var finish = webOut.LastIndexOf("</article>") + "<article>".Length;
-                webOut = webOut.Substring(start, finish - start);
-                start = webOut.IndexOf("<h1>") + "<h1>".Length;
-                finish = webOut.IndexOf("</h1>");
                 try
                 {
-                    name = webOut.Substring(start, finish - start);
-                    name = name.Trim();
+                    name = extractName(webOut);
                 }
                 catch (ArgumentOutOfRangeException)
                 {
@@ -97,7 +89,6 @@ namespace YGOShared
                 level = extractElement(webOut, "<b>Level</b>");
                 rank = extractElement(webOut, "<b>Rank</b>");
                 monsterType = extractElement(webOut, "<b>Monster Type</b>");
-                attack = extractElement(webOut, "<b>ATK</b>");
                 attack = extractElement(webOut, "<b>ATK</b>");
                 defence = extractElement(webOut, "<b>DEF</b>");
                 cardText = extractElement(webOut, "<b>Card Text</b>");                             
@@ -111,8 +102,27 @@ namespace YGOShared
                 new XElement("Card_Text", cardText)));
                 
             }
+            Console.WriteLine("Database Updated.");
+            doc.Save("CardDB.xml");
+        }
 
-            doc.Save("CardDB");
+        public string extractName(string webOut)
+        {
+            var name = "";
+            try
+            {
+                var start = webOut.IndexOf("<article");
+                var finish = webOut.LastIndexOf("</article>") + "<article>".Length;
+                webOut = webOut.Substring(start, finish - start);
+                start = webOut.IndexOf("<h1>") + "<h1>".Length;
+                finish = webOut.IndexOf("</h1>");
+                name = webOut.Substring(start, finish - start);
+                name = name.Trim();
+            }
+            catch { }
+            
+            return name;
+
         }
 
         /// <summary>
@@ -170,6 +180,105 @@ namespace YGOShared
             string w = await website.GetStringAsync(u);
             return w;
         }
+
+        public async Task<Card> downloadCard(int id)
+        {
+            Card c = new Card();
+            Uri iuri = new Uri(uri + "card_search.action?ope=2&cid=" + id);
+            var page = await this.getWebsiteStringAsync(iuri);
+
+            c.Name = extractName(page);
+            c.Attribute = extractElement(page, "<b>Attribute</b>");
+            c.Icon = extractElement(page, "<b>Icon</b>");
+            try
+            {
+                c.Level = int.Parse(extractElement(page, "<b>Level</b>"));
+            }
+            catch { }
+            try
+            {
+                c.Rank = int.Parse(extractElement(page, "<b>Rank</b>"));
+            }
+            catch { }
+            try
+            {
+                c.PendulumScale = int.Parse(extractElement(page, "<b>Pendulum Scale</b>"));
+            }
+            catch { }
+            c.PendulumEffect = extractElement(page, "<b>Pendulum Effect</b>");
+            c.MonsterType = extractElement(page, "<b>Monster Type</b>");
+            try
+            {
+                c.ATK = int.Parse(extractElement(page, "<b>ATK</b>"));
+            }
+            catch { }
+            try
+            {
+                c.DEF = int.Parse(extractElement(page, "<b>DEF</b>"));
+            }
+            catch { }
+            c.CardText = extractElement(page, "<b>Card Text</b>");
+            return c;
+        }
+
+        public async void test()
+        {
+            Card[] trunk = new Card[12273];
+
+            for(int i = 4007; i < 4027/*trunk.Length*/; i++)
+            {
+                trunk[i] = await this.downloadCard(i);
+            }
+            using (XmlWriter writer = XmlWriter.Create("CardDB.xml"))
+            {
+                writer.WriteStartDocument();
+                writer.WriteStartElement("CardDB");
+                writer.WriteRaw("\n");
+                foreach (Card c in trunk)
+                {
+                    try
+                    {
+                        writer.WriteStartElement("Card");
+                        writer.WriteRaw("\n");
+                        writer.WriteElementString("Name", c.Name);
+                        writer.WriteRaw("\n");
+                        writer.WriteElementString("Attribute", c.Attribute);
+                        writer.WriteRaw("\n");
+                        writer.WriteElementString("Icon", c.Icon);
+                        writer.WriteRaw("\n");
+                        writer.WriteElementString("Level", c.Level.ToString());
+                        writer.WriteRaw("\n");
+                        writer.WriteElementString("Rank", c.Rank.ToString());
+                        writer.WriteRaw("\n");
+                        writer.WriteElementString("Pendulum_Scale", c.PendulumScale.ToString());
+                        writer.WriteRaw("\n");
+                        writer.WriteElementString("Pendulum_Effect", c.PendulumEffect);
+                        writer.WriteRaw("\n");
+                        writer.WriteElementString("Monster_Type", c.MonsterType);
+                        writer.WriteRaw("\n");
+                        writer.WriteElementString("ATK", c.ATK.ToString());
+                        writer.WriteRaw("\n");
+                        writer.WriteElementString("DEF", c.DEF.ToString());
+                        writer.WriteRaw("\n");
+                        writer.WriteElementString("Card_Text", c.CardText);
+                        writer.WriteRaw("\n");
+                        writer.WriteEndElement();
+                        writer.WriteRaw("\n");
+                        writer.WriteEndElement();
+                        writer.WriteRaw("\n");
+                    }
+                    catch { }
+                    
+                }
+                                
+                writer.WriteEndDocument();
+                Console.WriteLine("Database Complete");
+            }
+            
+            
+
+        }
+
         /// <summary>
         /// Initializes the object.
         /// </summary>

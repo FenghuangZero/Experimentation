@@ -21,10 +21,11 @@ namespace YGOCardGame
         {
             Card[] trunk = new Card[130];
             XmlHandler cardDB = new XmlHandler();
-            //cardDB.downloadDB();         
-            cardDB.loadXml(trunk);
+            cardDB.test();
+            //cardDB.downloadDB();
+            //cardDB.loadXml(trunk);
 
-            Duel gameOn = new Duel(trunk);
+            //Duel gameOn = new Duel(trunk);
 
             // Keep the console window open in debug mode.
             Console.WriteLine("Press any key to exit.");

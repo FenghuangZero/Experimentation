@@ -16,10 +16,13 @@ namespace YGOShared
         public string Icon { get; set; }
         public int Level { get; set; }
         public int Rank { get; set; }
-        public string Type { get; set; }
-        public int Attack { get; set; }
-        public int Defence { get; set; }
-        public string Text { get; set; }
+        public int PendulumScale { get; set; }
+        public string PendulumEffect { get; set; }
+        public string MonsterType { get; set; }
+        public string CardType { get; set; }
+        public int ATK { get; set; }
+        public int DEF { get; set; }
+        public string CardText { get; set; }
         public bool FaceUp { get; set; }
         public bool Horizontal { get; set; }
         public string Location { get; set; }
@@ -34,10 +37,12 @@ namespace YGOShared
             Icon = "";
             Level = 0;
             Rank = 0;
-            Type = "";
-            Attack = 0;
-            Defence = 0;
-            Text = "";
+            PendulumScale = 0;
+            PendulumEffect = "";
+            MonsterType = "";
+            ATK = 0;
+            DEF = 0;
+            CardText = "";
             FaceUp = false;
             Horizontal = false;
         }
@@ -57,10 +62,10 @@ namespace YGOShared
             this.Name = n;
             this.Attribute = a;
             this.Level = l;
-            this.Type = t;
-            this.Attack = atk;
-            this.Defence = def;
-            this.Text = txt;
+            this.MonsterType = t;
+            this.ATK = atk;
+            this.DEF = def;
+            this.CardText = txt;
         }
     }
 }
