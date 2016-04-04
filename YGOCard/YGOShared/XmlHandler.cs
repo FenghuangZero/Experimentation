@@ -15,8 +15,7 @@ namespace YGOShared
     /// </summary>
     class XmlHandler
     {
-
-        HttpClient website = new HttpClient();
+        
         Uri uri = new Uri("http://www.db.yugioh-card.com/yugiohdb/");
         //http://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=NUMBER
         //This is the address to list individual cards. Replace 'NUMBER' with any int from 4007 to 12272 inclusive
@@ -55,57 +54,10 @@ namespace YGOShared
         }
 
         /// <summary>
-        /// Downloads a web page that details a card at the given index number.
+        /// Reads the HTML page and extracts the header.
         /// </summary>
-        public async void downloadDB()
-        {
-            XDocument doc = new XDocument(new XElement("CardDB"));
-            
-            for (int i = 4007; i < 4081; i++)
-            {
-                var name = "";
-                var attribute = "";
-                var icon = "";
-                var level = "";
-                var rank = "";
-                var monsterType = "";
-                var attack = "";
-                var defence = "";
-                var cardText = "";
-                Uri iUri = new Uri(uri + "card_search.action?ope=2&cid=" + i);
-                var webOut = await this.getWebsiteStringAsync(iUri);
-
-                try
-                {
-                    name = extractName(webOut);
-                }
-                catch (ArgumentOutOfRangeException)
-                {
-                    //When a webpage displays no card, skip.
-                    continue;
-                }
-                attribute = extractElement(webOut, "<b>Attribute</b>");
-                icon = extractElement(webOut, "<b>Icon</b>");
-                level = extractElement(webOut, "<b>Level</b>");
-                rank = extractElement(webOut, "<b>Rank</b>");
-                monsterType = extractElement(webOut, "<b>Monster Type</b>");
-                attack = extractElement(webOut, "<b>ATK</b>");
-                defence = extractElement(webOut, "<b>DEF</b>");
-                cardText = extractElement(webOut, "<b>Card Text</b>");                             
-                
-                doc.Root.Add(new XElement("id_" + i, new XElement("Name", name),
-                new XElement("Attribute", attribute),
-                new XElement("Level", level),
-                new XElement("Monster_Type", monsterType),
-                new XElement("ATK", attack),
-                new XElement("DEF", defence),
-                new XElement("Card_Text", cardText)));
-                
-            }
-            Console.WriteLine("Database Updated.");
-            doc.Save("CardDB.xml");
-        }
-
+        /// <param name="webOut">A string representation of the HTML.</param>
+        /// <returns></returns>
         public string extractName(string webOut)
         {
             var name = "";
@@ -174,10 +126,16 @@ namespace YGOShared
             return element;
         }
 
-
+        /// <summary>
+        /// Queries 
+        /// </summary>
+        /// <param name="u"></param>
+        /// <returns></returns>
         public async Task<string> getWebsiteStringAsync(Uri u)
         {
-            string w = await website.GetStringAsync(u);
+            HttpClient httpclient = new HttpClient();
+            string w = await httpclient.GetStringAsync(u);
+            httpclient.Dispose();
             return w;
         }
 
@@ -188,95 +146,128 @@ namespace YGOShared
             var page = await this.getWebsiteStringAsync(iuri);
 
             c.Name = extractName(page);
-            c.Attribute = extractElement(page, "<b>Attribute</b>");
-            c.Icon = extractElement(page, "<b>Icon</b>");
-            try
+            if (c.Name != "")
             {
-                c.Level = int.Parse(extractElement(page, "<b>Level</b>"));
+                c.Attribute = extractElement(page, "<b>Attribute</b>");
+                c.Icon = extractElement(page, "<b>Icon</b>");
+                try
+                {
+                    c.Level = int.Parse(extractElement(page, "<b>Level</b>"));
+                }
+                catch { }
+                try
+                {
+                    c.Rank = int.Parse(extractElement(page, "<b>Rank</b>"));
+                }
+                catch { }
+                try
+                {
+                    c.PendulumScale = int.Parse(extractElement(page, "<b>Pendulum Scale</b>"));
+                }
+                catch { }
+                c.PendulumEffect = extractElement(page, "<b>Pendulum Effect</b>");
+                c.MonsterType = extractElement(page, "<b>Monster Type</b>");
+                try
+                {
+                    c.ATK = int.Parse(extractElement(page, "<b>ATK</b>"));
+                }
+                catch { }
+                try
+                {
+                    c.DEF = int.Parse(extractElement(page, "<b>DEF</b>"));
+                }
+                catch { }
+                c.CardText = extractElement(page, "<b>Card Text</b>");
+                c.ID = id;
             }
-            catch { }
-            try
+            else
             {
-                c.Rank = int.Parse(extractElement(page, "<b>Rank</b>"));
+                c = null;
             }
-            catch { }
-            try
-            {
-                c.PendulumScale = int.Parse(extractElement(page, "<b>Pendulum Scale</b>"));
-            }
-            catch { }
-            c.PendulumEffect = extractElement(page, "<b>Pendulum Effect</b>");
-            c.MonsterType = extractElement(page, "<b>Monster Type</b>");
-            try
-            {
-                c.ATK = int.Parse(extractElement(page, "<b>ATK</b>"));
-            }
-            catch { }
-            try
-            {
-                c.DEF = int.Parse(extractElement(page, "<b>DEF</b>"));
-            }
-            catch { }
-            c.CardText = extractElement(page, "<b>Card Text</b>");
             return c;
         }
 
-        public async void test()
+        public async void downloadToArray()
         {
             Card[] trunk = new Card[12273];
 
-            for(int i = 4007; i < 4027/*trunk.Length*/; i++)
+            for (int i = 4007; i < 4057/*trunk.Length*/; i = i + 10)
             {
-                trunk[i] = await this.downloadCard(i);
+                var download1 = this.downloadCard(i);
+                var download2 = this.downloadCard(i + 1);
+                var download3 = this.downloadCard(i + 2);
+                var download4 = this.downloadCard(i + 3);
+                var download5 = this.downloadCard(i + 4);
+                var download6 = this.downloadCard(i + 5);
+                var download7 = this.downloadCard(i + 6);
+                var download8 = this.downloadCard(i + 7);
+                var download9 = this.downloadCard(i + 8);
+                var download10 = this.downloadCard(i + 9);
+                trunk[i] = await download1;
+                trunk[i + 1] = await download2;
+                trunk[i + 2] = await download3;
+                trunk[i + 3] = await download4;
+                trunk[i + 4] = await download5;
+                trunk[i + 5] = await download6;
+                trunk[i + 6] = await download7;
+                trunk[i + 7] = await download8;
+                trunk[i + 8] = await download9;
+                trunk[i + 9] = await download10;
             }
-            using (XmlWriter writer = XmlWriter.Create("CardDB.xml"))
-            {
-                writer.WriteStartDocument();
-                writer.WriteStartElement("CardDB");
-                writer.WriteRaw("\n");
-                foreach (Card c in trunk)
-                {
-                    try
-                    {
-                        writer.WriteStartElement("Card");
-                        writer.WriteRaw("\n");
-                        writer.WriteElementString("Name", c.Name);
-                        writer.WriteRaw("\n");
-                        writer.WriteElementString("Attribute", c.Attribute);
-                        writer.WriteRaw("\n");
-                        writer.WriteElementString("Icon", c.Icon);
-                        writer.WriteRaw("\n");
-                        writer.WriteElementString("Level", c.Level.ToString());
-                        writer.WriteRaw("\n");
-                        writer.WriteElementString("Rank", c.Rank.ToString());
-                        writer.WriteRaw("\n");
-                        writer.WriteElementString("Pendulum_Scale", c.PendulumScale.ToString());
-                        writer.WriteRaw("\n");
-                        writer.WriteElementString("Pendulum_Effect", c.PendulumEffect);
-                        writer.WriteRaw("\n");
-                        writer.WriteElementString("Monster_Type", c.MonsterType);
-                        writer.WriteRaw("\n");
-                        writer.WriteElementString("ATK", c.ATK.ToString());
-                        writer.WriteRaw("\n");
-                        writer.WriteElementString("DEF", c.DEF.ToString());
-                        writer.WriteRaw("\n");
-                        writer.WriteElementString("Card_Text", c.CardText);
-                        writer.WriteRaw("\n");
-                        writer.WriteEndElement();
-                        writer.WriteRaw("\n");
-                        writer.WriteEndElement();
-                        writer.WriteRaw("\n");
-                    }
-                    catch { }
-                    
-                }
-                                
-                writer.WriteEndDocument();
-                Console.WriteLine("Database Complete");
-            }
-            
-            
+            Console.WriteLine("Download Complete.");
+            writeXml(trunk);
+        }
 
+        public void writeXml(Card[] trunk)
+        {
+            XmlWriterSettings writerSettings = new XmlWriterSettings();
+            writerSettings.Indent = true;
+            writerSettings.IndentChars = "\t";
+            writerSettings.NewLineChars = "\n";
+
+            XmlWriter writer = XmlWriter.Create("CardDB.xml", writerSettings);
+
+            writer.WriteStartDocument();
+            writer.WriteStartElement("CardDB");
+            foreach (Card c in trunk)
+            {
+                if (c != null)
+                {
+                    var id = c.ID.ToString();
+                    writer.WriteStartElement("Card", id);
+                    writer.WriteElementString("Name", c.Name);
+                    writer.WriteElementString("Attribute", c.Attribute);
+                    writer.WriteElementString("Icon", c.Icon);
+                    writer.WriteElementString("Level", c.Level.ToString());
+                    writer.WriteElementString("Rank", c.Rank.ToString());
+                    writer.WriteElementString("Pendulum_Scale", c.PendulumScale.ToString());
+                    writer.WriteElementString("Pendulum_Effect", c.PendulumEffect);
+                    writer.WriteElementString("Monster_Type", c.MonsterType);
+                    writer.WriteElementString("ATK", c.ATK.ToString());
+                    writer.WriteElementString("DEF", c.DEF.ToString());
+                    writer.WriteElementString("Card_Text", c.CardText);
+                    writer.WriteEndElement();
+
+                }
+
+            }
+
+            writer.WriteEndElement();
+            writer.WriteEndDocument();
+            writer.Flush();
+            Console.WriteLine("Database Complete");
+        }
+
+        public Card[] readXml()
+        {
+            Card[] trunk = new Card[12273];
+            XmlReader reader = XmlReader.Create("CardDB.xml");
+
+            reader.MoveToContent();
+            //reader.ReadToNextSibling("Card");
+            Console.WriteLine(reader.LocalName);
+            Console.WriteLine(reader.NamespaceURI);
+            return trunk;
         }
 
         /// <summary>
@@ -284,7 +275,6 @@ namespace YGOShared
         /// </summary>
         public XmlHandler()
         {
-            website.BaseAddress = uri;
         }
     }
 }

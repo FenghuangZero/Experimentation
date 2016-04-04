@@ -11,6 +11,7 @@ namespace YGOShared
     /// </summary>
     public class Card
     {
+        public int ID { get; set; }
         public string Name { get; set; }
         public string Attribute { get; set; }
         public string Icon { get; set; }
@@ -32,6 +33,7 @@ namespace YGOShared
         /// </summary>
         public Card()
         {
+            ID = 0;
             Name = "";
             Attribute = "";
             Icon = "";
