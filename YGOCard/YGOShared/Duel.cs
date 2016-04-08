@@ -18,8 +18,8 @@ namespace YGOShared
         /// <param name="t">The card database.</param>
         public void loadDeck(Card[] t)
         {
-            p2.Deck[0] = t[1];
-            p1.Deck[0] = t[5];
+            p2.Deck[0] = t[4007];
+            p1.Deck[0] = t[4056];
         }
 
         /// <summary>

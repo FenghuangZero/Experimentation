@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Xml;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Net.Http;
+using Windows.Storage;
+using Windows.ApplicationModel;
 
 
 namespace YGOShared
@@ -28,27 +31,36 @@ namespace YGOShared
         /// <returns></returns>
         public Card[] loadXml(Card[] t)
         {
-            XDocument doc = XDocument.Load("YGOCardDB.xml");
+            XDocument doc = XDocument.Load("CardDB.xml");
 
+            var dbCard = doc.Descendants("Card");
             var dbName = doc.Descendants("Name");
             var dbAttribute = doc.Descendants("Attribute");
             var dbLevel = doc.Descendants("Level");
-            var dbType = doc.Descendants("Type");
-            var dbAttack = doc.Descendants("Attack");
-            var dbDefence = doc.Descendants("Defence");
-            var dbText = doc.Descendants("Description");
-
+            var dbRank = doc.Descendants("Rank");
+            var dbPenScale = doc.Descendants("Pendulum_Scale");
+            var dbPenEffect = doc.Descendants("Pendulum_Effect");
+            var dbMonType = doc.Descendants("Monster_Type");
+            var dbAttack = doc.Descendants("ATK");
+            var dbDefence = doc.Descendants("DEF");
+            var dbText = doc.Descendants("Card_Text");
+            
             // Load cards from XML
-            for (int i = 0; i < 126; i++)
+            for (int i = 0; i < dbCard.Count(); i++)
             {
-                t[i] = new Card();
-                t[i].Name = dbName.ElementAt(i).Value;
-                t[i].Attribute = dbAttribute.ElementAt(i).Value;
-                t[i].Level = int.Parse(dbLevel.ElementAt(i).Value);
-                t[i].MonsterType = dbType.ElementAt(i).Value;
-                t[i].ATK = int.Parse(dbAttack.ElementAt(i).Value);
-                t[i].DEF = int.Parse(dbDefence.ElementAt(i).Value);
-                t[i].CardText = dbText.ElementAt(i).Value;
+                var index = int.Parse(dbCard.ElementAt(i).FirstAttribute.Value);
+                t[index] = new Card();
+                t[index].ID = index;
+                t[index].Name = dbName.ElementAt(i).Value;
+                t[index].Attribute = dbAttribute.ElementAt(i).Value;
+                t[index].Level = int.Parse(dbLevel.ElementAt(i).Value);
+                t[index].Rank = int.Parse(dbRank.ElementAt(i).Value);
+                t[index].PendulumScale = int.Parse(dbPenScale.ElementAt(i).Value);
+                t[index].PendulumEffect = dbPenEffect.ElementAt(i).Value;
+                t[index].MonsterType = dbMonType.ElementAt(i).Value;
+                t[index].ATK = int.Parse(dbAttack.ElementAt(i).Value);
+                t[index].DEF = int.Parse(dbDefence.ElementAt(i).Value);
+                t[index].CardText = dbText.ElementAt(i).Value;
             }
             return t;
         }
@@ -127,9 +139,9 @@ namespace YGOShared
         }
 
         /// <summary>
-        /// Queries 
+        /// Queries website.
         /// </summary>
-        /// <param name="u"></param>
+        /// <param name="u">Uri of the website.</param>
         /// <returns></returns>
         public async Task<string> getWebsiteStringAsync(Uri u)
         {
@@ -139,11 +151,16 @@ namespace YGOShared
             return w;
         }
 
+        /// <summary>
+        /// Asyncronously downloads a single webpage of a card and extracts the elements into a Card object.
+        /// </summary>
+        /// <param name="id">Identification number of the card.</param>
+        /// <returns></returns>
         public async Task<Card> downloadCard(int id)
         {
             Card c = new Card();
             Uri iuri = new Uri(uri + "card_search.action?ope=2&cid=" + id);
-            var page = await this.getWebsiteStringAsync(iuri);
+            var page = await getWebsiteStringAsync(iuri);
 
             c.Name = extractName(page);
             if (c.Name != "")
@@ -187,22 +204,25 @@ namespace YGOShared
             return c;
         }
 
+        /// <summary>
+        /// Begins a series of download tasks to put cards into an array.
+        /// </summary>
         public async void downloadToArray()
         {
             Card[] trunk = new Card[12273];
 
             for (int i = 4007; i < 4057/*trunk.Length*/; i = i + 10)
             {
-                var download1 = this.downloadCard(i);
-                var download2 = this.downloadCard(i + 1);
-                var download3 = this.downloadCard(i + 2);
-                var download4 = this.downloadCard(i + 3);
-                var download5 = this.downloadCard(i + 4);
-                var download6 = this.downloadCard(i + 5);
-                var download7 = this.downloadCard(i + 6);
-                var download8 = this.downloadCard(i + 7);
-                var download9 = this.downloadCard(i + 8);
-                var download10 = this.downloadCard(i + 9);
+                var download1 = downloadCard(i);
+                var download2 = downloadCard(i + 1);
+                var download3 = downloadCard(i + 2);
+                var download4 = downloadCard(i + 3);
+                var download5 = downloadCard(i + 4);
+                var download6 = downloadCard(i + 5);
+                var download7 = downloadCard(i + 6);
+                var download8 = downloadCard(i + 7);
+                var download9 = downloadCard(i + 8);
+                var download10 = downloadCard(i + 9);
                 trunk[i] = await download1;
                 trunk[i + 1] = await download2;
                 trunk[i + 2] = await download3;
@@ -214,18 +234,32 @@ namespace YGOShared
                 trunk[i + 8] = await download9;
                 trunk[i + 9] = await download10;
             }
+#if CONSOLE
             Console.WriteLine("Download Complete.");
+#endif
             writeXml(trunk);
         }
 
-        public void writeXml(Card[] trunk)
+        /// <summary>
+        /// Writes a Card array into an XML file.
+        /// </summary>
+        /// <param name="trunk">Array to be written.</param>
+        public async void writeXml(Card[] trunk)
         {
+#if WINDOWS_UWP
+            StorageFolder sf = Package.Current.InstalledLocation;
+            StorageFile db = await sf.CreateFileAsync("CardDB.xml", CreationCollisionOption.OpenIfExists);
+            var database = await db.OpenStreamForWriteAsync();
+#elif CONSOLE
+            FileStream database = new FileStream("CardDB.xml", FileMode.OpenOrCreate);
+#endif
             XmlWriterSettings writerSettings = new XmlWriterSettings();
             writerSettings.Indent = true;
             writerSettings.IndentChars = "\t";
             writerSettings.NewLineChars = "\n";
 
-            XmlWriter writer = XmlWriter.Create("CardDB.xml", writerSettings);
+
+            XmlWriter writer = XmlWriter.Create(database, writerSettings);
 
             writer.WriteStartDocument();
             writer.WriteStartElement("CardDB");
@@ -233,8 +267,8 @@ namespace YGOShared
             {
                 if (c != null)
                 {
-                    var id = c.ID.ToString();
-                    writer.WriteStartElement("Card", id);
+                    writer.WriteStartElement("Card");
+                    writer.WriteAttributeString("id", c.ID.ToString());
                     writer.WriteElementString("Name", c.Name);
                     writer.WriteElementString("Attribute", c.Attribute);
                     writer.WriteElementString("Icon", c.Icon);
@@ -255,19 +289,9 @@ namespace YGOShared
             writer.WriteEndElement();
             writer.WriteEndDocument();
             writer.Flush();
+#if CONSOLE
             Console.WriteLine("Database Complete");
-        }
-
-        public Card[] readXml()
-        {
-            Card[] trunk = new Card[12273];
-            XmlReader reader = XmlReader.Create("CardDB.xml");
-
-            reader.MoveToContent();
-            //reader.ReadToNextSibling("Card");
-            Console.WriteLine(reader.LocalName);
-            Console.WriteLine(reader.NamespaceURI);
-            return trunk;
+#endif
         }
 
         /// <summary>

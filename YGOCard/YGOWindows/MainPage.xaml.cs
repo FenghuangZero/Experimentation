@@ -33,12 +33,12 @@ namespace YGOWindows
         /// </summary>
         public MainPage()
         {
-            this.InitializeComponent();
-
-            cardDB.loadXml(trunk);
-            Duel gameOn = new Duel(trunk);
-            
+            this.InitializeComponent();            
         }
-        
+
+        private void downDB_Click(object sender, RoutedEventArgs e)
+        {
+            cardDB.downloadToArray();
+        }
     }
 }

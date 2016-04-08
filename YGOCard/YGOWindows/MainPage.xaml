@@ -8,7 +8,6 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:Name="deckButton" Content="Deck" HorizontalAlignment="Left" Margin="547,256,0,0" VerticalAlignment="Top" Click="deckButton_Click"/>
-        <TextBlock x:Name="p1hand1textBlock" HorizontalAlignment="Left" Margin="321,288,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <Button x:Name="downDB" Content="Download Database" HorizontalAlignment="Stretch" Height="45" Margin="10,359,237,0" VerticalAlignment="Top" Click="downDB_Click"/>
     </Grid>
 </Page>

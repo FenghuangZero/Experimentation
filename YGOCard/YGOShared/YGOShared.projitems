@@ -15,11 +15,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)XmlHandler.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)YGOCardDB.xml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CardDB.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)YGOCardDB.xsd" />
   </ItemGroup>
 </Project>

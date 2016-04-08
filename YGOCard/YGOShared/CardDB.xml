@@ -1,0 +1,588 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CardDB>
+	<Card id="4007">
+		<Name>Blue-Eyes White Dragon</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>8</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dragon</Monster_Type>
+		<ATK>3000</ATK>
+		<DEF>2500</DEF>
+		<Card_Text>This legendary dragon is a powerful engine of destruction. Virtually invincible, very few have faced this awesome creature and lived to tell the tale.</Card_Text>
+	</Card>
+	<Card id="4008">
+		<Name>Mystical Elf</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<ATK>800</ATK>
+		<DEF>2000</DEF>
+		<Card_Text>A delicate elf that lacks offense, but has a terrific defense backed by mystical power.</Card_Text>
+	</Card>
+	<Card id="4009">
+		<Name>Hitotsu-Me Giant</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast-Warrior</Monster_Type>
+		<ATK>1200</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>A one-eyed behemoth with thick, powerful arms made for delivering punishing blows.</Card_Text>
+	</Card>
+	<Card id="4010">
+		<Name>Baby Dragon</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dragon</Monster_Type>
+		<ATK>1200</ATK>
+		<DEF>700</DEF>
+		<Card_Text>Much more than just a child, this dragon is gifted with untapped power.</Card_Text>
+	</Card>
+	<Card id="4011">
+		<Name>Ryu-Kishin</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<ATK>1000</ATK>
+		<DEF>500</DEF>
+		<Card_Text>A very elusive creature that looks like a harmless statue until it attacks.</Card_Text>
+	</Card>
+	<Card id="4012">
+		<Name>Feral Imp</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<ATK>1300</ATK>
+		<DEF>1400</DEF>
+		<Card_Text>A playful little fiend that lurks in the dark, waiting to attack an unwary enemy.</Card_Text>
+	</Card>
+	<Card id="4013">
+		<Name>Winged Dragon, Guardian of the Fortress #1</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dragon</Monster_Type>
+		<ATK>1400</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>A dragon commonly found guarding mountain fortresses. Its signature attack is a sweeping dive from out of the blue.</Card_Text>
+	</Card>
+	<Card id="4014">
+		<Name>Mushroom Man</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Plant</Monster_Type>
+		<ATK>800</ATK>
+		<DEF>600</DEF>
+		<Card_Text>Found in humid regions, this creature attacks enemies with a lethal rain of poison spores.</Card_Text>
+	</Card>
+	<Card id="4016">
+		<Name>Blackland Fire Dragon</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dragon</Monster_Type>
+		<ATK>1500</ATK>
+		<DEF>800</DEF>
+		<Card_Text>A dragon that dwells in the depths of darkness, its vulnerability lies in its poor eyesight.</Card_Text>
+	</Card>
+	<Card id="4017">
+		<Name>Sword Arm of Dragon</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>6</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dinosaur</Monster_Type>
+		<ATK>1750</ATK>
+		<DEF>2030</DEF>
+		<Card_Text>This Jurassic juggernaut has a spine covered in sword-like plates, and a tail to split open skulls.</Card_Text>
+	</Card>
+	<Card id="4018">
+		<Name>Swamp Battleguard</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<ATK>1800</ATK>
+		<DEF>1500</DEF>
+		<Card_Text>This card gains 500 ATK for each "Lava Battleguard" you control.</Card_Text>
+	</Card>
+	<Card id="4019">
+		<Name>Tyhone</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Winged Beast</Monster_Type>
+		<ATK>1200</ATK>
+		<DEF>1400</DEF>
+		<Card_Text>Capable of firing cannonballs from its mouth for long-range attacks, this creature is particularly effective in mountain battles.</Card_Text>
+	</Card>
+	<Card id="4020">
+		<Name>Battle Steer</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast-Warrior</Monster_Type>
+		<ATK>1800</ATK>
+		<DEF>1300</DEF>
+		<Card_Text>A bull monster often found in the woods, it charges enemy monsters with a pair of deadly horns.</Card_Text>
+	</Card>
+	<Card id="4021">
+		<Name>Flame Swordsman</Name>
+		<Attribute>FIRE</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<ATK>1800</ATK>
+		<DEF>1600</DEF>
+		<Card_Text>"Flame Manipulator" + "Masaki the Legendary Swordsman"</Card_Text>
+	</Card>
+	<Card id="4022">
+		<Name>Time Wizard</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<ATK>500</ATK>
+		<DEF>400</DEF>
+		<Card_Text>Once per turn: You can toss a coin and call it. If you call it right, destroy all monsters your opponent controls. If you call it wrong, destroy as many monsters you control as possible, and if you do, take damage equal to half the total ATK those destroyed monsters had on the field.</Card_Text>
+	</Card>
+	<Card id="4023">
+		<Name>Right Leg of the Forbidden One</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>1</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<ATK>200</ATK>
+		<DEF>300</DEF>
+		<Card_Text>A forbidden right leg sealed by magic. Whosoever breaks this seal will know infinite power.</Card_Text>
+	</Card>
+	<Card id="4024">
+		<Name>Left Leg of the Forbidden One</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>1</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<ATK>200</ATK>
+		<DEF>300</DEF>
+		<Card_Text>A forbidden left leg sealed by magic. Whosoever breaks this seal will know infinite power.</Card_Text>
+	</Card>
+	<Card id="4025">
+		<Name>Right Arm of the Forbidden One</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>1</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<ATK>200</ATK>
+		<DEF>300</DEF>
+		<Card_Text>A forbidden right arm sealed by magic. Whosoever breaks this seal will know infinite power.</Card_Text>
+	</Card>
+	<Card id="4026">
+		<Name>Left Arm of the Forbidden One</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>1</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<ATK>200</ATK>
+		<DEF>300</DEF>
+		<Card_Text>A forbidden left arm sealed by magic. Whosoever breaks this seal will know infinite power.</Card_Text>
+	</Card>
+	<Card id="4027">
+		<Name>Exodia the Forbidden One</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<ATK>1000</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>If you have "Right Leg of the Forbidden One", "Left Leg of the Forbidden One", "Right Arm of the Forbidden One" and "Left Arm of the Forbidden One" in addition to this card in your hand, you win the Duel.</Card_Text>
+	</Card>
+	<Card id="4028">
+		<Name>Summoned Skull</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>6</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<ATK>2500</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>A fiend with dark powers for confusing the enemy. Among the Fiend-Type monsters, this monster boasts considerable force.&lt;br&gt;&lt;br&gt;(This card is always treated as an "Archfiend" card.)</Card_Text>
+	</Card>
+	<Card id="4029">
+		<Name>The Wicked Worm Beast</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast</Monster_Type>
+		<ATK>1400</ATK>
+		<DEF>700</DEF>
+		<Card_Text>This face-up card on the field is returned to the owner's hand during the End Phase of your turn.</Card_Text>
+	</Card>
+	<Card id="4030">
+		<Name>Skull Servant</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>1</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Zombie</Monster_Type>
+		<ATK>300</ATK>
+		<DEF>200</DEF>
+		<Card_Text>A skeletal ghost that isn't strong but can mean trouble in large numbers.</Card_Text>
+	</Card>
+	<Card id="4032">
+		<Name>Battle Ox</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast-Warrior</Monster_Type>
+		<ATK>1700</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>A monster with tremendous power, it destroys enemies with a swing of its axe.</Card_Text>
+	</Card>
+	<Card id="4033">
+		<Name>Beaver Warrior</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast-Warrior</Monster_Type>
+		<ATK>1200</ATK>
+		<DEF>1500</DEF>
+		<Card_Text>What this creature lacks in size it makes up for in defense when battling in the prairie.</Card_Text>
+	</Card>
+	<Card id="4034">
+		<Name>Rock Ogre Grotto #1</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Rock</Monster_Type>
+		<ATK>800</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>Protected by a solid body of rock, this monster throws a bone-shattering punch.</Card_Text>
+	</Card>
+	<Card id="4036">
+		<Name>Zombie Warrior</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Zombie</Monster_Type>
+		<ATK>1200</ATK>
+		<DEF>900</DEF>
+		<Card_Text>Skull Servant + "Battle Warrior"</Card_Text>
+	</Card>
+	<Card id="4037">
+		<Name>Koumori Dragon</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dragon</Monster_Type>
+		<ATK>1500</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>A vicious, fire-breathing dragon whose wicked flame corrupts the souls of its victims.</Card_Text>
+	</Card>
+	<Card id="4038">
+		<Name>Two-Headed King Rex</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dinosaur</Monster_Type>
+		<ATK>1600</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>A powerful monster whose two heads attack as one.</Card_Text>
+	</Card>
+	<Card id="4039">
+		<Name>Judge Man</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>6</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<ATK>2200</ATK>
+		<DEF>1500</DEF>
+		<Card_Text>This club-wielding warrior battles to the end and will never surrender.</Card_Text>
+	</Card>
+	<Card id="4040">
+		<Name>Saggi the Dark Clown</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<ATK>600</ATK>
+		<DEF>1500</DEF>
+		<Card_Text>This clown appears from nowhere and executes very strange moves to avoid enemy attacks.</Card_Text>
+	</Card>
+	<Card id="4041">
+		<Name>Dark Magician</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>7</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<ATK>2500</ATK>
+		<DEF>2100</DEF>
+		<Card_Text>The ultimate wizard in terms of attack and defense.</Card_Text>
+	</Card>
+	<Card id="4042">
+		<Name>The Snake Hair</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Zombie</Monster_Type>
+		<ATK>1500</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>A monster with a head of poison snakes. One look from this monster can turn an opponent to stone.</Card_Text>
+	</Card>
+	<Card id="4043">
+		<Name>Gaia the Dragon Champion</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>7</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dragon</Monster_Type>
+		<ATK>2600</ATK>
+		<DEF>2100</DEF>
+		<Card_Text>Gaia The Fierce Knight + "Curse of Dragon"</Card_Text>
+	</Card>
+	<Card id="4044">
+		<Name>Gaia The Fierce Knight</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>7</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<ATK>2300</ATK>
+		<DEF>2100</DEF>
+		<Card_Text>A knight whose horse travels faster than the wind. His battle-charge is a force to be reckoned with.</Card_Text>
+	</Card>
+	<Card id="4045">
+		<Name>Curse of Dragon</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dragon</Monster_Type>
+		<ATK>2000</ATK>
+		<DEF>1500</DEF>
+		<Card_Text>A wicked dragon that taps into dark forces to execute a powerful attack.</Card_Text>
+	</Card>
+	<Card id="4046">
+		<Name>Dragon Piper</Name>
+		<Attribute>FIRE</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Pyro</Monster_Type>
+		<ATK>200</ATK>
+		<DEF>1800</DEF>
+		<Card_Text>FLIP: Destroy all face-up "Dragon Capture Jar"(s) on the field. If you destroy any, change all face-up Dragon-Type monsters on the field to Attack Position.</Card_Text>
+	</Card>
+	<Card id="4047">
+		<Name>Celtic Guardian</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<ATK>1400</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>An elf who learned to wield a sword, he baffles enemies with lightning-swift attacks.</Card_Text>
+	</Card>
+	<Card id="4048">
+		<Name>Illusionist Faceless Mage</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<ATK>1200</ATK>
+		<DEF>2200</DEF>
+		<Card_Text>Manipulates enemy attacks with the power of illusion.</Card_Text>
+	</Card>
+	<Card id="4049">
+		<Name>Karbonala Warrior</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<ATK>1500</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>"M-Warrior #1" + "M-Warrior #2"</Card_Text>
+	</Card>
+	<Card id="4050">
+		<Name>Rogue Doll</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<ATK>1600</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>A deadly doll gifted with mystical power, it is particularly powerful when attacking against dark forces.</Card_Text>
+	</Card>
+	<Card id="4051">
+		<Name>Wattkid</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Thunder</Monster_Type>
+		<ATK>1000</ATK>
+		<DEF>500</DEF>
+		<Card_Text>A creature that electrocutes opponents with bolts of lightning.</Card_Text>
+	</Card>
+	<Card id="4052">
+		<Name>Griffore</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast</Monster_Type>
+		<ATK>1200</ATK>
+		<DEF>1500</DEF>
+		<Card_Text>This monster's tough hide deflects almost any attack.</Card_Text>
+	</Card>
+	<Card id="4054">
+		<Name>Sangan</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<ATK>1000</ATK>
+		<DEF>600</DEF>
+		<Card_Text>When this card is sent from the field to the Graveyard: Add 1 monster with 1500 or less ATK from your Deck to your hand.</Card_Text>
+	</Card>
+	<Card id="4056">
+		<Name>Basic Insect</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Insect</Monster_Type>
+		<ATK>500</ATK>
+		<DEF>700</DEF>
+		<Card_Text>Usually found traveling in swarms, this creature's ideal environment is the forest.</Card_Text>
+	</Card>
+</CardDB>
