@@ -23,15 +23,21 @@ namespace YGOShared
         //http://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=NUMBER
         //This is the address to list individual cards. Replace 'NUMBER' with any int from 4007 to 12272 inclusive
 
+        StorageFolder localFolder = ApplicationData.Current.LocalFolder;
 
         /// <summary>
         /// Loads the database from a pre-existing Xml file.
         /// </summary>
         /// <param name="t">The object which will store the database while loaded.</param>
         /// <returns></returns>
-        public Card[] loadXml(Card[] t)
+        public async Task<Card[]> loadXml(Card[] t)
         {
+#if WINDOWS_UWP
+            StorageFile db = await localFolder.GetFileAsync("CardDB.xml");
+            XDocument doc = XDocument.Load(await db.OpenStreamForReadAsync());
+#elif CONSOLE
             XDocument doc = XDocument.Load("CardDB.xml");
+#endif
 
             var dbCard = doc.Descendants("Card");
             var dbName = doc.Descendants("Name");
@@ -247,8 +253,7 @@ namespace YGOShared
         public async void writeXml(Card[] trunk)
         {
 #if WINDOWS_UWP
-            StorageFolder sf = Package.Current.InstalledLocation;
-            StorageFile db = await sf.CreateFileAsync("CardDB.xml", CreationCollisionOption.OpenIfExists);
+            StorageFile db = await localFolder.CreateFileAsync("CardDB.xml", CreationCollisionOption.ReplaceExisting);
             var database = await db.OpenStreamForWriteAsync();
 #elif CONSOLE
             FileStream database = new FileStream("CardDB.xml", FileMode.OpenOrCreate);

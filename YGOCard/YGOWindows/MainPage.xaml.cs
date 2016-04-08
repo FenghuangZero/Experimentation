@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Net;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -33,7 +34,16 @@ namespace YGOWindows
         /// </summary>
         public MainPage()
         {
-            this.InitializeComponent();            
+            this.InitializeComponent();
+            ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
+            StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+            localSettings.Values["exampleSetting"] = "Hello Windows";
+            Object value = localSettings.Values["exampleSetting"];
+            ApplicationDataCompositeValue composite = new ApplicationDataCompositeValue();
+            composite["intVal"] = 1;
+            composite["strVal"] = "string";
+
+            localSettings.Values["exampleCompositeSetting"] = composite;
         }
 
         private void downDB_Click(object sender, RoutedEventArgs e)
