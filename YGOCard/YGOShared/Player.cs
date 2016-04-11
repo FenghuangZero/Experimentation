@@ -18,6 +18,7 @@ namespace YGOShared
         public Card[] Deck = new Card[60];
         public Card[] Hand = new Card[60];
         public Card[] Graveyard = new Card[75];
+        public Card[] Sidedeck = new Card[15];
 
         /// <summary>
         /// Moves a single card from the deck to the hand.
@@ -188,17 +189,9 @@ namespace YGOShared
         /// <param name="si">The position of the card prior to moving.</param>
         public void move(Card[] s, Card[] e, Card c, int si)
         {
-            for (int i = 0; i < e.Length;)
-            {
-                if (e[i] == null)
-                {
-                    e[i] = c;
-                    s[si] = null;
-                break;
-                }
-                else
-                    i++;
-            }
+            int ei = Array.IndexOf(e, null);
+            e[ei] = c;
+            s[si] = null;
         }
 
         /// <summary>

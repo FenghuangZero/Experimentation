@@ -15,19 +15,26 @@ namespace YGOCardGame
     /// </summary>
     class Program
     {
+        Card[] trunk;
+        XmlHandler cardDB;
+
+        public async void demo()
+        {
+            trunk = new Card[12273];
+            cardDB = new XmlHandler();
+            await cardDB.loadXml(trunk);
+            Duel gameOn = new Duel(trunk);            
+        }
+
         /// <summary>
         /// Initializes the program. This is the first line of authored code executed.
         /// </summary>
         static void Main()
         {
-            Card[] trunk = new Card[12273];
-            XmlHandler cardDB = new XmlHandler();
-           
-            cardDB.downloadToArray();
-            //cardDB.loadXml(trunk);
-
-            //Duel gameOn = new Duel(trunk);
-
+            //cardDB.downloadToArray();
+            Program p = new Program();
+            p.demo();
+            
             // Keep the console window open in debug mode.
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
