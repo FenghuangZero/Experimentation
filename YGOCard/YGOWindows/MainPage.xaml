@@ -8,6 +8,11 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:Name="downDB" Content="Download Database" HorizontalAlignment="Stretch" Height="45" Margin="10,359,237,0" VerticalAlignment="Top" Click="downDB_Click"/>
+        <StackPanel x:Name="Stack_Panel" HorizontalAlignment="Left" Height="221" Margin="235,10,0,0" VerticalAlignment="Top" Width="145" RenderTransformOrigin="2.507,0.098">
+            <Button x:Name="campaign" Content="Campaign" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="campaign_Click"/>
+            <Button x:Name="deckEditor" Content="Deck Editor" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="deckEditor_Click"/>
+            <Button x:Name="multiplayer" Content="Multiplayer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="multiplayer_Click"/>
+            <Button x:Name="options" Content="Help and Options" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="options_Click"/>
+        </StackPanel>
     </Grid>
 </Page>

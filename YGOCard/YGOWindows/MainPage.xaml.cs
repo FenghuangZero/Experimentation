@@ -34,21 +34,29 @@ namespace YGOWindows
         /// </summary>
         public MainPage()
         {
-            this.InitializeComponent();
-            ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
-            StorageFolder localFolder = ApplicationData.Current.LocalFolder;
-            localSettings.Values["exampleSetting"] = "Hello Windows";
-            Object value = localSettings.Values["exampleSetting"];
-            ApplicationDataCompositeValue composite = new ApplicationDataCompositeValue();
-            composite["intVal"] = 1;
-            composite["strVal"] = "string";
-
-            localSettings.Values["exampleCompositeSetting"] = composite;
+            InitializeComponent();
         }
 
-        private void downDB_Click(object sender, RoutedEventArgs e)
+        private void campaign_Click(object sender, RoutedEventArgs e)
         {
-            cardDB.downloadToArray();
+
         }
+
+
+        private void deckEditor_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(DeckBuilder));
+        }
+
+        private void multiplayer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void options_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

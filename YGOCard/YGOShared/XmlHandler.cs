@@ -7,8 +7,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Net.Http;
+#if WINDOWS_UWP
 using Windows.Storage;
 using Windows.ApplicationModel;
+#endif
 
 
 namespace YGOShared
@@ -22,8 +24,9 @@ namespace YGOShared
         Uri uri = new Uri("http://www.db.yugioh-card.com/yugiohdb/");
         //http://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=NUMBER
         //This is the address to list individual cards. Replace 'NUMBER' with any int from 4007 to 12272 inclusive
-
+#if WINDOWS_UWP
         StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+#endif
 
         /// <summary>
         /// Loads the database from a pre-existing Xml file.
