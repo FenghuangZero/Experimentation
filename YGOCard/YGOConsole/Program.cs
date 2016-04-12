@@ -23,7 +23,7 @@ namespace YGOCardGame
             trunk = new Card[12273];
             cardDB = new XmlHandler();
             await cardDB.loadXml(trunk);
-            Duel gameOn = new Duel(trunk);            
+            var gameOn = new Duel(trunk);            
         }
 
         /// <summary>
@@ -32,11 +32,12 @@ namespace YGOCardGame
         static void Main()
         {
             //cardDB.downloadToArray();
-            Program p = new Program();
+            var p = new Program();
+            var d = new Debug();
             p.demo();
             
             // Keep the console window open in debug mode.
-            Console.WriteLine("Press any key to exit.");
+            Debug.WriteLine("Press any key to exit.");
             Console.ReadKey();
         }
     }

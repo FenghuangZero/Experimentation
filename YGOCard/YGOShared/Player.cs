@@ -25,11 +25,9 @@ namespace YGOShared
         /// </summary>
         public void draw()
         {
-#if CONSOLE
-            Console.WriteLine(this.Name + " drew " + Deck[0].Name);
-#endif
+            Debug.WriteLine(this.Name + " drew " + Deck[0].Name);
             move(Deck, Hand, Deck[0], 0);            
-            for (int i = 0; i < (Deck.Length - 1); i++)
+            for (var i = 0; i < (Deck.Length - 1); i++)
             {
                 Deck[i] = Deck[i + 1];
             }
@@ -45,9 +43,7 @@ namespace YGOShared
         {
             m[i].FaceUp = true;
             m[i].Horizontal = false;
-#if CONSOLE
-            Console.WriteLine("{0} summons {1} in attack position.", this.Name, m[i].Name);
-#endif
+            Debug.WriteLine("{0} summons {1} in attack position.", this.Name, m[i].Name);
             move(Hand, MonsterZone, m[i], i);            
         }
 
@@ -60,9 +56,7 @@ namespace YGOShared
         {
             m[i].FaceUp = false;
             m[i].Horizontal = true;
-#if CONSOLE
-            Console.WriteLine("{0} summons a monster in face down defence position.", this.Name);
-#endif
+            Debug.WriteLine("{0} summons a monster in face down defence position.", this.Name);
             move(Hand, MonsterZone, m[i], i);            
         }
 
@@ -76,15 +70,11 @@ namespace YGOShared
             {
                 case false:
                     m.Horizontal = true;
-#if CONSOLE
-                    Console.WriteLine("{0} switches {1} to defence position.", this.Name, m.Name);
-#endif
+                    Debug.WriteLine("{0} switches {1} to defence position.", this.Name, m.Name);
                     break;
                 case true:
                     m.Horizontal = false;
-#if CONSOLE
-                    Console.WriteLine("{0} switches {1} to defence position.", this.Name, m.Name);
-#endif
+                    Debug.WriteLine("{0} switches {1} to defence position.", this.Name, m.Name);
                     break;
             }
         }
@@ -97,13 +87,9 @@ namespace YGOShared
         /// <param name="o">The player that is being attacked.</param>
         public void attackDirectly(Card[] a, int ai, Player o)
         {
-#if CONSOLE
-            Console.WriteLine("{0} attack {1} directly with {2}.", this.Name, o.Name, a[ai].Name);
-#endif
+            Debug.WriteLine("{0} attack {1} directly with {2}.", this.Name, o.Name, a[ai].Name);
             o.LifePoints -= a[ai].ATK;
-#if CONSOLE
-            Console.WriteLine("{0}'s life points are {1}.", o.Name, o.LifePoints);
-#endif
+            Debug.WriteLine("{0}'s life points are {1}.", o.Name, o.LifePoints);
         }
 
         /// <summary>
@@ -116,9 +102,7 @@ namespace YGOShared
         /// <param name="di">The position on the field of the defending monster.</param>
         public void attackMonster(Card[] a, int ai, Player o, Card[] d, int di)
         {
-#if CONSOLE
-            Console.WriteLine("{0} attacks {1}'s {2} with {3}.", this.Name, o.Name, d[di].Name, a[ai].Name);
-#endif
+            Debug.WriteLine("{0} attacks {1}'s {2} with {3}.", this.Name, o.Name, d[di].Name, a[ai].Name);
             switch (d[di].Horizontal)
             {
                 case false:
@@ -126,18 +110,14 @@ namespace YGOShared
                     {
                         var damage = a[ai].ATK - d[di].ATK;
                         o.LifePoints -= damage;
-#if CONSOLE
-                        Console.WriteLine("{0} takes {1} points of damage.", o.Name, damage);
-                        Console.WriteLine("{0}'s life points are {1}.", o.Name, o.LifePoints);
-                        Console.WriteLine("{0} was destroyed.", d[di].Name);
-#endif
+                        Debug.WriteLine("{0} takes {1} points of damage.", o.Name, damage);
+                        Debug.WriteLine("{0}'s life points are {1}.", o.Name, o.LifePoints);
+                        Debug.WriteLine("{0} was destroyed.", d[di].Name);
                         o.move(o.MonsterZone, o.Graveyard, d[di], di);
                     }
                     else if (a[ai].ATK == d[di].ATK)
                     {
-#if CONSOLE
-                        Console.WriteLine("Both monsters were destroyed.");
-#endif
+                        Debug.WriteLine("Both monsters were destroyed.");
                         move(MonsterZone, Graveyard, a[ai], ai);
                         o.move(o.MonsterZone, o.Graveyard, d[di], di);
                     }
@@ -145,36 +125,28 @@ namespace YGOShared
                     {
                         var damage = d[di].ATK - a[ai].ATK;
                         LifePoints -= damage;
-#if CONSOLE
-                        Console.WriteLine("{0} takes {1} points of damage.", this.Name, damage);
-                        Console.WriteLine("{0}'s life points are {1}.", this.Name, this.LifePoints);
-                        Console.WriteLine("{0} was destroyed.", a[ai].Name);
-#endif
+                        Debug.WriteLine("{0} takes {1} points of damage.", this.Name, damage);
+                        Debug.WriteLine("{0}'s life points are {1}.", this.Name, this.LifePoints);
+                        Debug.WriteLine("{0} was destroyed.", a[ai].Name);
                         move(MonsterZone, Graveyard, a[ai], ai);
                     }
                     break;
                 case true:
                     if (a[ai].ATK > d[di].DEF)
                     {
-#if CONSOLE
-                        Console.WriteLine("{0} was destroyed.", d[di].Name);
-#endif
+                        Debug.WriteLine("{0} was destroyed.", d[di].Name);
                         o.move(o.MonsterZone, o.Graveyard, d[di], di);
                     }
                     else if (a[ai].ATK == d[di].DEF)
                     {
-#if CONSOLE
-                        Console.WriteLine("{0} endured.", d[di].Name);
-#endif
+                        Debug.WriteLine("{0} endured.", d[di].Name);
                     }
                     else
                     {
                         var damage = d[di].DEF - a[ai].ATK;
                         LifePoints -= damage;
-#if CONSOLE
-                        Console.WriteLine("{0} takes {1} points of damage.", this.Name, damage);
-                        Console.WriteLine("{0}'s life points are {1}.", this.Name, this.LifePoints);
-#endif
+                        Debug.WriteLine("{0} takes {1} points of damage.", this.Name, damage);
+                        Debug.WriteLine("{0}'s life points are {1}.", this.Name, this.LifePoints);
                     }
                     break;
             }           
@@ -201,7 +173,7 @@ namespace YGOShared
         {
             Name = "";
             LifePoints = 8000;
-            for (int i = 0; i < 5; i++)
+            for (var i = 0; i < 5; i++)
             {
                 MonsterZone[i] = null;
                 SpellZone[i] = null;
@@ -216,7 +188,7 @@ namespace YGOShared
         {
             Name = n;
             LifePoints = 8000;
-            for (int i = 0; i < 5; i++)
+            for (var i = 0; i < 5; i++)
             {
                 MonsterZone[i] = null;
                 SpellZone[i] = null;

@@ -40,7 +40,7 @@ namespace YGOShared
             StorageFile db = await localFolder.GetFileAsync("CardDB.xml");
             XDocument doc = XDocument.Load(await db.OpenStreamForReadAsync());
 #elif CONSOLE
-            XDocument doc = XDocument.Load("CardDB.xml");
+            var doc = XDocument.Load("CardDB.xml");
 #endif
 
             var dbCard = doc.Descendants("Card");
@@ -56,7 +56,7 @@ namespace YGOShared
             var dbText = doc.Descendants("Card_Text");
             
             // Load cards from XML
-            for (int i = 0; i < dbCard.Count(); i++)
+            for (var i = 0; i < dbCard.Count(); i++)
             {
                 var index = int.Parse(dbCard.ElementAt(i).FirstAttribute.Value);
                 t[index] = new Card();
@@ -155,7 +155,7 @@ namespace YGOShared
         /// <returns></returns>
         public async Task<string> getWebsiteStringAsync(Uri u)
         {
-            HttpClient httpclient = new HttpClient();
+            var httpclient = new HttpClient();
             string w = await httpclient.GetStringAsync(u);
             httpclient.Dispose();
             return w;
@@ -168,8 +168,8 @@ namespace YGOShared
         /// <returns></returns>
         public async Task<Card> downloadCard(int id)
         {
-            Card c = new Card();
-            Uri iuri = new Uri(uri + "card_search.action?ope=2&cid=" + id);
+            var c = new Card();
+            var iuri = new Uri(uri + "card_search.action?ope=2&cid=" + id);
             var page = await getWebsiteStringAsync(iuri);
 
             c.Name = extractName(page);
@@ -219,9 +219,9 @@ namespace YGOShared
         /// </summary>
         public async void downloadToArray()
         {
-            Card[] trunk = new Card[12273];
+            var trunk = new Card[12273];
 
-            for (int i = 4007; i < 4057/*trunk.Length*/; i = i + 10)
+            for (var i = 4007; i < 4057/*trunk.Length*/; i = i + 10)
             {
                 var download1 = downloadCard(i);
                 var download2 = downloadCard(i + 1);
@@ -244,9 +244,7 @@ namespace YGOShared
                 trunk[i + 8] = await download9;
                 trunk[i + 9] = await download10;
             }
-#if CONSOLE
-            Console.WriteLine("Download Complete.");
-#endif
+            Debug.WriteLine("Download Complete.");
             writeXml(trunk);
         }
 
@@ -260,19 +258,18 @@ namespace YGOShared
             StorageFile db = await localFolder.CreateFileAsync("CardDB.xml", CreationCollisionOption.ReplaceExisting);
             var database = await db.OpenStreamForWriteAsync();
 #elif CONSOLE
-            FileStream database = new FileStream("CardDB.xml", FileMode.OpenOrCreate);
+            var database = new FileStream("CardDB.xml", FileMode.OpenOrCreate);
 #endif
-            XmlWriterSettings writerSettings = new XmlWriterSettings();
+            var writerSettings = new XmlWriterSettings();
             writerSettings.Indent = true;
             writerSettings.IndentChars = "\t";
             writerSettings.NewLineChars = "\n";
 
-
-            XmlWriter writer = XmlWriter.Create(database, writerSettings);
+            var writer = XmlWriter.Create(database, writerSettings);
 
             writer.WriteStartDocument();
             writer.WriteStartElement("CardDB");
-            foreach (Card c in trunk)
+            foreach (var c in trunk)
             {
                 if (c != null)
                 {
@@ -290,17 +287,13 @@ namespace YGOShared
                     writer.WriteElementString("DEF", c.DEF.ToString());
                     writer.WriteElementString("Card_Text", c.CardText);
                     writer.WriteEndElement();
-
                 }
 
             }
-
             writer.WriteEndElement();
             writer.WriteEndDocument();
             writer.Flush();
-#if CONSOLE
-            Console.WriteLine("Database Complete");
-#endif
+            Debug.WriteLine("Database Complete");
         }
 
         /// <summary>

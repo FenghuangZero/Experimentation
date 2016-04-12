@@ -61,13 +61,13 @@ namespace YGOShared
         /// <param name="txt">The description written in the card Text Box.</param>
         public Card(string n, string a, int l, string t, int atk, int def, string txt)
         {
-            this.Name = n;
-            this.Attribute = a;
-            this.Level = l;
-            this.MonsterType = t;
-            this.ATK = atk;
-            this.DEF = def;
-            this.CardText = txt;
+            Name = n;
+            Attribute = a;
+            Level = l;
+            MonsterType = t;
+            ATK = atk;
+            DEF = def;
+            CardText = txt;
         }
     }
 }
