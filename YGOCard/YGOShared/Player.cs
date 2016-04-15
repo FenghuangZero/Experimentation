@@ -18,14 +18,15 @@ namespace YGOShared
         public Card[] Deck = new Card[60];
         public Card[] Hand = new Card[60];
         public Card[] Graveyard = new Card[75];
-        public Card[] Sidedeck = new Card[15];
+        public Card[] ExtraDeck = new Card[15];
+        public Card[] SideDeck = new Card[15];
 
         /// <summary>
         /// Moves a single card from the deck to the hand.
         /// </summary>
         public void draw()
         {
-            Debug.WriteLine(this.Name + " drew " + Deck[0].Name);
+            Debug.WriteLine("{0} drew {1}", this.Name,  Deck[0].Name);
             move(Deck, Hand, Deck[0], 0);            
             for (var i = 0; i < (Deck.Length - 1); i++)
             {

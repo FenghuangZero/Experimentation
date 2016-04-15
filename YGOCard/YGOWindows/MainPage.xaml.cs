@@ -25,9 +25,8 @@ namespace YGOWindows
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        Card[] trunk = new Card[130];
+        Card[] trunk = new Card[12273];
         XmlHandler cardDB = new XmlHandler();
-        
         
         /// <summary>
         /// Initializes the page.
@@ -37,9 +36,10 @@ namespace YGOWindows
             InitializeComponent();
         }
 
-        private void campaign_Click(object sender, RoutedEventArgs e)
+        private async void campaign_Click(object sender, RoutedEventArgs e)
         {
-
+            await cardDB.loadXml(trunk);
+            var gameOn = new Duel(trunk);
         }
 
 
