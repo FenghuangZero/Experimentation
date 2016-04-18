@@ -58,12 +58,10 @@ namespace YGOShared
             Array.Clear(Recipie[2], 0, Recipie[1].Length);
         }
 
-        public void loadDeck(Player p, Card[] t, string rep)
+        public void loadDeck(Player p, Card[] t, string resource)
         {
-            var recipie = new FileStream(rep + ".txt", FileMode.Open);
-            var reader = new StreamReader(recipie);
             
-            var read = (reader.ReadLine()).Split(',');
+            var read = (resource).Split(',');
             for(var i = 0; i < read.Length; i++)
             {
                 if (read[i] != "" && read[i] != null)

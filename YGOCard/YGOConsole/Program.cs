@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using YGOShared;
 using System.Resources;
+using System.Reflection;
+using System.IO;
 
 namespace YGOCardGame
 {
@@ -23,9 +25,9 @@ namespace YGOCardGame
         {
             trunk = new Card[12273];
             cardDB = new XmlHandler();
-            await cardDB.loadXml(trunk);
-            // cardDB.downloadCardList(13301001);
-            var gameOn = new Duel(trunk);
+            //await cardDB.loadXml(trunk);
+            //var gameOn = new Duel(trunk);
+            cardDB.downloadToArray();
         }
 
         /// <summary>
@@ -33,10 +35,8 @@ namespace YGOCardGame
         /// </summary>
         static void Main()
         {
-            //cardDB.downloadToArray();
             var p = new Program();
             var d = new Debug();
-            var r = new ResourceManager("Resources", typeof(Program).Assembly);
             p.demo();
             
             // Keep the console window open in debug mode.

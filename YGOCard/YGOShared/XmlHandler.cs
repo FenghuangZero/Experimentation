@@ -54,6 +54,7 @@ namespace YGOShared
             var dbPenScale = doc.Descendants("Pendulum_Scale");
             var dbPenEffect = doc.Descendants("Pendulum_Effect");
             var dbMonType = doc.Descendants("Monster_Type");
+            //var dbCardType = doc.Descendants("Card_Type");
             var dbAttack = doc.Descendants("ATK");
             var dbDefence = doc.Descendants("DEF");
             var dbText = doc.Descendants("Card_Text");
@@ -71,6 +72,7 @@ namespace YGOShared
                 t[index].PendulumScale = int.Parse(dbPenScale.ElementAt(i).Value);
                 t[index].PendulumEffect = dbPenEffect.ElementAt(i).Value;
                 t[index].MonsterType = dbMonType.ElementAt(i).Value;
+                //t[index].CardType = dbCardType.ElementAt(i).Value;
                 t[index].ATK = int.Parse(dbAttack.ElementAt(i).Value);
                 t[index].DEF = int.Parse(dbDefence.ElementAt(i).Value);
                 t[index].CardText = dbText.ElementAt(i).Value;
@@ -131,7 +133,13 @@ namespace YGOShared
                 {
                     start = webOut.IndexOf("</span>");
                     webOut = webOut.Substring(start + 7);
-                    if (webOut.IndexOf("<span class=\"item_box_value\">") < webOut.IndexOf("</div>"))
+                    if (webOut.IndexOf("</div>") < webOut.IndexOf("<span"))
+                    {
+                        finish = webOut.IndexOf("</div>");
+                        element = webOut.Substring(0, finish);
+                        element = element.Trim();
+                    }
+                    else if (webOut.IndexOf("<span class=\"item_box_value\">") < webOut.IndexOf("</div>"))
                     {
                         start = webOut.IndexOf("<span class=\"item_box_value\">");
                         webOut = webOut.Substring(start + 28);
@@ -144,6 +152,14 @@ namespace YGOShared
                         finish = webOut.IndexOf("</div>");
                         element = webOut.Substring(0, finish);
                         element = element.Trim();
+                    }
+
+                    if (el == "<b>Card Type</b>")
+                    {
+                        element = element.Replace("<!--", "");
+                        element = element.Replace("-->", "");
+                        element = element.Trim();
+                        element = element.Replace(" ", "");
                     }
                 }                
             }
@@ -159,7 +175,36 @@ namespace YGOShared
         public async Task<string> getWebsiteStringAsync(Uri u)
         {
             var httpclient = new HttpClient();
-            string w = await httpclient.GetStringAsync(u);
+            httpclient.Timeout = TimeSpan.FromSeconds(10);
+            string w = "";
+            try
+            {
+                w = await httpclient.GetStringAsync(u);
+            }
+            catch (TaskCanceledException e)
+            {
+                Debug.WriteLine(e.ToString());
+                Debug.WriteLine(u.ToString() + " failed to download. Retrying.");
+                try
+                {
+                    w = await httpclient.GetStringAsync(u);
+                }
+                catch (TaskCanceledException e2)
+                {
+                    Debug.WriteLine(e2.ToString());
+                    Debug.WriteLine(u.ToString() + " failed to download. Retrying a second Time.");
+                    try
+                    {
+                        w = await httpclient.GetStringAsync(u);
+                    }
+                    catch (TaskCanceledException e3)
+                    {
+                        Debug.WriteLine(e3.ToString());
+                        Debug.WriteLine(u.ToString() + " failed to download. Skipping");
+                    }
+                }
+            } 
+            
             httpclient.Dispose();
             return w;
         }
@@ -197,6 +242,7 @@ namespace YGOShared
                 catch { }
                 c.PendulumEffect = extractElement(page, "<b>Pendulum Effect</b>");
                 c.MonsterType = extractElement(page, "<b>Monster Type</b>");
+                c.CardType = extractElement(page, "<b>Card Type</b>");
                 try
                 {
                     c.ATK = int.Parse(extractElement(page, "<b>ATK</b>"));
@@ -223,32 +269,53 @@ namespace YGOShared
         public async void downloadToArray()
         {
             var trunk = new Card[12273];
-
-            for (var i = 4007; i < 4057/*trunk.Length*/; i = i + 10)
+            for (int i = 0; i < trunk.Length; i++)
             {
-                var download1 = downloadCard(i);
-                var download2 = downloadCard(i + 1);
-                var download3 = downloadCard(i + 2);
-                var download4 = downloadCard(i + 3);
-                var download5 = downloadCard(i + 4);
-                var download6 = downloadCard(i + 5);
-                var download7 = downloadCard(i + 6);
-                var download8 = downloadCard(i + 7);
-                var download9 = downloadCard(i + 8);
-                var download10 = downloadCard(i + 9);
-                trunk[i] = await download1;
-                trunk[i + 1] = await download2;
-                trunk[i + 2] = await download3;
-                trunk[i + 3] = await download4;
-                trunk[i + 4] = await download5;
-                trunk[i + 5] = await download6;
-                trunk[i + 6] = await download7;
-                trunk[i + 7] = await download8;
-                trunk[i + 8] = await download9;
-                trunk[i + 9] = await download10;
+                trunk[i] = new Card();
+                trunk[i].ID = i;
             }
+
+            Debug.WriteLine("Start Download");
+            
+            for (int i = 0; i < 90; i++)
+            {
+                var range = 4006;
+                range += i * 100;
+                trunk = await downloadRange(trunk, range, range + 200);
+                
+            }
+            //trunk = await downloadRange(trunk, 4006, 12272);
+
             Debug.WriteLine("Download Complete.");
+            for (int i = 0; i < trunk.Length; i++)
+            {
+                if (trunk[i] != null)
+                {
+                    if (trunk[i].Name == "")
+                        trunk[i] = null;
+                }
+            }
             writeXml(trunk);
+        }
+
+        public async Task<Card[]> downloadRange(Card[] trunk, int istart, int iend)
+        {
+
+            Task<Card>[] download = new Task<Card>[12273];
+            foreach (Card c in trunk)
+            {
+                if (c != null)
+                    if (c.ID > istart && c.ID < iend)
+                        download[c.ID] = downloadCard(c.ID);
+            }
+
+            foreach (Card c in trunk)
+            {
+                if (c != null)
+                    if (c.ID > istart && c.ID < iend)
+                        trunk[c.ID] = await download[c.ID];
+            }
+            return trunk;
         }
 
         /// <summary>
@@ -286,6 +353,7 @@ namespace YGOShared
                     writer.WriteElementString("Pendulum_Scale", c.PendulumScale.ToString());
                     writer.WriteElementString("Pendulum_Effect", c.PendulumEffect);
                     writer.WriteElementString("Monster_Type", c.MonsterType);
+                    writer.WriteElementString("Card_Type", c.CardType);
                     writer.WriteElementString("ATK", c.ATK.ToString());
                     writer.WriteElementString("DEF", c.DEF.ToString());
                     writer.WriteElementString("Card_Text", c.CardText);

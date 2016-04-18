@@ -61,11 +61,29 @@ namespace YGOConsole.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 4088,4759,4010,4176,5146,4148,4299,4446,4057,4973,4980,5059,4919,4533,4022,4499,4434,4177,4054,4272,4120,4608,4075,4021,4327,4342,4348,4835,4843,4860,4874,4910,4906,4838,4842,4837,4338,4321,4662,4811,4818,4865,4836,4849,4850,4886,4851,4863,4696,4695,.
+        /// </summary>
+        internal static string STARTER_DECK_JOEY {
+            get {
+                return ResourceManager.GetString("STARTER_DECK_JOEY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 4007,4009,4011,4029,4032,4037,4039,4050,4072,4086,4096,4097,4200,4239,4247,4254,4273,4287,4293,4309,4330,4342,4352,4383,4384,4385,4388,4460,4472,4508,4603,4835,4836,4839,4843,4842,4848,4849,4852,4865,4747,4810,4172,4230,4339,4547,4695,4838,4850,4851,.
         /// </summary>
         internal static string STARTER_DECK_KAIBA {
             get {
                 return ResourceManager.GetString("STARTER_DECK_KAIBA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 4737,4731,4732,4048,4050,4086,4080,4219,4387,4547,4929,4738,4108,4580,4507,4522,4126,4475,4617,4773,4735,4733,4734,4798,4317,4342,4348,4835,4843,4860,4326,4909,4905,4838,4842,4857,4341,4802,4888,4812,4836,4849,4850,4886,4863,4851,4876,4862,4992,4892,.
+        /// </summary>
+        internal static string STARTER_DECK_PEGASUS {
+            get {
+                return ResourceManager.GetString("STARTER_DECK_PEGASUS", resourceCulture);
             }
         }
         

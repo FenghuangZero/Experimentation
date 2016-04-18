@@ -19,9 +19,9 @@ namespace YGOShared
         public void loadDeck(Card[] t)
         {
             DeckBuilder d = new DeckBuilder();
-            d.loadDeck(p2, t, "STARTER_DECK_KAIBA");
+            d.loadDeck(p2, t, YGOConsole.Properties.Resources.STARTER_DECK_KAIBA);
             d.emptyRecipie();
-            d.loadDeck(p1, t, "STARTER_DECK_YUGI");
+            d.loadDeck(p1, t, YGOConsole.Properties.Resources.STARTER_DECK_YUGI);
         }
 
         /// <summary>
