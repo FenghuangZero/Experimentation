@@ -19,10 +19,9 @@ namespace YGOShared
         public void loadDeck(Card[] t)
         {
             DeckBuilder d = new DeckBuilder();
-            d.loadKaiba();
-            d.loadDeck(p2, t);
+            d.loadDeck(p2, t, "kaiba");
             d.emptyRecipie();
-            p1.Deck[0] = t[4056];
+            d.loadDeck(p1, t, "yugi");
         }
 
         /// <summary>
@@ -30,13 +29,14 @@ namespace YGOShared
         /// </summary>
         public void mockDuel()
         {
-            p1.draw();
-            for (var i = 0; i < 7; i++)
+            for (var i = 0; i < 6; i++)
+                p1.draw();
+            for (var i = 0; i < 6; i++)
                 p2.draw();
-            p1.summon(p1.Hand, 0);
-            p1.attackDirectly(p1.MonsterZone, 0, p2);
+            p1.draw();
+            p1.set(p1.Hand, 0);
             p2.draw();
-            p2.summon(p2.Hand, 0);
+            p2.summon(p2.Hand, 1);
             p2.attackMonster(p2.MonsterZone, 0, p1, p1.MonsterZone, 0);
             Debug.WriteLine("Player 1 has drawn Exodia. Player 1 Wins.");
         }

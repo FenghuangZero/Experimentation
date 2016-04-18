@@ -22,8 +22,11 @@ namespace YGOShared
     {
         
         Uri uri = new Uri("http://www.db.yugioh-card.com/yugiohdb/");
-        //http://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=NUMBER
-        //This is the address to list individual cards. Replace 'NUMBER' with any int from 4007 to 12272 inclusive
+        // http://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=NUMBER
+        // This is the address to list individual cards. Replace 'NUMBER' with any int from 4007 to 12272 inclusive
+        // http://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=1&sess=1&pid=NUMBER&rp=99999
+        // This is the address for a card list. Replace the 'NUMBER' with an 8 digit id.
+        // Starter decks use the id format 
 
 #if WINDOWS_UWP
         StorageFolder localFolder = ApplicationData.Current.LocalFolder;
@@ -294,6 +297,57 @@ namespace YGOShared
             writer.WriteEndDocument();
             writer.Flush();
             Debug.WriteLine("Database Complete");
+        }
+
+        public async void downloadCardList(int id)
+        {
+            var iuri = new Uri(uri + "card_search.action?ope=1&sess=1&pid=" + id + "&rp=99999");
+            var page = await getWebsiteStringAsync(iuri);
+            var start = page.IndexOf("#card_image_0_1");
+            var findLength = page.IndexOf("Total of");
+            var findName = page.IndexOf("<li class=\"oneline\">");
+            var finish = page.IndexOf("$('.list_style ul li')");
+
+            var listLength = page.Substring(findLength + 8);
+            listLength = listLength.Substring(0, listLength.IndexOf("cards"));
+            listLength = listLength.Trim();
+
+            var listName = page.Substring(findName + 20);
+            listName = listName.Substring(0, listName.IndexOf("</li>"));
+            page = page.Substring(start, finish);
+
+            var cardArray = new int[int.Parse(listLength)];
+
+            for (var i = 0; i < cardArray.Length; i++)
+            {
+
+                start = page.IndexOf("#card_image_"+ i + "_1");
+                page = page.Substring(start);
+                cardArray[i] = extractCardFromList(page);
+            }
+            writeRecipie(cardArray, listName);
+        }
+
+        public int extractCardFromList(string webOut)
+        {
+            var start = webOut.IndexOf("cid=");
+            var finish = webOut.IndexOf("&ciid=1");
+            webOut = webOut.Substring(start + 4, finish - start - 4);
+            return int.Parse(webOut);
+        }
+
+        public void writeRecipie(int[] cards, string name)
+        {
+            name = name + ".txt";
+            var recipie = new FileStream(name, FileMode.Create);
+            var writer = new StreamWriter(recipie);
+            foreach (var i in cards)
+            {
+                
+                writer.Write(i);
+                writer.Write(',');
+            }
+            writer.Flush();
         }
 
         /// <summary>
