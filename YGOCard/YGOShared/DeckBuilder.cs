@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using System.Resources;
 
 namespace YGOShared
 {
@@ -59,8 +60,7 @@ namespace YGOShared
 
         public void loadDeck(Player p, Card[] t, string rep)
         {
-            rep = rep + ".rep";
-            var recipie = new FileStream(rep, FileMode.Open);
+            var recipie = new FileStream(rep + ".txt", FileMode.Open);
             var reader = new StreamReader(recipie);
             
             var read = (reader.ReadLine()).Split(',');
@@ -76,7 +76,7 @@ namespace YGOShared
 
         public void saveRecipie(string name)
         {
-            name = name + ".rep";
+            name = name + ".txt";
             var recipie = new FileStream(name, FileMode.Create);
             var writer = new StreamWriter(recipie);
 
