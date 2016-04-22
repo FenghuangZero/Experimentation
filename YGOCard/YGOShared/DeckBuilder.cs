@@ -58,18 +58,18 @@ namespace YGOShared
             Array.Clear(Recipie[2], 0, Recipie[1].Length);
         }
 
-        public Card[] loadDeck(Card[] t, string resource)
+        public Card[][] loadDeck(Card[] t, string resource)
         {
             
             var read = (resource).Split(',');
-            var deck = new Card[60];
+            var deck = new Card[3][] {new Card[60], new Card[15], new Card[15] };
             for(var i = 0; i < read.Length; i++)
             {
                 if (read[i] != "" && read[i] != null)
                     Recipie[0][i] = int.Parse(read[i]);
 
                 if (Recipie[0][i] != null)
-                    deck[i] = t[Recipie[0][i].Value];
+                    deck[0][i] = t[Recipie[0][i].Value];
             }
             return deck;
         }
@@ -114,17 +114,17 @@ namespace YGOShared
             for (var i = 0; i < 60; i++)
             {
                 if (Recipie[0][i] != null)
-                    p.Deck[i] = t[Recipie[0][i].Value];
+                    p.Deck[0][i] = t[Recipie[0][i].Value];
             }
             for (var i = 0; i < 15; i++)
             {
                 if (Recipie[1][i] != null)
-                    p.ExtraDeck[i] = t[Recipie[1][i].Value];
+                    p.Deck[1][i] = t[Recipie[1][i].Value];
             }
             for (var i = 0; i < 15; i++)
             {
                 if (Recipie[2][i] != null)
-                    p.SideDeck[i] = t[Recipie[2][i].Value];
+                    p.Deck[2][i] = t[Recipie[2][i].Value];
             }
         }
 

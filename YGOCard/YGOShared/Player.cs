@@ -15,24 +15,22 @@ namespace YGOShared
         public int LifePoints { get; set; }
         public Card[] MonsterZone = new Card[5];
         public Card[] SpellZone = new Card[5];
-        public Card[] Deck = new Card[60];
+        public Card[][] Deck = new Card[3][] {new Card[60], new Card[15], new Card[15] };
         public Card[] Hand = new Card[60];
         public Card[] Graveyard = new Card[75];
-        public Card[] ExtraDeck = new Card[15];
-        public Card[] SideDeck = new Card[15];
 
         /// <summary>
         /// Moves a single card from the deck to the hand.
         /// </summary>
         public void draw()
         {
-            Debug.WriteLine("{0} drew {1}", this.Name,  this.Deck[0].Name);
-            move(Deck, Hand, Deck[0], 0);            
-            for (var i = 0; i < (Deck.Length - 1); i++)
+            Debug.WriteLine("{0} drew {1}", this.Name,  this.Deck[0][0].Name);
+            move(Deck[0], Hand, Deck[0][0], 0);            
+            for (var i = 0; i < (Deck[0].Length - 1); i++)
             {
-                Deck[i] = Deck[i + 1];
+                Deck[0][i] = Deck[0][i + 1];
             }
-            Deck[Deck.Length - 1] = null;
+            Deck[0][Deck[0].Length - 1] = null;
         }
         
         /// <summary>
