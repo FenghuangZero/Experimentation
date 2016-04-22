@@ -26,7 +26,7 @@ namespace YGOShared
         // This is the address to list individual cards. Replace 'NUMBER' with any int from 4007 to 12272 inclusive
         // http://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=1&sess=1&pid=NUMBER&rp=99999
         // This is the address for a card list. Replace the 'NUMBER' with an 8 digit id.
-        // Starter decks use the id format 
+        // Starter decks use the id format 1330{series}00{set number}
 
 #if WINDOWS_UWP
         StorageFolder localFolder = ApplicationData.Current.LocalFolder;

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{53E1E6FF-44A8-4A4F-93A1-A0EA091D0515}</ProjectGuid>
+    <ProjectGuid>{6E8F2CD8-86DC-4B84-97EE-F7DCBFC59CD7}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>YGOConsole</RootNamespace>
