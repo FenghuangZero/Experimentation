@@ -36,10 +36,11 @@ namespace YGOWindows
             InitializeComponent();
         }
 
-        private async void campaign_Click(object sender, RoutedEventArgs e)
+        private void campaign_Click(object sender, RoutedEventArgs e)
         {
-            await cardDB.loadXml(trunk);
-            var gameOn = new Duel(trunk);
+            this.Frame.Navigate(typeof(DuelPage));
+            // await cardDB.loadXml(trunk);
+            // var gameOn = new Duel(trunk);
         }
 
 

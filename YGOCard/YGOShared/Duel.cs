@@ -1,6 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using System.Linq;
+using System.Xml;
+using System.Xml.Linq;
+#if WINDOWS_UWP
+using Windows.Storage;
+#endif
 
 namespace YGOShared
 {
@@ -16,12 +23,26 @@ namespace YGOShared
         /// Assigns decks to each player.
         /// </summary>
         /// <param name="t">The card database.</param>
-        public void loadDeck(Card[] t)
+        public async void loadDeck(Card[] t)
         {
-            DeckBuilder d = new DeckBuilder();
-            d.loadDeck(p2, t, YGOConsole.Properties.Resources.STARTER_DECK_KAIBA);
+            var d = new DeckBuilder();
+#if WINDOWS_UWP
+            var cardlistDirectory = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync(@"Assets\Card Lists");
+            var starterDecks = await cardlistDirectory.GetFileAsync("Starter Decks.xml");
+            var deckXml = XDocument.Load(await starterDecks.OpenStreamForReadAsync());
+            var kaiba = deckXml.Descendants("STARTER_DECK_KAIBA");
+            var yugi = deckXml.Descendants("STARTER_DECK_YUGI");
+            p2.Deck = d.loadDeck(t, kaiba.Single().Value);
             d.emptyRecipie();
-            d.loadDeck(p1, t, YGOConsole.Properties.Resources.STARTER_DECK_YUGI);
+            p1.Deck = d.loadDeck(t, yugi.Single().Value);
+
+#endif
+#if CONSOLE
+            p2.Deck = d.loadDeck(t, YGOConsole.Properties.Resources.STARTER_DECK_KAIBA);
+            d.emptyRecipie();
+            p1.Deck = d.loadDeck(t, YGOConsole.Properties.Resources.STARTER_DECK_YUGI);
+#endif
+            mockDuel();
         }
 
         /// <summary>
@@ -54,7 +75,6 @@ namespace YGOShared
         public Duel(Card[] t)
         {
             loadDeck(t);
-            mockDuel();
         }
     }
 }

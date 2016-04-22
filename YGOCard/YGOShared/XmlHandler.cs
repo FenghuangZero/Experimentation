@@ -54,7 +54,7 @@ namespace YGOShared
             var dbPenScale = doc.Descendants("Pendulum_Scale");
             var dbPenEffect = doc.Descendants("Pendulum_Effect");
             var dbMonType = doc.Descendants("Monster_Type");
-            //var dbCardType = doc.Descendants("Card_Type");
+            // var dbCardType = doc.Descendants("Card_Type");
             var dbAttack = doc.Descendants("ATK");
             var dbDefence = doc.Descendants("DEF");
             var dbText = doc.Descendants("Card_Text");
@@ -72,7 +72,7 @@ namespace YGOShared
                 t[index].PendulumScale = int.Parse(dbPenScale.ElementAt(i).Value);
                 t[index].PendulumEffect = dbPenEffect.ElementAt(i).Value;
                 t[index].MonsterType = dbMonType.ElementAt(i).Value;
-                //t[index].CardType = dbCardType.ElementAt(i).Value;
+                // t[index].CardType = dbCardType.ElementAt(i).Value;
                 t[index].ATK = int.Parse(dbAttack.ElementAt(i).Value);
                 t[index].DEF = int.Parse(dbDefence.ElementAt(i).Value);
                 t[index].CardText = dbText.ElementAt(i).Value;

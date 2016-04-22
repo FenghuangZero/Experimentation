@@ -26,7 +26,7 @@ namespace YGOCardGame
             trunk = new Card[12273];
             cardDB = new XmlHandler();
             await cardDB.loadXml(trunk);
-            // var gameOn = new Duel(trunk);
+            var gameOn = new Duel(trunk);
             // cardDB.downloadToArray();
         }
 

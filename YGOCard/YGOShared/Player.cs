@@ -26,7 +26,7 @@ namespace YGOShared
         /// </summary>
         public void draw()
         {
-            Debug.WriteLine("{0} drew {1}", this.Name,  Deck[0].Name);
+            Debug.WriteLine("{0} drew {1}", this.Name,  this.Deck[0].Name);
             move(Deck, Hand, Deck[0], 0);            
             for (var i = 0; i < (Deck.Length - 1); i++)
             {

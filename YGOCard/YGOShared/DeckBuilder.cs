@@ -58,18 +58,20 @@ namespace YGOShared
             Array.Clear(Recipie[2], 0, Recipie[1].Length);
         }
 
-        public void loadDeck(Player p, Card[] t, string resource)
+        public Card[] loadDeck(Card[] t, string resource)
         {
             
             var read = (resource).Split(',');
+            var deck = new Card[60];
             for(var i = 0; i < read.Length; i++)
             {
                 if (read[i] != "" && read[i] != null)
                     Recipie[0][i] = int.Parse(read[i]);
 
                 if (Recipie[0][i] != null)
-                    p.Deck[i] = t[Recipie[0][i].Value];
+                    deck[i] = t[Recipie[0][i].Value];
             }
+            return deck;
         }
 
         public void saveRecipie(string name)
