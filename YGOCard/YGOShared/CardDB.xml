@@ -9,6 +9,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Dragon</Monster_Type>
+		<Card_Type />
 		<ATK>3000</ATK>
 		<DEF>2500</DEF>
 		<Card_Text>This legendary dragon is a powerful engine of destruction. Virtually invincible, very few have faced this awesome creature and lived to tell the tale.</Card_Text>
@@ -22,6 +23,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type />
 		<ATK>800</ATK>
 		<DEF>2000</DEF>
 		<Card_Text>A delicate elf that lacks offense, but has a terrific defense backed by mystical power.</Card_Text>
@@ -35,6 +37,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Beast-Warrior</Monster_Type>
+		<Card_Type />
 		<ATK>1200</ATK>
 		<DEF>1000</DEF>
 		<Card_Text>A one-eyed behemoth with thick, powerful arms made for delivering punishing blows.</Card_Text>
@@ -48,6 +51,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Dragon</Monster_Type>
+		<Card_Type />
 		<ATK>1200</ATK>
 		<DEF>700</DEF>
 		<Card_Text>Much more than just a child, this dragon is gifted with untapped power.</Card_Text>
@@ -61,6 +65,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type />
 		<ATK>1000</ATK>
 		<DEF>500</DEF>
 		<Card_Text>A very elusive creature that looks like a harmless statue until it attacks.</Card_Text>
@@ -74,6 +79,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type />
 		<ATK>1300</ATK>
 		<DEF>1400</DEF>
 		<Card_Text>A playful little fiend that lurks in the dark, waiting to attack an unwary enemy.</Card_Text>
@@ -87,6 +93,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Dragon</Monster_Type>
+		<Card_Type />
 		<ATK>1400</ATK>
 		<DEF>1200</DEF>
 		<Card_Text>A dragon commonly found guarding mountain fortresses. Its signature attack is a sweeping dive from out of the blue.</Card_Text>
@@ -100,6 +107,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Plant</Monster_Type>
+		<Card_Type />
 		<ATK>800</ATK>
 		<DEF>600</DEF>
 		<Card_Text>Found in humid regions, this creature attacks enemies with a lethal rain of poison spores.</Card_Text>
@@ -113,6 +121,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Dragon</Monster_Type>
+		<Card_Type />
 		<ATK>1500</ATK>
 		<DEF>800</DEF>
 		<Card_Text>A dragon that dwells in the depths of darkness, its vulnerability lies in its poor eyesight.</Card_Text>
@@ -126,6 +135,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Dinosaur</Monster_Type>
+		<Card_Type />
 		<ATK>1750</ATK>
 		<DEF>2030</DEF>
 		<Card_Text>This Jurassic juggernaut has a spine covered in sword-like plates, and a tail to split open skulls.</Card_Text>
@@ -139,6 +149,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type>Effect</Card_Type>
 		<ATK>1800</ATK>
 		<DEF>1500</DEF>
 		<Card_Text>This card gains 500 ATK for each "Lava Battleguard" you control.</Card_Text>
@@ -152,6 +163,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Winged Beast</Monster_Type>
+		<Card_Type />
 		<ATK>1200</ATK>
 		<DEF>1400</DEF>
 		<Card_Text>Capable of firing cannonballs from its mouth for long-range attacks, this creature is particularly effective in mountain battles.</Card_Text>
@@ -165,6 +177,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Beast-Warrior</Monster_Type>
+		<Card_Type />
 		<ATK>1800</ATK>
 		<DEF>1300</DEF>
 		<Card_Text>A bull monster often found in the woods, it charges enemy monsters with a pair of deadly horns.</Card_Text>
@@ -178,9 +191,10 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
 		<ATK>1800</ATK>
 		<DEF>1600</DEF>
-		<Card_Text>"Flame Manipulator" + "Masaki the Legendary Swordsman"</Card_Text>
+		<Card_Text>Flame Manipulator + "Masaki the Legendary Swordsman"</Card_Text>
 	</Card>
 	<Card id="4022">
 		<Name>Time Wizard</Name>
@@ -191,6 +205,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type>Effect</Card_Type>
 		<ATK>500</ATK>
 		<DEF>400</DEF>
 		<Card_Text>Once per turn: You can toss a coin and call it. If you call it right, destroy all monsters your opponent controls. If you call it wrong, destroy as many monsters you control as possible, and if you do, take damage equal to half the total ATK those destroyed monsters had on the field.</Card_Text>
@@ -204,6 +219,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type />
 		<ATK>200</ATK>
 		<DEF>300</DEF>
 		<Card_Text>A forbidden right leg sealed by magic. Whosoever breaks this seal will know infinite power.</Card_Text>
@@ -217,6 +233,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type />
 		<ATK>200</ATK>
 		<DEF>300</DEF>
 		<Card_Text>A forbidden left leg sealed by magic. Whosoever breaks this seal will know infinite power.</Card_Text>
@@ -230,6 +247,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type />
 		<ATK>200</ATK>
 		<DEF>300</DEF>
 		<Card_Text>A forbidden right arm sealed by magic. Whosoever breaks this seal will know infinite power.</Card_Text>
@@ -243,6 +261,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type />
 		<ATK>200</ATK>
 		<DEF>300</DEF>
 		<Card_Text>A forbidden left arm sealed by magic. Whosoever breaks this seal will know infinite power.</Card_Text>
@@ -256,6 +275,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type>Effect</Card_Type>
 		<ATK>1000</ATK>
 		<DEF>1000</DEF>
 		<Card_Text>If you have "Right Leg of the Forbidden One", "Left Leg of the Forbidden One", "Right Arm of the Forbidden One" and "Left Arm of the Forbidden One" in addition to this card in your hand, you win the Duel.</Card_Text>
@@ -269,6 +289,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type />
 		<ATK>2500</ATK>
 		<DEF>1200</DEF>
 		<Card_Text>A fiend with dark powers for confusing the enemy. Among the Fiend-Type monsters, this monster boasts considerable force.&lt;br&gt;&lt;br&gt;(This card is always treated as an "Archfiend" card.)</Card_Text>
@@ -282,6 +303,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Beast</Monster_Type>
+		<Card_Type>Effect</Card_Type>
 		<ATK>1400</ATK>
 		<DEF>700</DEF>
 		<Card_Text>This face-up card on the field is returned to the owner's hand during the End Phase of your turn.</Card_Text>
@@ -295,6 +317,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Zombie</Monster_Type>
+		<Card_Type />
 		<ATK>300</ATK>
 		<DEF>200</DEF>
 		<Card_Text>A skeletal ghost that isn't strong but can mean trouble in large numbers.</Card_Text>
@@ -308,6 +331,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Beast-Warrior</Monster_Type>
+		<Card_Type />
 		<ATK>1700</ATK>
 		<DEF>1000</DEF>
 		<Card_Text>A monster with tremendous power, it destroys enemies with a swing of its axe.</Card_Text>
@@ -321,6 +345,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Beast-Warrior</Monster_Type>
+		<Card_Type />
 		<ATK>1200</ATK>
 		<DEF>1500</DEF>
 		<Card_Text>What this creature lacks in size it makes up for in defense when battling in the prairie.</Card_Text>
@@ -334,6 +359,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Rock</Monster_Type>
+		<Card_Type />
 		<ATK>800</ATK>
 		<DEF>1200</DEF>
 		<Card_Text>Protected by a solid body of rock, this monster throws a bone-shattering punch.</Card_Text>
@@ -347,6 +373,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Zombie</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
 		<ATK>1200</ATK>
 		<DEF>900</DEF>
 		<Card_Text>Skull Servant + "Battle Warrior"</Card_Text>
@@ -360,6 +387,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Dragon</Monster_Type>
+		<Card_Type />
 		<ATK>1500</ATK>
 		<DEF>1200</DEF>
 		<Card_Text>A vicious, fire-breathing dragon whose wicked flame corrupts the souls of its victims.</Card_Text>
@@ -373,6 +401,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Dinosaur</Monster_Type>
+		<Card_Type />
 		<ATK>1600</ATK>
 		<DEF>1200</DEF>
 		<Card_Text>A powerful monster whose two heads attack as one.</Card_Text>
@@ -386,6 +415,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
 		<ATK>2200</ATK>
 		<DEF>1500</DEF>
 		<Card_Text>This club-wielding warrior battles to the end and will never surrender.</Card_Text>
@@ -399,6 +429,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type />
 		<ATK>600</ATK>
 		<DEF>1500</DEF>
 		<Card_Text>This clown appears from nowhere and executes very strange moves to avoid enemy attacks.</Card_Text>
@@ -412,6 +443,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type />
 		<ATK>2500</ATK>
 		<DEF>2100</DEF>
 		<Card_Text>The ultimate wizard in terms of attack and defense.</Card_Text>
@@ -425,6 +457,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Zombie</Monster_Type>
+		<Card_Type />
 		<ATK>1500</ATK>
 		<DEF>1200</DEF>
 		<Card_Text>A monster with a head of poison snakes. One look from this monster can turn an opponent to stone.</Card_Text>
@@ -438,6 +471,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Dragon</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
 		<ATK>2600</ATK>
 		<DEF>2100</DEF>
 		<Card_Text>Gaia The Fierce Knight + "Curse of Dragon"</Card_Text>
@@ -451,6 +485,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
 		<ATK>2300</ATK>
 		<DEF>2100</DEF>
 		<Card_Text>A knight whose horse travels faster than the wind. His battle-charge is a force to be reckoned with.</Card_Text>
@@ -464,6 +499,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Dragon</Monster_Type>
+		<Card_Type />
 		<ATK>2000</ATK>
 		<DEF>1500</DEF>
 		<Card_Text>A wicked dragon that taps into dark forces to execute a powerful attack.</Card_Text>
@@ -477,6 +513,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Pyro</Monster_Type>
+		<Card_Type>Effect</Card_Type>
 		<ATK>200</ATK>
 		<DEF>1800</DEF>
 		<Card_Text>FLIP: Destroy all face-up "Dragon Capture Jar"(s) on the field. If you destroy any, change all face-up Dragon-Type monsters on the field to Attack Position.</Card_Text>
@@ -490,6 +527,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
 		<ATK>1400</ATK>
 		<DEF>1200</DEF>
 		<Card_Text>An elf who learned to wield a sword, he baffles enemies with lightning-swift attacks.</Card_Text>
@@ -503,6 +541,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type />
 		<ATK>1200</ATK>
 		<DEF>2200</DEF>
 		<Card_Text>Manipulates enemy attacks with the power of illusion.</Card_Text>
@@ -516,6 +555,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
 		<ATK>1500</ATK>
 		<DEF>1200</DEF>
 		<Card_Text>"M-Warrior #1" + "M-Warrior #2"</Card_Text>
@@ -529,6 +569,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type />
 		<ATK>1600</ATK>
 		<DEF>1000</DEF>
 		<Card_Text>A deadly doll gifted with mystical power, it is particularly powerful when attacking against dark forces.</Card_Text>
@@ -542,6 +583,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Thunder</Monster_Type>
+		<Card_Type />
 		<ATK>1000</ATK>
 		<DEF>500</DEF>
 		<Card_Text>A creature that electrocutes opponents with bolts of lightning.</Card_Text>
@@ -555,6 +597,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Beast</Monster_Type>
+		<Card_Type />
 		<ATK>1200</ATK>
 		<DEF>1500</DEF>
 		<Card_Text>This monster's tough hide deflects almost any attack.</Card_Text>
@@ -568,6 +611,7 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type>Effect</Card_Type>
 		<ATK>1000</ATK>
 		<DEF>600</DEF>
 		<Card_Text>When this card is sent from the field to the Graveyard: Add 1 monster with 1500 or less ATK from your Deck to your hand.</Card_Text>
@@ -581,8 +625,4475 @@
 		<Pendulum_Scale>0</Pendulum_Scale>
 		<Pendulum_Effect />
 		<Monster_Type>Insect</Monster_Type>
+		<Card_Type />
 		<ATK>500</ATK>
 		<DEF>700</DEF>
 		<Card_Text>Usually found traveling in swarms, this creature's ideal environment is the forest.</Card_Text>
+	</Card>
+	<Card id="4057">
+		<Name>Armored Lizard</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Reptile</Monster_Type>
+		<Card_Type />
+		<ATK>1500</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>A lizard with a very tough hide and a vicious bite.</Card_Text>
+	</Card>
+	<Card id="4058">
+		<Name>Hercules Beetle</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Insect</Monster_Type>
+		<Card_Type />
+		<ATK>1500</ATK>
+		<DEF>2000</DEF>
+		<Card_Text>A massive beetle with a tough carapace and a dangerous horn.</Card_Text>
+	</Card>
+	<Card id="4059">
+		<Name>Killer Needle</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Insect</Monster_Type>
+		<Card_Type />
+		<ATK>1200</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>A huge bee with exceptional strength that's particularly dangerous in a swarm.</Card_Text>
+	</Card>
+	<Card id="4060">
+		<Name>Gokibore</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Insect</Monster_Type>
+		<Card_Type />
+		<ATK>1200</ATK>
+		<DEF>1400</DEF>
+		<Card_Text>A large, spherical roach that attacks its enemies by rolling over them.</Card_Text>
+	</Card>
+	<Card id="4061">
+		<Name>Giant Flea</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Insect</Monster_Type>
+		<Card_Type />
+		<ATK>1500</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>A massive flea that feeds on the blood of its enemies.</Card_Text>
+	</Card>
+	<Card id="4062">
+		<Name>Larvae Moth</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Insect</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>500</ATK>
+		<DEF>400</DEF>
+		<Card_Text>This monster cannot be Normal Summoned or Set. This card can only be Special Summoned by offering "Petit Moth" as a Tribute on the 2nd of your turns after "Petit Moth" has been equipped with "Cocoon of Evolution".</Card_Text>
+	</Card>
+	<Card id="4063">
+		<Name>Great Moth</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>8</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Insect</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>2600</ATK>
+		<DEF>2500</DEF>
+		<Card_Text>This monster cannot be Normal Summoned or Set. This card can only be Special Summoned by Tributing "Petit Moth" on the 4th of your turns after "Petit Moth" has been equipped with "Cocoon of Evolution".</Card_Text>
+	</Card>
+	<Card id="4064">
+		<Name>Kuriboh</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>1</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>300</ATK>
+		<DEF>200</DEF>
+		<Card_Text>During your opponent's turn, at damage calculation: You can discard this card; you take no battle damage from that battle (this is a Quick Effect).</Card_Text>
+	</Card>
+	<Card id="4065">
+		<Name>Mammoth Graveyard</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dinosaur</Monster_Type>
+		<Card_Type />
+		<ATK>1200</ATK>
+		<DEF>800</DEF>
+		<Card_Text>A mammoth that protects the graves of its pack and is absolutely merciless when facing grave-robbers.</Card_Text>
+	</Card>
+	<Card id="4066">
+		<Name>Great White</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fish</Monster_Type>
+		<Card_Type />
+		<ATK>1600</ATK>
+		<DEF>800</DEF>
+		<Card_Text>A giant white shark with razor-sharp teeth.</Card_Text>
+	</Card>
+	<Card id="4067">
+		<Name>Wolf</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast</Monster_Type>
+		<Card_Type />
+		<ATK>1200</ATK>
+		<DEF>800</DEF>
+		<Card_Text>Dis alpha wolf yoozes his sense a smell ta find da enemy. 'ey, quit sniffin at my socks!</Card_Text>
+	</Card>
+	<Card id="4068">
+		<Name>Harpie Lady</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Winged Beast</Monster_Type>
+		<Card_Type />
+		<ATK>1300</ATK>
+		<DEF>1400</DEF>
+		<Card_Text>This human-shaped animal with wings is beautiful to watch but deadly in battle.</Card_Text>
+	</Card>
+	<Card id="4069">
+		<Name>Harpie Lady Sisters</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>6</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Winged Beast</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>1950</ATK>
+		<DEF>2100</DEF>
+		<Card_Text>Cannot be Normal Summoned/Set. Must first be Special Summoned with "Elegant Egotist".</Card_Text>
+	</Card>
+	<Card id="4070">
+		<Name>Tiger Axe</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast-Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>1300</ATK>
+		<DEF>1100</DEF>
+		<Card_Text>A fast and powerful axe-wielding beast-warrior.</Card_Text>
+	</Card>
+	<Card id="4071">
+		<Name>Silver Fang</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast</Monster_Type>
+		<Card_Type />
+		<ATK>1200</ATK>
+		<DEF>800</DEF>
+		<Card_Text>A snow wolf that's beautiful to the eye, but absolutely vicious in battle.</Card_Text>
+	</Card>
+	<Card id="4072">
+		<Name>Kojikocy</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>1500</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>A man-hunter with powerful arms that can crush boulders.</Card_Text>
+	</Card>
+	<Card id="4073">
+		<Name>Perfectly Ultimate Great Moth</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>8</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Insect</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>3500</ATK>
+		<DEF>3000</DEF>
+		<Card_Text>This card cannot be Normal Summoned or Set. This monster can only be Special Summoned by Tributing "Petit Moth" on the 6th of your turns after "Petit Moth" has been equipped with "Cocoon of Evolution".</Card_Text>
+	</Card>
+	<Card id="4074">
+		<Name>Garoozis</Name>
+		<Attribute>FIRE</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast-Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>1800</ATK>
+		<DEF>1500</DEF>
+		<Card_Text>An axe-swinging beast-warrior with the head of a dragon.</Card_Text>
+	</Card>
+	<Card id="4075">
+		<Name>Thousand Dragon</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>7</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dragon</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>2400</ATK>
+		<DEF>2000</DEF>
+		<Card_Text>Time Wizard + "Baby Dragon"</Card_Text>
+	</Card>
+	<Card id="4077">
+		<Name>Jellyfish</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Aqua</Monster_Type>
+		<Card_Type />
+		<ATK>1200</ATK>
+		<DEF>1500</DEF>
+		<Card_Text>An almost invisible, semi-transparent jellyfish that drifts in the sea.</Card_Text>
+	</Card>
+	<Card id="4078">
+		<Name>Cocoon of Evolution</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Insect</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>0</ATK>
+		<DEF>2000</DEF>
+		<Card_Text>You can equip this card from your hand as an Equip Spell Card to a face-up "Petit Moth" on the field. If equipped, the ATK and DEF of "Cocoon of Evolution" is applied to "Petit Moth".</Card_Text>
+	</Card>
+	<Card id="4080">
+		<Name>Giant Soldier of Stone</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Rock</Monster_Type>
+		<Card_Type />
+		<ATK>1300</ATK>
+		<DEF>2000</DEF>
+		<Card_Text>A giant warrior made of stone. A punch from this creature has earth-shaking results.</Card_Text>
+	</Card>
+	<Card id="4084">
+		<Name>Axe Raider</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>1700</ATK>
+		<DEF>1150</DEF>
+		<Card_Text>An axe-wielding monster of tremendous strength and agility.</Card_Text>
+	</Card>
+	<Card id="4085">
+		<Name>Megazowler</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>6</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dinosaur</Monster_Type>
+		<Card_Type />
+		<ATK>1800</ATK>
+		<DEF>2000</DEF>
+		<Card_Text>Nothing stands in the way of this spike-covered dinosaur!</Card_Text>
+	</Card>
+	<Card id="4086">
+		<Name>Uraby</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dinosaur</Monster_Type>
+		<Card_Type />
+		<ATK>1500</ATK>
+		<DEF>800</DEF>
+		<Card_Text>Fast on its feet, this dinosaur rips enemies to shreds with its sharp claws.</Card_Text>
+	</Card>
+	<Card id="4087">
+		<Name>Crawling Dragon #2</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dinosaur</Monster_Type>
+		<Card_Type />
+		<ATK>1600</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>A powerful dragon with teeth that can grind almost anything to dust.</Card_Text>
+	</Card>
+	<Card id="4088">
+		<Name>Red-Eyes B. Dragon</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>7</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dragon</Monster_Type>
+		<Card_Type />
+		<ATK>2400</ATK>
+		<DEF>2000</DEF>
+		<Card_Text>A ferocious dragon with a deadly attack.</Card_Text>
+	</Card>
+	<Card id="4089">
+		<Name>Castle of Dark Illusions</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>920</ATK>
+		<DEF>1930</DEF>
+		<Card_Text>FLIP: Increases the ATK and DEF of all Zombie-Type monsters by 200 points. As long as this card remains face-up on the field, the ATK and DEF of Zombie-Type monsters continues to increase by 200 points during each of your Standby Phases. This effect continues until your 4th turn after the card is activated.</Card_Text>
+	</Card>
+	<Card id="4090">
+		<Name>Reaper of the Cards</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>1380</ATK>
+		<DEF>1930</DEF>
+		<Card_Text>FLIP: Select 1 Trap Card on the field and destroy it. If the selected card is Set, pick up and see the card. If it is a Trap Card, it is destroyed. If it is a Spell Card, return it to its original position.</Card_Text>
+	</Card>
+	<Card id="4091">
+		<Name>King of Yamimakai</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type />
+		<ATK>2000</ATK>
+		<DEF>1530</DEF>
+		<Card_Text>Wields the power of darkness to destroy its enemies.</Card_Text>
+	</Card>
+	<Card id="4092">
+		<Name>Barox</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>1380</ATK>
+		<DEF>1530</DEF>
+		<Card_Text>"Frenzied Panda" + "Ryu-Kishin"</Card_Text>
+	</Card>
+	<Card id="4094">
+		<Name>Metal Guardian</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type />
+		<ATK>1150</ATK>
+		<DEF>2150</DEF>
+		<Card_Text>A fiend guarding the treasures of the netherworld, it's most at home in the dark.</Card_Text>
+	</Card>
+	<Card id="4095">
+		<Name>Catapult Turtle</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Aqua</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>1000</ATK>
+		<DEF>2000</DEF>
+		<Card_Text>Once per turn: You can Tribute 1 monster; inflict damage to your opponent equal to half the Tributed monster's ATK on the field.</Card_Text>
+	</Card>
+	<Card id="4096">
+		<Name>Gyakutenno Megami</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>6</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fairy</Monster_Type>
+		<Card_Type />
+		<ATK>1800</ATK>
+		<DEF>2000</DEF>
+		<Card_Text>This fairy uses her mystical power to protect the weak and provide spiritual support.</Card_Text>
+	</Card>
+	<Card id="4097">
+		<Name>Mystic Horseman</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast</Monster_Type>
+		<Card_Type />
+		<ATK>1300</ATK>
+		<DEF>1550</DEF>
+		<Card_Text>Half man and half horse, this monster is known for its extreme speed.</Card_Text>
+	</Card>
+	<Card id="4098">
+		<Name>Rabid Horseman</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>6</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast-Warrior</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>2000</ATK>
+		<DEF>1700</DEF>
+		<Card_Text>"Battle Ox" + "Mystic Horseman"</Card_Text>
+	</Card>
+	<Card id="4100">
+		<Name>Crawling Dragon</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dragon</Monster_Type>
+		<Card_Type />
+		<ATK>1600</ATK>
+		<DEF>1400</DEF>
+		<Card_Text>This weakened dragon can no longer fly, but is still a deadly force to be reckoned with.</Card_Text>
+	</Card>
+	<Card id="4101">
+		<Name>Crass Clown</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>1350</ATK>
+		<DEF>1400</DEF>
+		<Card_Text>When this card is changed from Defense Position to Attack Position, return 1 monster on your opponent's side of the field to the owner's hand.</Card_Text>
+	</Card>
+	<Card id="4102">
+		<Name>Armored Zombie</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Zombie</Monster_Type>
+		<Card_Type />
+		<ATK>1500</ATK>
+		<DEF>0</DEF>
+		<Card_Text>This warrior blindly swings a deadly blade with devastating force.</Card_Text>
+	</Card>
+	<Card id="4103">
+		<Name>Dragon Zombie</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Zombie</Monster_Type>
+		<Card_Type />
+		<ATK>1600</ATK>
+		<DEF>0</DEF>
+		<Card_Text>A dragon revived by sorcery. Its breath is highly corrosive.</Card_Text>
+	</Card>
+	<Card id="4104">
+		<Name>Clown Zombie</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Zombie</Monster_Type>
+		<Card_Type />
+		<ATK>1350</ATK>
+		<DEF>0</DEF>
+		<Card_Text>A clown revived by the powers of darkness. Its deadly dance has sent many monsters to their graves.</Card_Text>
+	</Card>
+	<Card id="4105">
+		<Name>Pumpking the King of Ghosts</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>6</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Zombie</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>1800</ATK>
+		<DEF>2000</DEF>
+		<Card_Text>If "Castle of Dark Illusions" is face-up on the field, increase the ATK and DEF of this card by 100 points. As long as this "Castle of Dark Illusions" remains face-up on the field, the ATK and DEF of this card continues to increase by 100 points during each of your Standby Phases. This effect continues until your 4th turn after the card is activated.</Card_Text>
+	</Card>
+	<Card id="4107">
+		<Name>Wings of Wicked Flame</Name>
+		<Attribute>FIRE</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Pyro</Monster_Type>
+		<Card_Type />
+		<ATK>700</ATK>
+		<DEF>600</DEF>
+		<Card_Text>Crimson wings of fire make this a very lethal creature.</Card_Text>
+	</Card>
+	<Card id="4108">
+		<Name>Mask of Darkness</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>900</ATK>
+		<DEF>400</DEF>
+		<Card_Text>FLIP: Target 1 Trap Card in your Graveyard; add that target to your hand.</Card_Text>
+	</Card>
+	<Card id="4110">
+		<Name>Curtain of the Dark Ones</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type />
+		<ATK>600</ATK>
+		<DEF>500</DEF>
+		<Card_Text>A curtain that a spellcaster made, it is said to raise a dark power.</Card_Text>
+	</Card>
+	<Card id="4111">
+		<Name>Tomozaurus</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dinosaur</Monster_Type>
+		<Card_Type />
+		<ATK>500</ATK>
+		<DEF>400</DEF>
+		<Card_Text>Small but vicious, this monster even attacks its own kind.</Card_Text>
+	</Card>
+	<Card id="4113">
+		<Name>Kageningen</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>800</ATK>
+		<DEF>600</DEF>
+		<Card_Text>He yoozes both a physical and a shadow form ta attack. So he's a tough monstah ta beat!</Card_Text>
+	</Card>
+	<Card id="4115">
+		<Name>Goddess with the Third Eye</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fairy</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>1200</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>You can substitute this card for any 1 Fusion Material Monster. When you do this, the other Fusion Material Monster(s) must be the correct one(s).</Card_Text>
+	</Card>
+	<Card id="4116">
+		<Name>Hero of the East</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>1100</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>Feel da strength ah dis sword-swingin' samurai from da Far East.</Card_Text>
+	</Card>
+	<Card id="4117">
+		<Name>Doma The Angel of Silence</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fairy</Monster_Type>
+		<Card_Type />
+		<ATK>1600</ATK>
+		<DEF>1400</DEF>
+		<Card_Text>This fairy rules over the end of existence.</Card_Text>
+	</Card>
+	<Card id="4119">
+		<Name>Dark Gray</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast</Monster_Type>
+		<Card_Type />
+		<ATK>800</ATK>
+		<DEF>900</DEF>
+		<Card_Text>Entirely gray, this beast has rarely been seen by mortal eyes.</Card_Text>
+	</Card>
+	<Card id="4120">
+		<Name>White Magical Hat</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>1000</ATK>
+		<DEF>700</DEF>
+		<Card_Text>When this card inflicts Battle Damage to your opponent's Life Points, your opponent discards 1 card randomly from his/her hand.</Card_Text>
+	</Card>
+	<Card id="4121">
+		<Name>Kamionwizard</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>1300</ATK>
+		<DEF>1100</DEF>
+		<Card_Text>Mystical Elf + "Curtain of the Dark Ones"</Card_Text>
+	</Card>
+	<Card id="4123">
+		<Name>Spirit of the Books</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Winged Beast</Monster_Type>
+		<Card_Type />
+		<ATK>1400</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>This wise spirit dwells in books, using its accumulated knowledge to defeat enemies.</Card_Text>
+	</Card>
+	<Card id="4125">
+		<Name>Trial of Nightmare</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type />
+		<ATK>1300</ATK>
+		<DEF>900</DEF>
+		<Card_Text>This fiend passes judgment on enemies that are locked in coffins.</Card_Text>
+	</Card>
+	<Card id="4126">
+		<Name>Dream Clown</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>1200</ATK>
+		<DEF>900</DEF>
+		<Card_Text>When this card is changed from Attack Position to Defense Position, destroy 1 monster on your opponent's side of the field.</Card_Text>
+	</Card>
+	<Card id="4127">
+		<Name>Sleeping Lion</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast</Monster_Type>
+		<Card_Type />
+		<ATK>700</ATK>
+		<DEF>1700</DEF>
+		<Card_Text>A ferocious animal that sleeps all day. Sometimes it's better to let Sleeping Lions lie.</Card_Text>
+	</Card>
+	<Card id="4130">
+		<Name>Ancient Tool</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Machine</Monster_Type>
+		<Card_Type />
+		<ATK>1700</ATK>
+		<DEF>1400</DEF>
+		<Card_Text>A destructive machine discovered in the Ruins of the Ancients.</Card_Text>
+	</Card>
+	<Card id="4131">
+		<Name>Faith Bird</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Winged Beast</Monster_Type>
+		<Card_Type />
+		<ATK>1500</ATK>
+		<DEF>1100</DEF>
+		<Card_Text>This long-tailed bird blinds its enemies with mystical light.</Card_Text>
+	</Card>
+	<Card id="4133">
+		<Name>Ansatsu</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>1700</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>A silent and deadly warrior specializing in assassinations.</Card_Text>
+	</Card>
+	<Card id="4135">
+		<Name>Nemuriko</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type />
+		<ATK>800</ATK>
+		<DEF>700</DEF>
+		<Card_Text>A child-like creature that controls a sleep fiend to beckon enemies into eternal slumber.</Card_Text>
+	</Card>
+	<Card id="4137">
+		<Name>Octoberser</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Aqua</Monster_Type>
+		<Card_Type />
+		<ATK>1600</ATK>
+		<DEF>1400</DEF>
+		<Card_Text>With the head of a fish and the legs of an octopus, this strange creature attacks enemies by flinging spears.</Card_Text>
+	</Card>
+	<Card id="4138">
+		<Name>The 13th Grave</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Zombie</Monster_Type>
+		<Card_Type />
+		<ATK>1200</ATK>
+		<DEF>900</DEF>
+		<Card_Text>A zombie that suddenly appeared from plot #13 - an empty grave.</Card_Text>
+	</Card>
+	<Card id="4139">
+		<Name>Charubin the Fire Knight</Name>
+		<Attribute>FIRE</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Pyro</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>1100</ATK>
+		<DEF>800</DEF>
+		<Card_Text>"Monster Egg" + "Hinotama Soul"</Card_Text>
+	</Card>
+	<Card id="4142">
+		<Name>Witty Phantom</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type />
+		<ATK>1400</ATK>
+		<DEF>1300</DEF>
+		<Card_Text>Dressed in a night-black tuxedo, this creature presides over the darkness.</Card_Text>
+	</Card>
+	<Card id="4148">
+		<Name>Flame Manipulator</Name>
+		<Attribute>FIRE</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type />
+		<ATK>900</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>This Spellcaster attacks enemies with fire-related spells such as "Sea of Flames" and "Wall of Fire".</Card_Text>
+	</Card>
+	<Card id="4149">
+		<Name>Necrolancer the Timelord</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type />
+		<ATK>800</ATK>
+		<DEF>900</DEF>
+		<Card_Text>The one-eyed Necrolancer launches his onslaught from a dimensional ring that can appear out of thin air.</Card_Text>
+	</Card>
+	<Card id="4152">
+		<Name>Temple of Skulls</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Zombie</Monster_Type>
+		<Card_Type />
+		<ATK>900</ATK>
+		<DEF>1300</DEF>
+		<Card_Text>A mysterious temple of skulls and bones that pulls in unsuspecting enemies.</Card_Text>
+	</Card>
+	<Card id="4153">
+		<Name>Monster Egg</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>600</ATK>
+		<DEF>900</DEF>
+		<Card_Text>A warrior hidden within an egg that attacks enemies by flinging eggshells.</Card_Text>
+	</Card>
+	<Card id="4155">
+		<Name>Lord of the Lamp</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type />
+		<ATK>1400</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>This spirit emerges from the mystic lamp and obeys the wishes of its summoner.</Card_Text>
+	</Card>
+	<Card id="4157">
+		<Name>Rhaimundos of the Red Sword</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>1200</ATK>
+		<DEF>1300</DEF>
+		<Card_Text>Armed with the Sword of Crimson Flames, this warrior can bind a monster with fiery restraints.</Card_Text>
+	</Card>
+	<Card id="4161">
+		<Name>Larvas</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast</Monster_Type>
+		<Card_Type />
+		<ATK>800</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>A fast-moving, bird-like creature that strangles opposing monsters with its long, thin arms.</Card_Text>
+	</Card>
+	<Card id="4162">
+		<Name>Hard Armor</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>300</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>A living suit of armor that attacks enemies with a bone-jarring tackle.</Card_Text>
+	</Card>
+	<Card id="4163">
+		<Name>Firegrass</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Plant</Monster_Type>
+		<Card_Type />
+		<ATK>700</ATK>
+		<DEF>600</DEF>
+		<Card_Text>A fire-breathing plant found growing near volcanoes.</Card_Text>
+	</Card>
+	<Card id="4164">
+		<Name>Man Eater</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Plant</Monster_Type>
+		<Card_Type />
+		<ATK>800</ATK>
+		<DEF>600</DEF>
+		<Card_Text>Man-eating plant with poison feelers for attacking enemies.</Card_Text>
+	</Card>
+	<Card id="4165">
+		<Name>Dig Beak</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast</Monster_Type>
+		<Card_Type />
+		<ATK>500</ATK>
+		<DEF>800</DEF>
+		<Card_Text>This beast coils like a snake, and strikes quickly with its snapping beak.</Card_Text>
+	</Card>
+	<Card id="4166">
+		<Name>M-Warrior #1</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>1000</ATK>
+		<DEF>500</DEF>
+		<Card_Text>Specializing in combination attacks, this warrior uses magnetism to block an enemy's escape.</Card_Text>
+	</Card>
+	<Card id="4167">
+		<Name>M-Warrior #2</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>500</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>Specializing in combination attacks, this warrior is equipped with a tough, magnetically coated armor.</Card_Text>
+	</Card>
+	<Card id="4168">
+		<Name>Tainted Wisdom</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>1250</ATK>
+		<DEF>800</DEF>
+		<Card_Text>When this card is changed from Attack Position to Defense Position, shuffle your own Deck.</Card_Text>
+	</Card>
+	<Card id="4171">
+		<Name>The Judgement Hand</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>1400</ATK>
+		<DEF>700</DEF>
+		<Card_Text>An all-powerful hand that delivers ruthless attacks.</Card_Text>
+	</Card>
+	<Card id="4172">
+		<Name>Mysterious Puppeteer</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>1000</ATK>
+		<DEF>1500</DEF>
+		<Card_Text>Each time you or your opponent Normal Summons or Flip Summons a monster, increase your Life Points by 500 points.</Card_Text>
+	</Card>
+	<Card id="4174">
+		<Name>Darkfire Dragon</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dragon</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>1500</ATK>
+		<DEF>1250</DEF>
+		<Card_Text>"Firegrass" + "Petit Dragon"</Card_Text>
+	</Card>
+	<Card id="4175">
+		<Name>Dark King of the Abyss</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type />
+		<ATK>1200</ATK>
+		<DEF>800</DEF>
+		<Card_Text>It's said that this King of the Netherworld once had the power to rule over the dark.</Card_Text>
+	</Card>
+	<Card id="4176">
+		<Name>Spirit of the Harp</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fairy</Monster_Type>
+		<Card_Type />
+		<ATK>800</ATK>
+		<DEF>2000</DEF>
+		<Card_Text>A spirit that soothes the soul with the music of its heavenly harp.</Card_Text>
+	</Card>
+	<Card id="4177">
+		<Name>Big Eye</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>1200</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>FLIP: Look at up to 5 cards from the top of your Deck, then place them on the top of the Deck in any order.</Card_Text>
+	</Card>
+	<Card id="4178">
+		<Name>Armaill</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>700</ATK>
+		<DEF>1300</DEF>
+		<Card_Text>A strange warrior who manipulates three deadly blades with both hands and his tail.</Card_Text>
+	</Card>
+	<Card id="4181">
+		<Name>Ancient Brain</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type />
+		<ATK>1000</ATK>
+		<DEF>700</DEF>
+		<Card_Text>A fallen fairy that is powerful in the dark.</Card_Text>
+	</Card>
+	<Card id="4184">
+		<Name>Claw Reacher</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type />
+		<ATK>1000</ATK>
+		<DEF>800</DEF>
+		<Card_Text>Stretching arms and razor-sharp claws make this monster a formidable opponent.</Card_Text>
+	</Card>
+	<Card id="4192">
+		<Name>Fiend Reflection #2</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Winged Beast</Monster_Type>
+		<Card_Type />
+		<ATK>1100</ATK>
+		<DEF>1400</DEF>
+		<Card_Text>A bird-beast that summons reinforcements with a hand mirror.</Card_Text>
+	</Card>
+	<Card id="4195">
+		<Name>Fusionist</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>900</ATK>
+		<DEF>700</DEF>
+		<Card_Text>"Petit Angel" + "Mystical Sheep #2"</Card_Text>
+	</Card>
+	<Card id="4198">
+		<Name>Key Mace</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>1</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fairy</Monster_Type>
+		<Card_Type />
+		<ATK>400</ATK>
+		<DEF>300</DEF>
+		<Card_Text>Enemies' hearts will melt at the sight of this small fairy's cuteness.</Card_Text>
+	</Card>
+	<Card id="4199">
+		<Name>Turtle Tiger</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Aqua</Monster_Type>
+		<Card_Type />
+		<ATK>1000</ATK>
+		<DEF>1500</DEF>
+		<Card_Text>A tiger encased in a protective shell that attacks with razor-sharp fangs.</Card_Text>
+	</Card>
+	<Card id="4200">
+		<Name>Terra the Terrible</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type />
+		<ATK>1200</ATK>
+		<DEF>1300</DEF>
+		<Card_Text>Known as a swamp dweller, this creature is a minion of the dark forces.</Card_Text>
+	</Card>
+	<Card id="4204">
+		<Name>Happy Lover</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fairy</Monster_Type>
+		<Card_Type />
+		<ATK>800</ATK>
+		<DEF>500</DEF>
+		<Card_Text>Enemies become overjoyed when struck by the Heart Ray emitted from the forehead of this tiny cherub.</Card_Text>
+	</Card>
+	<Card id="4205">
+		<Name>Penguin Knight</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Aqua</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>900</ATK>
+		<DEF>800</DEF>
+		<Card_Text>When this card is sent directly from your Deck to the Graveyard by an effect of a card controlled by your opponent, unite your Graveyard cards and your own Deck, shuffle them and form a new Deck.</Card_Text>
+	</Card>
+	<Card id="4207">
+		<Name>Frenzied Panda</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast</Monster_Type>
+		<Card_Type />
+		<ATK>1200</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>A savage beast that carries a big bamboo stick for beating down its enemies.</Card_Text>
+	</Card>
+	<Card id="4208">
+		<Name>Archfiend Marmot of Nefariousness</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast</Monster_Type>
+		<Card_Type />
+		<ATK>400</ATK>
+		<DEF>600</DEF>
+		<Card_Text>An air marmot that has a nefarious horn and wings. It attacks by throwing acorns.</Card_Text>
+	</Card>
+	<Card id="4213">
+		<Name>Droll Bird</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Winged Beast</Monster_Type>
+		<Card_Type />
+		<ATK>600</ATK>
+		<DEF>500</DEF>
+		<Card_Text>This monster stuns its enemies with a massive beak and ear-piercing wails.</Card_Text>
+	</Card>
+	<Card id="4214">
+		<Name>Petit Angel</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fairy</Monster_Type>
+		<Card_Type />
+		<ATK>600</ATK>
+		<DEF>900</DEF>
+		<Card_Text>A quick-moving and tiny fairy that's very difficult to hit.</Card_Text>
+	</Card>
+	<Card id="4216">
+		<Name>Hinotama Soul</Name>
+		<Attribute>FIRE</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Pyro</Monster_Type>
+		<Card_Type />
+		<ATK>600</ATK>
+		<DEF>500</DEF>
+		<Card_Text>An intensely hot flame creature that rams anything standing in its way.</Card_Text>
+	</Card>
+	<Card id="4217">
+		<Name>Thunder Kid</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Thunder</Monster_Type>
+		<Card_Type />
+		<ATK>700</ATK>
+		<DEF>600</DEF>
+		<Card_Text>This monster stores electricity within his body, and can unleash it with catastrophic power.</Card_Text>
+	</Card>
+	<Card id="4218">
+		<Name>Meotoko</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast</Monster_Type>
+		<Card_Type />
+		<ATK>700</ATK>
+		<DEF>600</DEF>
+		<Card_Text>Dis big ol' guy wit' a big ol' eye shoots a nasty ray beam right atcha!</Card_Text>
+	</Card>
+	<Card id="4219">
+		<Name>Aqua Madoor</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type />
+		<ATK>1200</ATK>
+		<DEF>2000</DEF>
+		<Card_Text>A wizard of the waters that conjures a liquid wall to crush any enemies that oppose him.</Card_Text>
+	</Card>
+	<Card id="4220">
+		<Name>Kagemusha of the Blue Flame</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>800</ATK>
+		<DEF>400</DEF>
+		<Card_Text>Serving as a double for the Ruler of the Blue Flame, he's a master swordsman that wields a fine blade.</Card_Text>
+	</Card>
+	<Card id="4221">
+		<Name>Flame Ghost</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Zombie</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>1000</ATK>
+		<DEF>800</DEF>
+		<Card_Text>"Skull Servant" + "Dissolverock"</Card_Text>
+	</Card>
+	<Card id="4223">
+		<Name>B. Skull Dragon</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>9</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dragon</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>3200</ATK>
+		<DEF>2500</DEF>
+		<Card_Text>"Summoned Skull" + "Red-Eyes B. Dragon"&lt;br&gt;&lt;br&gt;(This card is always treated as an "Archfiend" card.)</Card_Text>
+	</Card>
+	<Card id="4224">
+		<Name>Two-Mouth Darkruler</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dinosaur</Monster_Type>
+		<Card_Type />
+		<ATK>900</ATK>
+		<DEF>700</DEF>
+		<Card_Text>A dinosaur with two deadly jaws, it stores electricity in its horn and releases high voltage bolts from the mouth on its back.</Card_Text>
+	</Card>
+	<Card id="4226">
+		<Name>Masked Sorcerer</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>900</ATK>
+		<DEF>1400</DEF>
+		<Card_Text>When this card inflicts Battle Damage to your opponent's Life Points, draw 1 card from your Deck.</Card_Text>
+	</Card>
+	<Card id="4227">
+		<Name>Kumootoko</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Insect</Monster_Type>
+		<Card_Type />
+		<ATK>700</ATK>
+		<DEF>1400</DEF>
+		<Card_Text>A massive, intelligent spider that traps enemies with webbing.</Card_Text>
+	</Card>
+	<Card id="4229">
+		<Name>Roaring Ocean Snake</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>6</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Aqua</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>2100</ATK>
+		<DEF>1800</DEF>
+		<Card_Text>"Mystic Lamp" + "Hyosube"</Card_Text>
+	</Card>
+	<Card id="4230">
+		<Name>Trap Master</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>500</ATK>
+		<DEF>1100</DEF>
+		<Card_Text>FLIP: Select 1 Trap Card on the field and destroy it. If the selected card is Set, pick up and see the card. If it is a Trap Card, it is destroyed. If it is a Spell Card, return it to its original position.</Card_Text>
+	</Card>
+	<Card id="4232">
+		<Name>Skull Stalker</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>900</ATK>
+		<DEF>800</DEF>
+		<Card_Text>Foist he's gonna grab yer monstah wit' his claws, den attack again wit' his poizin stingah!</Card_Text>
+	</Card>
+	<Card id="4239">
+		<Name>Dark Titan of Terror</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type />
+		<ATK>1300</ATK>
+		<DEF>1100</DEF>
+		<Card_Text>A fiend said to dwell in the world of dreams, it attacks enemies in their sleep.</Card_Text>
+	</Card>
+	<Card id="4240">
+		<Name>Beautiful Headhuntress</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>1600</ATK>
+		<DEF>800</DEF>
+		<Card_Text>A vicious creature that has decapitated numerous enemy monsters.</Card_Text>
+	</Card>
+	<Card id="4241">
+		<Name>Wodan the Resident of the Forest</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>900</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>Increase this card's ATK by 100 points for every Plant-Type monster that is face-up on the field.</Card_Text>
+	</Card>
+	<Card id="4242">
+		<Name>Guardian of the Labyrinth</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>1000</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>A monster that guards the entrance to the Netherworld.</Card_Text>
+	</Card>
+	<Card id="4243">
+		<Name>Haniwa</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Rock</Monster_Type>
+		<Card_Type />
+		<ATK>500</ATK>
+		<DEF>500</DEF>
+		<Card_Text>An earthen figure that protects the tomb of an ancient ruler.</Card_Text>
+	</Card>
+	<Card id="4247">
+		<Name>Dark Assailant</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Zombie</Monster_Type>
+		<Card_Type />
+		<ATK>1200</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>Armed with the Psycho Sword, this sinister assassin rules the bad land.</Card_Text>
+	</Card>
+	<Card id="4250">
+		<Name>Dissolverock</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Rock</Monster_Type>
+		<Card_Type />
+		<ATK>900</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>A monster born in the lava pits, it generates intense heat that can melt away its enemies.</Card_Text>
+	</Card>
+	<Card id="4251">
+		<Name>Meda Bat</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type />
+		<ATK>800</ATK>
+		<DEF>400</DEF>
+		<Card_Text>An eyeball fiend created by a servant of the wicked, it uses "Dark Blasts" to blow away its enemies.</Card_Text>
+	</Card>
+	<Card id="4253">
+		<Name>Root Water</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fish</Monster_Type>
+		<Card_Type />
+		<ATK>900</ATK>
+		<DEF>800</DEF>
+		<Card_Text>An amphibian capable of calling up a massive tidal wave from the dark seas to wipe out enemy monsters.</Card_Text>
+	</Card>
+	<Card id="4254">
+		<Name>Master &amp;amp; Expert</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast</Monster_Type>
+		<Card_Type />
+		<ATK>1200</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>A deadly duo consisting of a beast master and its loyal servant.</Card_Text>
+	</Card>
+	<Card id="4255">
+		<Name>Water Omotics</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Aqua</Monster_Type>
+		<Card_Type />
+		<ATK>1400</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>Transforms the water overflowing from a jar into attacking dragons.</Card_Text>
+	</Card>
+	<Card id="4257">
+		<Name>Enchanting Mermaid</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fish</Monster_Type>
+		<Card_Type />
+		<ATK>1200</ATK>
+		<DEF>900</DEF>
+		<Card_Text>A beautiful mermaid that lures voyagers to a watery grave.</Card_Text>
+	</Card>
+	<Card id="4258">
+		<Name>Nekogal #1</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast</Monster_Type>
+		<Card_Type />
+		<ATK>1100</ATK>
+		<DEF>900</DEF>
+		<Card_Text>A pussycat-fairy. Contrary to her lovely beauty, she claws on her enemies.</Card_Text>
+	</Card>
+	<Card id="4261">
+		<Name>Prevent Rat</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast</Monster_Type>
+		<Card_Type />
+		<ATK>500</ATK>
+		<DEF>2000</DEF>
+		<Card_Text>This creature is shielded with a tough hide of hair and is excellent at defending itself.</Card_Text>
+	</Card>
+	<Card id="4262">
+		<Name>D.D. Warrior</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>1200</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>After damage calculation, when this card battles a monster: Banish that monster, also banish this card.</Card_Text>
+	</Card>
+	<Card id="4263">
+		<Name>Stone Armadiller</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Rock</Monster_Type>
+		<Card_Type />
+		<ATK>800</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>Dis stone crittah's got rock-hahd fur. Dat gives him some really good dee-fense!</Card_Text>
+	</Card>
+	<Card id="4264">
+		<Name>Beastking of the Swamps</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Aqua</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>1000</ATK>
+		<DEF>1100</DEF>
+		<Card_Text>You can substitute this card for any 1 Fusion Material Monster. When you do this, the other Fusion Material Monster(s) must be the correct one(s).</Card_Text>
+	</Card>
+	<Card id="4268">
+		<Name>The Little Swordsman of Aile</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>800</ATK>
+		<DEF>1300</DEF>
+		<Card_Text>Offer 1 monster on your side of the field as a Tribute to increase this monster's ATK by 700 points until the end of the turn.</Card_Text>
+	</Card>
+	<Card id="4271">
+		<Name>The Furious Sea King</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Aqua</Monster_Type>
+		<Card_Type />
+		<ATK>800</ATK>
+		<DEF>700</DEF>
+		<Card_Text>Grand King of the Seven Seas, he's able to summon massive tidal waves to drown the enemy.</Card_Text>
+	</Card>
+	<Card id="4272">
+		<Name>Princess of Tsurugi</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>900</ATK>
+		<DEF>700</DEF>
+		<Card_Text>FLIP: Inflict 500 points of damage to your opponent's Life Points for each Spell and Trap Card on your opponent's side of the field.</Card_Text>
+	</Card>
+	<Card id="4273">
+		<Name>Unknown Warrior of Fiend</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>1000</ATK>
+		<DEF>500</DEF>
+		<Card_Text>The speed of this warrior creates an intense vacuum that can slice through a monster's hide.</Card_Text>
+	</Card>
+	<Card id="4274">
+		<Name>Sectarian of Secrets</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type />
+		<ATK>700</ATK>
+		<DEF>500</DEF>
+		<Card_Text>This wizard worships the darkness, and is served by a sinister hand that drags its enemies into oblivion.</Card_Text>
+	</Card>
+	<Card id="4275">
+		<Name>Versago the Destroyer</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>1100</ATK>
+		<DEF>900</DEF>
+		<Card_Text>You can substitute this card for any 1 Fusion Material Monster. When you do this, the other Fusion Material Monster(s) must be the correct one(s).</Card_Text>
+	</Card>
+	<Card id="4278">
+		<Name>Mavelus</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Winged Beast</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>1300</ATK>
+		<DEF>900</DEF>
+		<Card_Text>"Tyhone" + "Wings of Wicked Flame"</Card_Text>
+	</Card>
+	<Card id="4280">
+		<Name>Green Phantom King</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Plant</Monster_Type>
+		<Card_Type />
+		<ATK>500</ATK>
+		<DEF>1600</DEF>
+		<Card_Text>This youthful king of the forests lives in a green world, abundant with trees and wildlife.</Card_Text>
+	</Card>
+	<Card id="4281">
+		<Name>Ground Attacker Bugroth</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Machine</Monster_Type>
+		<Card_Type />
+		<ATK>1500</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>A surface battle robot that was once used for sea warfare.</Card_Text>
+	</Card>
+	<Card id="4282">
+		<Name>Ray &amp;amp; Temperature</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fairy</Monster_Type>
+		<Card_Type />
+		<ATK>1000</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>The Sun and the North Wind join hands to deliver a devastating combination of heat and gale-force winds.</Card_Text>
+	</Card>
+	<Card id="4284">
+		<Name>Petit Moth</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>1</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Insect</Monster_Type>
+		<Card_Type />
+		<ATK>300</ATK>
+		<DEF>200</DEF>
+		<Card_Text>This small but deadly creature is better off avoided.</Card_Text>
+	</Card>
+	<Card id="4285">
+		<Name>King Fog</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type />
+		<ATK>1000</ATK>
+		<DEF>900</DEF>
+		<Card_Text>A fiend that dwells in a blinding curtain of smoke.</Card_Text>
+	</Card>
+	<Card id="4286">
+		<Name>Protector of the Throne</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>800</ATK>
+		<DEF>1500</DEF>
+		<Card_Text>While the king is away, this queen protects his throne with a mighty defense.</Card_Text>
+	</Card>
+	<Card id="4287">
+		<Name>Mystic Clown</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type />
+		<ATK>1500</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>Nothing can stop the mad attack of this powerful creature.</Card_Text>
+	</Card>
+	<Card id="4288">
+		<Name>Mystical Sheep #2</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast</Monster_Type>
+		<Card_Type />
+		<ATK>800</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>A monstrous sheep with a long tail for hypnotizing enemies.</Card_Text>
+	</Card>
+	<Card id="4292">
+		<Name>Gatekeeper</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Machine</Monster_Type>
+		<Card_Type />
+		<ATK>1500</ATK>
+		<DEF>1800</DEF>
+		<Card_Text>An indestructible mechanoid created for the sole purpose of guarding the gateways.</Card_Text>
+	</Card>
+	<Card id="4293">
+		<Name>Ogre of the Black Shadow</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast-Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>1200</ATK>
+		<DEF>1400</DEF>
+		<Card_Text>An ogre possessed by the powers of the dark. Few can withstand its rapid charge.</Card_Text>
+	</Card>
+	<Card id="4294">
+		<Name>Dark Artist</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>600</ATK>
+		<DEF>1400</DEF>
+		<Card_Text>If this card is being attacked by a LIGHT monster, its DEF is halved during damage calculation only.</Card_Text>
+	</Card>
+	<Card id="4296">
+		<Name>Moon Envoy</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>1100</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>Many have fallen victim to this lunar warrior's crescent pike.</Card_Text>
+	</Card>
+	<Card id="4297">
+		<Name>Fireyarou</Name>
+		<Attribute>FIRE</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Pyro</Monster_Type>
+		<Card_Type />
+		<ATK>1300</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>A malevolent creature wrapped in flames that attacks enemies with intense fire.</Card_Text>
+	</Card>
+	<Card id="4298">
+		<Name>Psychic Kappa</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Aqua</Monster_Type>
+		<Card_Type />
+		<ATK>400</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>An amphibian with a myriad of powers to shield it from enemy attacks.</Card_Text>
+	</Card>
+	<Card id="4299">
+		<Name>Masaki the Legendary Swordsman</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>1100</ATK>
+		<DEF>1100</DEF>
+		<Card_Text>Legendary swordmaster Masaki is a veteran of over 100 battles.</Card_Text>
+	</Card>
+	<Card id="4300">
+		<Name>Dragoness the Wicked Knight</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>1200</ATK>
+		<DEF>900</DEF>
+		<Card_Text>"Armaill" + "One-Eyed Shield Dragon"</Card_Text>
+	</Card>
+	<Card id="4302">
+		<Name>One-Eyed Shield Dragon</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dragon</Monster_Type>
+		<Card_Type />
+		<ATK>700</ATK>
+		<DEF>1300</DEF>
+		<Card_Text>This dragon wears a shield not only for its own protection, but also for ramming its enemies.</Card_Text>
+	</Card>
+	<Card id="4303">
+		<Name>Cyber Soldier of Darkworld</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Machine</Monster_Type>
+		<Card_Type />
+		<ATK>1400</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>A mechanical soldier that won't stop attacking until all life readings have been extinguished from its sensors.</Card_Text>
+	</Card>
+	<Card id="4305">
+		<Name>Sonic Maid</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>1200</ATK>
+		<DEF>900</DEF>
+		<Card_Text>A maiden that uses sound to her advantage, she wields a scythe that's shaped like a musical note.</Card_Text>
+	</Card>
+	<Card id="4307">
+		<Name>Legendary Sword</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>A Warrior-Type monster equipped with this card increases its ATK and DEF by 300 points.</Card_Text>
+	</Card>
+	<Card id="4308">
+		<Name>Sword of Dark Destruction</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>A DARK monster equipped with this card increases its ATK by 400 points and decreases its DEF by 200 points.</Card_Text>
+	</Card>
+	<Card id="4309">
+		<Name>Dark Energy</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>A Fiend-Type monster equipped with this card increases its ATK and DEF by 300 points.</Card_Text>
+	</Card>
+	<Card id="4310">
+		<Name>Axe of Despair</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>(This card is always treated as an "Archfiend" card.)&lt;br&gt;The equipped monster gains 1000 ATK. When this card is sent from the field to the Graveyard: You can Tribute 1 monster; place this card on the top of your Deck.</Card_Text>
+	</Card>
+	<Card id="4311">
+		<Name>Laser Cannon Armor</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>An Insect-Type monster equipped with this card increases its ATK and DEF by 300 points.</Card_Text>
+	</Card>
+	<Card id="4312">
+		<Name>Insect Armor with Laser Cannon</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Equip only to an Insect-Type monster. It gains 700 ATK.</Card_Text>
+	</Card>
+	<Card id="4313">
+		<Name>Elf's Light</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>A LIGHT monster equipped with this card increases its ATK by 400 points and decreases its DEF by 200 points.</Card_Text>
+	</Card>
+	<Card id="4314">
+		<Name>Beast Fangs</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>A Beast-Type monster equipped with this card increases its ATK and DEF by 300 points.</Card_Text>
+	</Card>
+	<Card id="4315">
+		<Name>Steel Shell</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>A WATER monster equipped with this card increases its ATK by 400 points and decreases its DEF by 200 points.</Card_Text>
+	</Card>
+	<Card id="4316">
+		<Name>Vile Germs</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>A Plant-Type monster equipped with this card increases its ATK and DEF by 300 points.</Card_Text>
+	</Card>
+	<Card id="4317">
+		<Name>Black Pendant</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>The equipped monster gains 500 ATK. When this card is sent from the field to the Graveyard: Inflict 500 damage to your opponent.</Card_Text>
+	</Card>
+	<Card id="4318">
+		<Name>Silver Bow and Arrow</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>A Fairy-Type monster equipped with this card increases its ATK and DEF by 300 points.</Card_Text>
+	</Card>
+	<Card id="4319">
+		<Name>Horn of Light</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Increase the DEF of a monster equipped with this card by 800 points. When this card is sent from the field to the Graveyard, if you pay 500 Life Points, this card returns to the top of your Deck.</Card_Text>
+	</Card>
+	<Card id="4320">
+		<Name>Horn of the Unicorn</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>The equipped monster gains 700 ATK and DEF. When this card is sent from the field to the Graveyard: Return it to the top of the Deck.</Card_Text>
+	</Card>
+	<Card id="4321">
+		<Name>Dragon Treasure</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>A Dragon-Type monster equipped with this card increases its ATK and DEF by 300 points.</Card_Text>
+	</Card>
+	<Card id="4322">
+		<Name>Electro-Whip</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>A Thunder-Type monster equipped with this card increases its ATK and DEF by 300 points.</Card_Text>
+	</Card>
+	<Card id="4323">
+		<Name>Cyber Shield</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Equip only to "Harpie Lady" or "Harpie Lady Sisters". It gains 500 ATK.</Card_Text>
+	</Card>
+	<Card id="4324">
+		<Name>Elegant Egotist</Name>
+		<Attribute />
+		<Icon>Normal Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>If "Harpie Lady" is on the field: Special Summon 1 "Harpie Lady" or "Harpie Lady Sisters" from your hand or Deck.</Card_Text>
+	</Card>
+	<Card id="4325">
+		<Name>Mystical Moon</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Equip only to a Beast-Warrior-Type monster. It gains 300 ATK and DEF.</Card_Text>
+	</Card>
+	<Card id="4326">
+		<Name>Stop Defense</Name>
+		<Attribute />
+		<Icon>Normal Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Select 1 Defense Position monster on your opponent's side of the field and change it to Attack Position.</Card_Text>
+	</Card>
+	<Card id="4327">
+		<Name>Malevolent Nuzzler</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>The equipped monster gains 700 ATK. When this card is sent from the field to the Graveyard: You can pay 500 LP; place this card on the top of your Deck.</Card_Text>
+	</Card>
+	<Card id="4328">
+		<Name>Violet Crystal</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>A Zombie-Type monster equipped with this card increases its ATK and DEF by 300 points.</Card_Text>
+	</Card>
+	<Card id="4329">
+		<Name>Book of Secret Arts</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>A Spellcaster-Type monster equipped with this card increases its ATK and DEF by 300 points.</Card_Text>
+	</Card>
+	<Card id="4330">
+		<Name>Invigoration</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>An EARTH monster equipped with this card increases its ATK by 400 points and decreases its DEF by 200 points.</Card_Text>
+	</Card>
+	<Card id="4331">
+		<Name>Machine Conversion Factory</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>A Machine-Type monster equipped with this card increases its ATK and DEF by 300 points.</Card_Text>
+	</Card>
+	<Card id="4332">
+		<Name>Raise Body Heat</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>A Dinosaur-Type monster equipped with this card increases its ATK and DEF by 300 points.</Card_Text>
+	</Card>
+	<Card id="4333">
+		<Name>Follow Wind</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>A Winged Beast-Type monster equipped with this card increases its ATK and DEF by 300 points.</Card_Text>
+	</Card>
+	<Card id="4334">
+		<Name>Power of Kaishin</Name>
+		<Attribute />
+		<Icon>Equip Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>An Aqua-Type monster equipped with this card increases its ATK and DEF by 300 points.</Card_Text>
+	</Card>
+	<Card id="4335">
+		<Name>Dragon Capture Jar</Name>
+		<Attribute />
+		<Icon>Continuous Trap</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Change all face-up Dragon-Type monsters on the field to Defense Position, also they cannot change their battle positions.</Card_Text>
+	</Card>
+	<Card id="4336">
+		<Name>Forest</Name>
+		<Attribute />
+		<Icon>Field Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Increases the ATK and DEF of all Insect, Beast, Plant, and Beast-Warrior-Type monsters by 200 points.</Card_Text>
+	</Card>
+	<Card id="4337">
+		<Name>Wasteland</Name>
+		<Attribute />
+		<Icon>Field Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Increases the ATK and DEF of all Dinosaur, Zombie, and Rock-Type monsters by 200 points.</Card_Text>
+	</Card>
+	<Card id="4338">
+		<Name>Mountain</Name>
+		<Attribute />
+		<Icon>Field Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Increase the ATK and DEF of all Dragon, Winged Beast, and Thunder-Type monsters by 200 points.</Card_Text>
+	</Card>
+	<Card id="4339">
+		<Name>Sogen</Name>
+		<Attribute />
+		<Icon>Field Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Increases the ATK and DEF of all Beast-Warrior and Warrior-Type monsters by 200 points.</Card_Text>
+	</Card>
+	<Card id="4340">
+		<Name>Umi</Name>
+		<Attribute />
+		<Icon>Field Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Increase the ATK and DEF of all Fish, Sea Serpent, Thunder, and Aqua-Type monsters by 200 points. Decrease the ATK and DEF of all Machine and Pyro-Type monsters by 200 points.</Card_Text>
+	</Card>
+	<Card id="4341">
+		<Name>Yami</Name>
+		<Attribute />
+		<Icon>Field Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Increases the ATK and DEF of all Fiend and Spellcaster-Type monsters by 200 points. Also decreases the ATK and DEF of all Fairy-Type monsters by 200 points.</Card_Text>
+	</Card>
+	<Card id="4342">
+		<Name>Dark Hole</Name>
+		<Attribute />
+		<Icon>Normal Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Destroy all monsters on the field.</Card_Text>
+	</Card>
+	<Card id="4343">
+		<Name>Raigeki</Name>
+		<Attribute />
+		<Icon>Normal Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Destroy all monsters your opponent controls.</Card_Text>
+	</Card>
+	<Card id="4344">
+		<Name>Mooyan Curry</Name>
+		<Attribute />
+		<Icon>Normal Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Choose 1 player; that player gains 200 Life Points.</Card_Text>
+	</Card>
+	<Card id="4345">
+		<Name>Red Medicine</Name>
+		<Attribute />
+		<Icon>Normal Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Increase your Life Points by 500 points.</Card_Text>
+	</Card>
+	<Card id="4346">
+		<Name>Goblin's Secret Remedy</Name>
+		<Attribute />
+		<Icon>Normal Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Increase your Life Points by 600 points.</Card_Text>
+	</Card>
+	<Card id="4347">
+		<Name>Soul of the Pure</Name>
+		<Attribute />
+		<Icon>Normal Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Increase your Life Points by 800 points.</Card_Text>
+	</Card>
+	<Card id="4348">
+		<Name>Dian Keto the Cure Master</Name>
+		<Attribute />
+		<Icon>Normal Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Increase your Life Points by 1000 points.</Card_Text>
+	</Card>
+	<Card id="4349">
+		<Name>Sparks</Name>
+		<Attribute />
+		<Icon>Normal Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Inflict 200 points of damage to your opponent's Life Points.</Card_Text>
+	</Card>
+	<Card id="4350">
+		<Name>Hinotama</Name>
+		<Attribute />
+		<Icon>Normal Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Inflict 500 damage to your opponent.</Card_Text>
+	</Card>
+	<Card id="4351">
+		<Name>Final Flame</Name>
+		<Attribute />
+		<Icon>Normal Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Inflict 600 points of damage to your opponent's Life Points.</Card_Text>
+	</Card>
+	<Card id="4352">
+		<Name>Ookazi</Name>
+		<Attribute />
+		<Icon>Normal Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Inflict 800 points of damage to your opponent's Life Points.</Card_Text>
+	</Card>
+	<Card id="4353">
+		<Name>Tremendous Fire</Name>
+		<Attribute />
+		<Icon>Normal Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Inflict 1000 points of damage to your opponent's Life Points and 500 points of damage to your Life Points.</Card_Text>
+	</Card>
+	<Card id="4354">
+		<Name>Swords of Revealing Light</Name>
+		<Attribute />
+		<Icon>Normal Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Flip all monsters your opponent controls face-up. This card remains on the field for 3 of your opponent's turns. While this card is face-up on the field, monsters your opponent controls cannot declare an attack.</Card_Text>
+	</Card>
+	<Card id="4355">
+		<Name>Spellbinding Circle</Name>
+		<Attribute />
+		<Icon>Continuous Trap</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Activate this card by targeting 1 monster your opponent controls; it cannot attack or change its battle position. When that monster is destroyed, destroy this card.</Card_Text>
+	</Card>
+	<Card id="4356">
+		<Name>Dark-Piercing Light</Name>
+		<Attribute />
+		<Icon>Normal Spell</Icon>
+		<Level>0</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type />
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>0</DEF>
+		<Card_Text>Flip all face-down monsters on your opponent's side of the field face-up.</Card_Text>
+	</Card>
+	<Card id="4357">
+		<Name>Yaranzo</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Zombie</Monster_Type>
+		<Card_Type />
+		<ATK>1300</ATK>
+		<DEF>1500</DEF>
+		<Card_Text>A treasure box containing a monster that attacks any unwary bandit.</Card_Text>
+	</Card>
+	<Card id="4358">
+		<Name>Kanan the Swordmistress</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>1400</ATK>
+		<DEF>1400</DEF>
+		<Card_Text>A lady warrior armed with sword and shield, she floats lightly and stings sharply.</Card_Text>
+	</Card>
+	<Card id="4359">
+		<Name>Takriminos</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Sea Serpent</Monster_Type>
+		<Card_Type />
+		<ATK>1500</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>A member of a race of sea serpents that freely travels through the sea.</Card_Text>
+	</Card>
+	<Card id="4360">
+		<Name>Stuffed Animal</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>1200</ATK>
+		<DEF>900</DEF>
+		<Card_Text>It may look like a harmless stuffed animal, but its zipper mouth deals a deadly bite.</Card_Text>
+	</Card>
+	<Card id="4361">
+		<Name>Megasonic Eye</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Machine</Monster_Type>
+		<Card_Type />
+		<ATK>1500</ATK>
+		<DEF>1800</DEF>
+		<Card_Text>Made of mysterious metal, this monster is a doomsday machine from the edge of the universe.</Card_Text>
+	</Card>
+	<Card id="4362">
+		<Name>Super War-Lion</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>7</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast</Monster_Type>
+		<Card_Type>Ritual</Card_Type>
+		<ATK>2300</ATK>
+		<DEF>2100</DEF>
+		<Card_Text>This card can only be Ritual Summoned with the Ritual Spell Card, "War-Lion Ritual".</Card_Text>
+	</Card>
+	<Card id="4363">
+		<Name>Yamadron</Name>
+		<Attribute>FIRE</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dragon</Monster_Type>
+		<Card_Type />
+		<ATK>1600</ATK>
+		<DEF>1800</DEF>
+		<Card_Text>This monster has three fire-breathing heads and can form a sea of blazing flames.</Card_Text>
+	</Card>
+	<Card id="4364">
+		<Name>Seiyaryu</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>7</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dragon</Monster_Type>
+		<Card_Type />
+		<ATK>2500</ATK>
+		<DEF>2300</DEF>
+		<Card_Text>A mystical dragon that burns away the unworthy with its mystic flames.</Card_Text>
+	</Card>
+	<Card id="4365">
+		<Name>Three-Legged Zombies</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Zombie</Monster_Type>
+		<Card_Type />
+		<ATK>1100</ATK>
+		<DEF>800</DEF>
+		<Card_Text>A pair of friendly skeletons, lean and fat, that travel with extreme difficulty.</Card_Text>
+	</Card>
+	<Card id="4366">
+		<Name>Zera the Mant</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>8</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type>Ritual</Card_Type>
+		<ATK>2800</ATK>
+		<DEF>2300</DEF>
+		<Card_Text>This card can only be Ritual Summoned with the Ritual Spell Card, "Zera Ritual".</Card_Text>
+	</Card>
+	<Card id="4367">
+		<Name>Flying Penguin</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Aqua</Monster_Type>
+		<Card_Type />
+		<ATK>1200</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>A very rare penguin that takes to the air with ears shaped like wings.</Card_Text>
+	</Card>
+	<Card id="4368">
+		<Name>Millennium Shield</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>3000</DEF>
+		<Card_Text>A famous shield said to belong to an ancient Egyptian Pharaoh. Legends tell of its power to block any strong attack.</Card_Text>
+	</Card>
+	<Card id="4369">
+		<Name>Fairy's Gift</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type />
+		<ATK>1400</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>This flying monster is known for delivering happiness to all.</Card_Text>
+	</Card>
+	<Card id="4370">
+		<Name>Black Luster Soldier</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>8</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type>Ritual</Card_Type>
+		<ATK>3000</ATK>
+		<DEF>2500</DEF>
+		<Card_Text>You can Ritual Summon this card with "Black Luster Ritual".</Card_Text>
+	</Card>
+	<Card id="4371">
+		<Name>Fiend's Mirror</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>6</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type>Ritual</Card_Type>
+		<ATK>2100</ATK>
+		<DEF>1800</DEF>
+		<Card_Text>You can Ritual Summon this card with "Beastly Mirror Ritual".</Card_Text>
+	</Card>
+	<Card id="4372">
+		<Name>Labyrinth Wall</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Rock</Monster_Type>
+		<Card_Type />
+		<ATK>0</ATK>
+		<DEF>3000</DEF>
+		<Card_Text>These walls form a labyrinth with no exit for enemies.</Card_Text>
+	</Card>
+	<Card id="4373">
+		<Name>Jirai Gumo</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Insect</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>2200</ATK>
+		<DEF>100</DEF>
+		<Card_Text>When this card declares an attack: Toss a coin and call it. If you call it wrong, lose half your Life Points.</Card_Text>
+	</Card>
+	<Card id="4374">
+		<Name>Shadow Ghoul</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Zombie</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>1600</ATK>
+		<DEF>1300</DEF>
+		<Card_Text>This card gains 100 ATK for each monster in your Graveyard.</Card_Text>
+	</Card>
+	<Card id="4375">
+		<Name>Wall Shadow</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>7</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>1600</ATK>
+		<DEF>3000</DEF>
+		<Card_Text>Cannot be Normal Summoned/Set. Must first be Special Summoned with "Magical Labyrinth".</Card_Text>
+	</Card>
+	<Card id="4376">
+		<Name>Labyrinth Tank</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>7</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Machine</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>2400</ATK>
+		<DEF>2400</DEF>
+		<Card_Text>"Giga-Tech Wolf" + "Cannon Soldier"</Card_Text>
+	</Card>
+	<Card id="4377">
+		<Name>Sanga of the Thunder</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>7</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Thunder</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>2600</ATK>
+		<DEF>2200</DEF>
+		<Card_Text>During damage calculation in your opponent's turn, if this card is being attacked: You can target the attacking monster; make that target's ATK 0 during damage calculation only (this is a Quick Effect). This effect can only be used once while this card is face-up on the field.</Card_Text>
+	</Card>
+	<Card id="4378">
+		<Name>Kazejin</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>7</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>2400</ATK>
+		<DEF>2200</DEF>
+		<Card_Text>During damage calculation in your opponent's turn, if this card is being attacked: You can target the attacking monster; make that target's ATK 0 during damage calculation only (this is a Quick Effect). This effect can only be used once while this card is face-up on the field.</Card_Text>
+	</Card>
+	<Card id="4379">
+		<Name>Suijin</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>7</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Aqua</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>2500</ATK>
+		<DEF>2400</DEF>
+		<Card_Text>During damage calculation in your opponent's turn, if this card is being attacked: You can target the attacking monster; make that target's ATK 0 during damage calculation only (this is a Quick Effect). This effect can only be used once while this card is face-up on the field.</Card_Text>
+	</Card>
+	<Card id="4380">
+		<Name>Gate Guardian</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>11</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>3750</ATK>
+		<DEF>3400</DEF>
+		<Card_Text>Cannot be Normal Summoned/Set. Must first be Special Summoned (from your hand) by Tributing 1 "Sanga of the Thunder", "Kazejin", and "Suijin".</Card_Text>
+	</Card>
+	<Card id="4381">
+		<Name>Dungeon Worm</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Insect</Monster_Type>
+		<Card_Type />
+		<ATK>1800</ATK>
+		<DEF>1500</DEF>
+		<Card_Text>Hidden under the floors of a labyrinth, it swallows any who pass above.</Card_Text>
+	</Card>
+	<Card id="4382">
+		<Name>Monster Tamer</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>1800</ATK>
+		<DEF>1600</DEF>
+		<Card_Text>A master of monsters that exercises control over several creatures.</Card_Text>
+	</Card>
+	<Card id="4383">
+		<Name>Ryu-Kishin Powered</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type />
+		<ATK>1600</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>A gargoyle enhanced by the powers of darkness. Very sharp talons make it a worthy opponent.</Card_Text>
+	</Card>
+	<Card id="4384">
+		<Name>Swordstalker</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>6</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>2000</ATK>
+		<DEF>1600</DEF>
+		<Card_Text>A monster formed by the vengeful souls of those who passed away in battle.</Card_Text>
+	</Card>
+	<Card id="4385">
+		<Name>La Jinn the Mystical Genie of the Lamp</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type />
+		<ATK>1800</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>A genie of the lamp that is at the beck and call of its master.</Card_Text>
+	</Card>
+	<Card id="4386">
+		<Name>Blue-Eyes Ultimate Dragon</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>12</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dragon</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>4500</ATK>
+		<DEF>3800</DEF>
+		<Card_Text>"Blue-Eyes White Dragon" + "Blue-Eyes White Dragon" + "Blue-Eyes White Dragon"</Card_Text>
+	</Card>
+	<Card id="4387">
+		<Name>Toon Alligator</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Reptile</Monster_Type>
+		<Card_Type />
+		<ATK>800</ATK>
+		<DEF>1600</DEF>
+		<Card_Text>An alligator monster straight from the cartoons.</Card_Text>
+	</Card>
+	<Card id="4388">
+		<Name>Rude Kaiser</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast-Warrior</Monster_Type>
+		<Card_Type />
+		<ATK>1800</ATK>
+		<DEF>1600</DEF>
+		<Card_Text>With an axe in each hand, this monster delivers heavy damage.</Card_Text>
+	</Card>
+	<Card id="4389">
+		<Name>Parrot Dragon</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dragon</Monster_Type>
+		<Card_Type />
+		<ATK>2000</ATK>
+		<DEF>1300</DEF>
+		<Card_Text>A dragon from the cartoons that's more dangerous than it appears to be.</Card_Text>
+	</Card>
+	<Card id="4390">
+		<Name>Dark Rabbit</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast</Monster_Type>
+		<Card_Type />
+		<ATK>1100</ATK>
+		<DEF>1500</DEF>
+		<Card_Text>He leaps up, down, and all around! Nobody can lay a hand on this funny bunny.</Card_Text>
+	</Card>
+	<Card id="4391">
+		<Name>Bickuribox</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>7</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>2300</ATK>
+		<DEF>2000</DEF>
+		<Card_Text>"Crass Clown" + "Dream Clown"</Card_Text>
+	</Card>
+	<Card id="4392">
+		<Name>Harpie's Pet Dragon</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>7</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dragon</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>2000</ATK>
+		<DEF>2500</DEF>
+		<Card_Text>This card gains 300 ATK and DEF for each "Harpie Lady" on the field.</Card_Text>
+	</Card>
+	<Card id="4393">
+		<Name>Mystic Lamp</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>1</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>400</ATK>
+		<DEF>300</DEF>
+		<Card_Text>This monster can attack your opponent's Life Points directly.</Card_Text>
+	</Card>
+	<Card id="4394">
+		<Name>Pendulum Machine</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>6</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Machine</Monster_Type>
+		<Card_Type />
+		<ATK>1750</ATK>
+		<DEF>2000</DEF>
+		<Card_Text>A horrible torture machine with a large pendulum blade.</Card_Text>
+	</Card>
+	<Card id="4395">
+		<Name>Giltia the D. Knight</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>1850</ATK>
+		<DEF>1500</DEF>
+		<Card_Text>"Guardian of the Labyrinth" + "Protector of the Throne"</Card_Text>
+	</Card>
+	<Card id="4396">
+		<Name>Launcher Spider</Name>
+		<Attribute>FIRE</Attribute>
+		<Icon />
+		<Level>7</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Machine</Monster_Type>
+		<Card_Type />
+		<ATK>2200</ATK>
+		<DEF>2500</DEF>
+		<Card_Text>A mechanical spider with rocket launchers capable of random fire.</Card_Text>
+	</Card>
+	<Card id="4397">
+		<Name>Zoa</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>7</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type />
+		<ATK>2600</ATK>
+		<DEF>1900</DEF>
+		<Card_Text>A monster whose full potential can be achieved when outfitted with "Metalmorph".</Card_Text>
+	</Card>
+	<Card id="4398">
+		<Name>Metalzoa</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>8</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Machine</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>3000</ATK>
+		<DEF>2300</DEF>
+		<Card_Text>Cannot be Normal Summoned/Set. Must first be Special Summoned (from your Deck) by Tributing "Zoa" equipped with "Metalmorph".</Card_Text>
+	</Card>
+	<Card id="4399">
+		<Name>Zone Eater</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>1</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Aqua</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>250</ATK>
+		<DEF>200</DEF>
+		<Card_Text>A monster attacked by this card will be destroyed during the End Phase of the 5th turn after the attack.</Card_Text>
+	</Card>
+	<Card id="4400">
+		<Name>Steel Scorpion</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>1</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Machine</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>250</ATK>
+		<DEF>300</DEF>
+		<Card_Text>A non Machine-Type Monster attacking "Steel Scorpion" will be destroyed at the End Phase of your opponent's 2nd turn after the attack.</Card_Text>
+	</Card>
+	<Card id="4401">
+		<Name>Dancing Elf</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>1</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fairy</Monster_Type>
+		<Card_Type />
+		<ATK>300</ATK>
+		<DEF>200</DEF>
+		<Card_Text>An elf that dances across the sky with wings of razor-sharp blades.</Card_Text>
+	</Card>
+	<Card id="4402">
+		<Name>Ocubeam</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fairy</Monster_Type>
+		<Card_Type />
+		<ATK>1550</ATK>
+		<DEF>1650</DEF>
+		<Card_Text>Frightening in appearance, this creature uses its large eyes and ears to keep track of any movement.</Card_Text>
+	</Card>
+	<Card id="4403">
+		<Name>Leghul</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>1</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Insect</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>300</ATK>
+		<DEF>350</DEF>
+		<Card_Text>This monster may attack your opponent's Life Points directly.</Card_Text>
+	</Card>
+	<Card id="4404">
+		<Name>Ooguchi</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>1</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Aqua</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>300</ATK>
+		<DEF>250</DEF>
+		<Card_Text>This monster may attack your opponent's Life Points directly.</Card_Text>
+	</Card>
+	<Card id="4405">
+		<Name>Swordsman from a Distant Land</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>1</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>250</ATK>
+		<DEF>250</DEF>
+		<Card_Text>If this card attacked an opponent's monster, after damage calculation: Destroy that monster during the 5th End Phase after the attack.</Card_Text>
+	</Card>
+	<Card id="4407">
+		<Name>Ushi Oni</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>6</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type />
+		<ATK>2150</ATK>
+		<DEF>1950</DEF>
+		<Card_Text>A bull fiend restored by the dark arts, this monster appears out of a jar.</Card_Text>
+	</Card>
+	<Card id="4408">
+		<Name>Monster Eye</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>1</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>250</ATK>
+		<DEF>350</DEF>
+		<Card_Text>You can pay 1000 Life Points; add 1 "Polymerization" from your Graveyard to your hand.</Card_Text>
+	</Card>
+	<Card id="4409">
+		<Name>Leogun</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast</Monster_Type>
+		<Card_Type />
+		<ATK>1750</ATK>
+		<DEF>1550</DEF>
+		<Card_Text>Huge monster with a lion's mane similar to the King of Beasts.</Card_Text>
+	</Card>
+	<Card id="4411">
+		<Name>Sword Slasher</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Machine</Monster_Type>
+		<Card_Type />
+		<ATK>1450</ATK>
+		<DEF>1500</DEF>
+		<Card_Text>A lethal engine of destruction that wields two well-honed blades.</Card_Text>
+	</Card>
+	<Card id="4413">
+		<Name>Machine King</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>6</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Machine</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>2200</ATK>
+		<DEF>2000</DEF>
+		<Card_Text>This card gains 100 ATK for each Machine-Type monster on the field.</Card_Text>
+	</Card>
+	<Card id="4415">
+		<Name>Metal Dragon</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>6</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Machine</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>1850</ATK>
+		<DEF>1700</DEF>
+		<Card_Text>"Steel Ogre Grotto #1" + "Lesser Dragon"</Card_Text>
+	</Card>
+	<Card id="4416">
+		<Name>Karakuri Spider</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Machine</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>400</ATK>
+		<DEF>500</DEF>
+		<Card_Text>If this card attacks a DARK monster, destroy the attack target after damage calculation.</Card_Text>
+	</Card>
+	<Card id="4418">
+		<Name>Giga-Tech Wolf</Name>
+		<Attribute>FIRE</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Machine</Monster_Type>
+		<Card_Type />
+		<ATK>1200</ATK>
+		<DEF>1400</DEF>
+		<Card_Text>An iron wolf with razor-sharp fangs that can penetrate any armor.</Card_Text>
+	</Card>
+	<Card id="4420">
+		<Name>Shovel Crusher</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Machine</Monster_Type>
+		<Card_Type />
+		<ATK>900</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>Armed with a pair of shovels, this monster will destroy anything that stands in its way.</Card_Text>
+	</Card>
+	<Card id="4421">
+		<Name>Mechanicalchaser</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Machine</Monster_Type>
+		<Card_Type />
+		<ATK>1850</ATK>
+		<DEF>800</DEF>
+		<Card_Text>A hunter that relentlessly pursues its target by order of the Machine King.</Card_Text>
+	</Card>
+	<Card id="4422">
+		<Name>Blocker</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Machine</Monster_Type>
+		<Card_Type />
+		<ATK>850</ATK>
+		<DEF>1800</DEF>
+		<Card_Text>Constructed from several components, this monster can launch them in a pincer attack.</Card_Text>
+	</Card>
+	<Card id="4423">
+		<Name>Blast Juggler</Name>
+		<Attribute>FIRE</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Machine</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>800</ATK>
+		<DEF>900</DEF>
+		<Card_Text>You can only activate this effect during your Standby Phase. Offer this face-up card as a Tribute to select and destroy 2 face-up monsters with an ATK 1000 or less.</Card_Text>
+	</Card>
+	<Card id="4425">
+		<Name>Giganto</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Machine</Monster_Type>
+		<Card_Type />
+		<ATK>1700</ATK>
+		<DEF>1800</DEF>
+		<Card_Text>A massive steel ball that mows down anything in its path.</Card_Text>
+	</Card>
+	<Card id="4426">
+		<Name>Cyber-Stein</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Machine</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>700</ATK>
+		<DEF>500</DEF>
+		<Card_Text>Pay 5000 Life Points. Special Summon 1 Fusion Monster from your Extra Deck to the field in Attack Position.</Card_Text>
+	</Card>
+	<Card id="4428">
+		<Name>Jinzo #7</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Machine</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>500</ATK>
+		<DEF>400</DEF>
+		<Card_Text>This monster can attack your opponent's Life Points directly.</Card_Text>
+	</Card>
+	<Card id="4430">
+		<Name>Sky Dragon</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>6</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dragon</Monster_Type>
+		<Card_Type />
+		<ATK>1900</ATK>
+		<DEF>1800</DEF>
+		<Card_Text>A flying dragon with four wings housing some very dangerous blades.</Card_Text>
+	</Card>
+	<Card id="4431">
+		<Name>Thunder Dragon</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Thunder</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>1600</ATK>
+		<DEF>1500</DEF>
+		<Card_Text>During your Main Phase, by discarding this card, add up to 2 "Thunder Dragons" from your Deck to your hand.</Card_Text>
+	</Card>
+	<Card id="4432">
+		<Name>Stone Dragon</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>7</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Rock</Monster_Type>
+		<Card_Type />
+		<ATK>2000</ATK>
+		<DEF>2300</DEF>
+		<Card_Text>A dragon formed by huge boulders that are also used to attack the enemy.</Card_Text>
+	</Card>
+	<Card id="4433">
+		<Name>Kaiser Dragon</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>7</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dragon</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>2300</ATK>
+		<DEF>2000</DEF>
+		<Card_Text>"Winged Dragon, Guardian of the Fortress #1" + "Fairy Dragon"</Card_Text>
+	</Card>
+	<Card id="4434">
+		<Name>Magician of Faith</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>1</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>300</ATK>
+		<DEF>400</DEF>
+		<Card_Text>FLIP: Target 1 Spell Card in your Graveyard; add that target to your hand.</Card_Text>
+	</Card>
+	<Card id="4435">
+		<Name>Goddess of Whim</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fairy</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>950</ATK>
+		<DEF>700</DEF>
+		<Card_Text>Once per turn: You can toss a coin and call Heads or Tails. If you call it right, double this card's ATK during this turn. If you call it wrong, halve its ATK during this turn.</Card_Text>
+	</Card>
+	<Card id="4436">
+		<Name>Water Magician</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Aqua</Monster_Type>
+		<Card_Type />
+		<ATK>1400</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>This monster swamps an opponent with an almost endless supply of water.</Card_Text>
+	</Card>
+	<Card id="4439">
+		<Name>Ancient Elf</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type />
+		<ATK>1450</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>This elf is rumored to have lived for thousands of years. He leads an army of spirits against his enemies.</Card_Text>
+	</Card>
+	<Card id="4443">
+		<Name>Deepsea Shark</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fish</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>1900</ATK>
+		<DEF>1600</DEF>
+		<Card_Text>Bottom Dweller + "Tongyo"</Card_Text>
+	</Card>
+	<Card id="4444">
+		<Name>Metal Fish</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Machine</Monster_Type>
+		<Card_Type />
+		<ATK>1600</ATK>
+		<DEF>1900</DEF>
+		<Card_Text>A metal fish with a razor-sharp caudal fin.</Card_Text>
+	</Card>
+	<Card id="4445">
+		<Name>Bottom Dweller</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fish</Monster_Type>
+		<Card_Type />
+		<ATK>1650</ATK>
+		<DEF>1700</DEF>
+		<Card_Text>This is one sea creature whose wrath is something monsters fear to face.</Card_Text>
+	</Card>
+	<Card id="4446">
+		<Name>7 Colored Fish</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fish</Monster_Type>
+		<Card_Type />
+		<ATK>1800</ATK>
+		<DEF>800</DEF>
+		<Card_Text>A rare rainbow fish that has never been caught by mortal man.</Card_Text>
+	</Card>
+	<Card id="4448">
+		<Name>Aqua Dragon</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>6</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Sea Serpent</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>2250</ATK>
+		<DEF>1900</DEF>
+		<Card_Text>"Fairy Dragon" + "Amazon of the Seas" + "Zone Eater"</Card_Text>
+	</Card>
+	<Card id="4450">
+		<Name>Turu-Purun</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Aqua</Monster_Type>
+		<Card_Type />
+		<ATK>450</ATK>
+		<DEF>500</DEF>
+		<Card_Text>A strange, one-eyed monster that can fell an enemy with a single stab of its spear.</Card_Text>
+	</Card>
+	<Card id="4451">
+		<Name>Sentinel of the Seas</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Aqua</Monster_Type>
+		<Card_Type />
+		<ATK>1300</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>A merman warrior that relentlessly attacks those who pollute the seas with their presence.</Card_Text>
+	</Card>
+	<Card id="4453">
+		<Name>Giant Red Seasnake</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Aqua</Monster_Type>
+		<Card_Type />
+		<ATK>1800</ATK>
+		<DEF>800</DEF>
+		<Card_Text>A sea-dwelling snake that attacks passing enemies with its sharp teeth.</Card_Text>
+	</Card>
+	<Card id="4454">
+		<Name>Spike Seadra</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Sea Serpent</Monster_Type>
+		<Card_Type />
+		<ATK>1600</ATK>
+		<DEF>1300</DEF>
+		<Card_Text>Using the spikes sprouting from its body, this creature stabs its opponents and floods them with electricity.</Card_Text>
+	</Card>
+	<Card id="4459">
+		<Name>Millennium Golem</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>6</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Rock</Monster_Type>
+		<Card_Type />
+		<ATK>2000</ATK>
+		<DEF>2200</DEF>
+		<Card_Text>For nearly a millennium, this golem has served as guardian of an ancient treasure trove.</Card_Text>
+	</Card>
+	<Card id="4460">
+		<Name>Destroyer Golem</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Rock</Monster_Type>
+		<Card_Type />
+		<ATK>1500</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>A golem with a massive right hand for crushing its victims.</Card_Text>
+	</Card>
+	<Card id="4464">
+		<Name>Kaminari Attack</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Thunder</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>1900</ATK>
+		<DEF>1400</DEF>
+		<Card_Text>"Ocubeam" + "Mega Thunderball"</Card_Text>
+	</Card>
+	<Card id="4465">
+		<Name>Tripwire Beast</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Thunder</Monster_Type>
+		<Card_Type />
+		<ATK>1200</ATK>
+		<DEF>1300</DEF>
+		<Card_Text>This creature attacks with electromagnetic waves.</Card_Text>
+	</Card>
+	<Card id="4467">
+		<Name>Bolt Penguin</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Thunder</Monster_Type>
+		<Card_Type />
+		<ATK>1100</ATK>
+		<DEF>800</DEF>
+		<Card_Text>With each arm forming an electric whip, this monster paralyzes its enemies with electric shocks.</Card_Text>
+	</Card>
+	<Card id="4468">
+		<Name>The Immortal of Thunder</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Thunder</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>1500</ATK>
+		<DEF>1300</DEF>
+		<Card_Text>FLIP: Increase your Life Points by 3000 points. When this card is sent from the field to the Graveyard, you lose 5000 Life Points.</Card_Text>
+	</Card>
+	<Card id="4469">
+		<Name>Electric Snake</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Thunder</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>800</ATK>
+		<DEF>900</DEF>
+		<Card_Text>When this card is discarded from your hand to the Graveyard by an effect of a card controlled by your opponent, draw 2 cards from your Deck.</Card_Text>
+	</Card>
+	<Card id="4471">
+		<Name>Punished Eagle</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>6</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Winged Beast</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>2100</ATK>
+		<DEF>1800</DEF>
+		<Card_Text>"Blue-Winged Crown" + "Niwatori"</Card_Text>
+	</Card>
+	<Card id="4472">
+		<Name>Skull Red Bird</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Winged Beast</Monster_Type>
+		<Card_Type />
+		<ATK>1550</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>This monster swoops down and attacks with a rain of knives stored in its wings.</Card_Text>
+	</Card>
+	<Card id="4473">
+		<Name>Crimson Sunbird</Name>
+		<Attribute>FIRE</Attribute>
+		<Icon />
+		<Level>6</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Winged Beast</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>2300</ATK>
+		<DEF>1800</DEF>
+		<Card_Text>"Faith Bird" + "Skull Red Bird"</Card_Text>
+	</Card>
+	<Card id="4474">
+		<Name>Queen Bird</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Winged Beast</Monster_Type>
+		<Card_Type />
+		<ATK>1200</ATK>
+		<DEF>2000</DEF>
+		<Card_Text>This monster attacks enemies using its huge beak.</Card_Text>
+	</Card>
+	<Card id="4475">
+		<Name>Armed Ninja</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>1</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Warrior</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>300</ATK>
+		<DEF>300</DEF>
+		<Card_Text>FLIP: Target 1 Spell Card on the field; destroy that target. (If the target is Set, reveal it, and destroy it if it is a Spell Card. Otherwise, return it to its original position.)</Card_Text>
+	</Card>
+	<Card id="4476">
+		<Name>Magical Ghost</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Zombie</Monster_Type>
+		<Card_Type />
+		<ATK>1300</ATK>
+		<DEF>1400</DEF>
+		<Card_Text>This creature casts a spell of terror and confusion just before attacking its enemies.</Card_Text>
+	</Card>
+	<Card id="4477">
+		<Name>Soul Hunter</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>6</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>2200</ATK>
+		<DEF>1800</DEF>
+		<Card_Text>Lord of the Lamp + "Invader from Another Dimension"</Card_Text>
+	</Card>
+	<Card id="4479">
+		<Name>Vermillion Sparrow</Name>
+		<Attribute>FIRE</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Pyro</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>1900</ATK>
+		<DEF>1500</DEF>
+		<Card_Text>Rhaimundos of the Red Sword + "Fireyarou"</Card_Text>
+	</Card>
+	<Card id="4480">
+		<Name>Sea Kamen</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Aqua</Monster_Type>
+		<Card_Type />
+		<ATK>1100</ATK>
+		<DEF>1300</DEF>
+		<Card_Text>A merciless monster that tears opponents to shreds with razor-like claws.</Card_Text>
+	</Card>
+	<Card id="4481">
+		<Name>Sinister Serpent</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>1</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Reptile</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>300</ATK>
+		<DEF>250</DEF>
+		<Card_Text>During your Standby Phase, if this card is in your Graveyard: You can add it to your hand, also banish 1 "Sinister Serpent" from your Graveyard during your opponent's next End Phase. You can only use this effect of "Sinister Serpent" once per turn.</Card_Text>
+	</Card>
+	<Card id="4484">
+		<Name>Insect Soldiers of the Sky</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Insect</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>1000</ATK>
+		<DEF>800</DEF>
+		<Card_Text>The ATK of this card increases by 1000 points whenever it attacks a WIND monster.</Card_Text>
+	</Card>
+	<Card id="4485">
+		<Name>Cockroach Knight</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Insect</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>800</ATK>
+		<DEF>900</DEF>
+		<Card_Text>When this card has been sent to the Graveyard, it is returned to the top of the Deck.</Card_Text>
+	</Card>
+	<Card id="4486">
+		<Name>Kuwagata &amp;alpha;</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Insect</Monster_Type>
+		<Card_Type />
+		<ATK>1250</ATK>
+		<DEF>1000</DEF>
+		<Card_Text>A very vicious stag beetle that goes for the head.</Card_Text>
+	</Card>
+	<Card id="4487">
+		<Name>Burglar</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>3</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast</Monster_Type>
+		<Card_Type />
+		<ATK>850</ATK>
+		<DEF>800</DEF>
+		<Card_Text>A sly rat. He will come at you with his huge left claw.</Card_Text>
+	</Card>
+	<Card id="4488">
+		<Name>Pragtical</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Dinosaur</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>1900</ATK>
+		<DEF>1500</DEF>
+		<Card_Text>"Trakodon" + "Flame Viper"</Card_Text>
+	</Card>
+	<Card id="4490">
+		<Name>Ameba</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>1</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Aqua</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>300</ATK>
+		<DEF>350</DEF>
+		<Card_Text>When the control of this face-up card on the field shifts to your opponent, inflict 2000 points of damage to your opponent's Life Points. This effect can only be used once as long as this card remains face-up on the field.</Card_Text>
+	</Card>
+	<Card id="4493">
+		<Name>Flower Wolf</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>1800</ATK>
+		<DEF>1400</DEF>
+		<Card_Text>"Silver Fang" + "Darkworld Thorns"</Card_Text>
+	</Card>
+	<Card id="4494">
+		<Name>Rainbow Flower</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Plant</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>400</ATK>
+		<DEF>500</DEF>
+		<Card_Text>This monster may attack your opponent's Life Points directly.</Card_Text>
+	</Card>
+	<Card id="4496">
+		<Name>Needle Ball</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>750</ATK>
+		<DEF>700</DEF>
+		<Card_Text>FLIP: You can pay 2000 Life Points to inflict 1000 damage to your opponent.</Card_Text>
+	</Card>
+	<Card id="4497">
+		<Name>Peacock</Name>
+		<Attribute>WIND</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Winged Beast</Monster_Type>
+		<Card_Type />
+		<ATK>1700</ATK>
+		<DEF>1500</DEF>
+		<Card_Text>A large peacock that launches its feathers in a lethal attack.</Card_Text>
+	</Card>
+	<Card id="4498">
+		<Name>Hoshiningen</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>2</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fairy</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>500</ATK>
+		<DEF>700</DEF>
+		<Card_Text>As long as this card remains face-up on the field, increase the ATK of all LIGHT monsters by 500 points and decrease the ATK of all DARK monsters by 400 points.</Card_Text>
+	</Card>
+	<Card id="4499">
+		<Name>Maha Vailo</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>1550</ATK>
+		<DEF>1400</DEF>
+		<Card_Text>This card gains 500 ATK for each Equip Card equipped to this card.</Card_Text>
+	</Card>
+	<Card id="4501">
+		<Name>Musician King</Name>
+		<Attribute>LIGHT</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Spellcaster</Monster_Type>
+		<Card_Type>Fusion</Card_Type>
+		<ATK>1750</ATK>
+		<DEF>1500</DEF>
+		<Card_Text>"Witch of the Black Forest" + "Lady of Faith"</Card_Text>
+	</Card>
+	<Card id="4502">
+		<Name>Wilmee</Name>
+		<Attribute>EARTH</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Beast</Monster_Type>
+		<Card_Type />
+		<ATK>1000</ATK>
+		<DEF>1200</DEF>
+		<Card_Text>A rabid rabbit that shears through opposition with its sharp skewers.</Card_Text>
+	</Card>
+	<Card id="4503">
+		<Name>Yado Karu</Name>
+		<Attribute>WATER</Attribute>
+		<Icon />
+		<Level>4</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Aqua</Monster_Type>
+		<Card_Type>Effect</Card_Type>
+		<ATK>900</ATK>
+		<DEF>1700</DEF>
+		<Card_Text>When this card is changed from Attack Position to Defense Position, you can place any number of cards from your hand at the bottom of your Deck in any order you desire.</Card_Text>
+	</Card>
+	<Card id="4504">
+		<Name>Morinphen</Name>
+		<Attribute>DARK</Attribute>
+		<Icon />
+		<Level>5</Level>
+		<Rank>0</Rank>
+		<Pendulum_Scale>0</Pendulum_Scale>
+		<Pendulum_Effect />
+		<Monster_Type>Fiend</Monster_Type>
+		<Card_Type />
+		<ATK>1550</ATK>
+		<DEF>1300</DEF>
+		<Card_Text>A strange fiend with long arms and razor-sharp talons.</Card_Text>
 	</Card>
 </CardDB>

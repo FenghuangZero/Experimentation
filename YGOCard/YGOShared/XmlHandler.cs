@@ -277,11 +277,11 @@ namespace YGOShared
 
             Debug.WriteLine("Start Download");
             
-            for (int i = 0; i < 90; i++)
+            for (int i = 0; i < 5; i++)
             {
                 var range = 4006;
                 range += i * 100;
-                trunk = await downloadRange(trunk, range, range + 200);
+                trunk = await downloadRange(trunk, range, range + 100);
                 
             }
             //trunk = await downloadRange(trunk, 4006, 12272);
