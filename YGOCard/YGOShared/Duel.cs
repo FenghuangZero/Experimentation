@@ -5,6 +5,7 @@ using System.Text;
 using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
+using YGOShared;
 #if WINDOWS_UWP
 using Windows.Storage;
 #endif
@@ -39,8 +40,20 @@ namespace YGOShared
 #endif
 #if CONSOLE
             p2.Deck = d.loadDeck(t, YGOConsole.Properties.Resources.STARTER_DECK_KAIBA);
+            p2.MainDeck.Add(t[4007]);
+            p2.MainDeck.Add(t[4009]);
+            p2.MainDeck.Add(t[4011]);
+            p2.MainDeck.Add(t[4029]);
+            p2.MainDeck.Add(t[4032]);
+            p2.MainDeck.Add(t[4037]);
             d.emptyRecipie();
             p1.Deck = d.loadDeck(t, YGOConsole.Properties.Resources.STARTER_DECK_YUGI);
+            p1.MainDeck.Add(t[4008]);
+            p1.MainDeck.Add(t[4012]);
+            p1.MainDeck.Add(t[4013]);
+            p1.MainDeck.Add(t[4028]);
+            p1.MainDeck.Add(t[4033]);
+            p1.MainDeck.Add(t[4041]);
 #endif
             mockDuel();
         }
@@ -50,6 +63,28 @@ namespace YGOShared
         /// </summary>
         public void mockDuel()
         {
+            p1.MainDeck.Shuffle();
+            p2.MainDeck.Shuffle();
+
+            Queue<Card> p1Deck = new Queue<Card>();
+            for (int i = 0; i < p1.MainDeck.Count; i++)
+                p1Deck.Enqueue(p1.MainDeck.ElementAt(i));
+
+            Queue<Card> p2Deck = new Queue<Card>();
+            for (int i = 0; i < p2.MainDeck.Count; i++)
+                p2Deck.Enqueue(p2.MainDeck.ElementAt(i));
+
+            Debug.WriteLine(p1Deck.Dequeue().Name);
+            Debug.WriteLine(p1Deck.Dequeue().Name);
+            Debug.WriteLine(p1Deck.Dequeue().Name);
+            Debug.WriteLine(p1Deck.Dequeue().Name);
+            Debug.WriteLine(p1Deck.Dequeue().Name);
+            Debug.WriteLine(p2Deck.Dequeue().Name);
+            Debug.WriteLine(p2Deck.Dequeue().Name);
+            Debug.WriteLine(p2Deck.Dequeue().Name);
+            Debug.WriteLine(p2Deck.Dequeue().Name);
+            Debug.WriteLine(p2Deck.Dequeue().Name);
+            /*
             for (var i = 0; i < 6; i++)
                 p1.draw();
             for (var i = 0; i < 6; i++)
@@ -58,7 +93,7 @@ namespace YGOShared
             p1.set(p1.Hand, 0);
             p2.draw();
             p2.summon(p2.Hand, 1);
-            p2.attackMonster(p2.MonsterZone, 0, p1, p1.MonsterZone, 0);
+            p2.attackMonster(p2.MonsterZone, 0, p1, p1.MonsterZone, 0);*/
             Debug.WriteLine("Player 1 has drawn Exodia. Player 1 Wins.");
         }
         

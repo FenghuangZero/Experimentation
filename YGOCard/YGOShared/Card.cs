@@ -48,7 +48,7 @@ namespace YGOShared
             FaceUp = false;
             Horizontal = false;
         }
-        
+
         /// <summary>
         /// Initializes the class with the minimum required values to create a Normal Monster Card.
         /// </summary>
