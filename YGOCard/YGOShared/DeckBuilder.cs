@@ -58,18 +58,15 @@ namespace YGOShared
             Array.Clear(Recipie[2], 0, Recipie[1].Length);
         }
 
-        public Card[][] loadDeck(Card[] t, string resource)
+        public List<Card> loadDeck(List<Card> t, string resource)
         {
             
             var read = (resource).Split(',');
-            var deck = new Card[3][] {new Card[60], new Card[15], new Card[15] };
-            for(var i = 0; i < read.Length; i++)
+            List<Card> deck = new List<Card>();
+            foreach (var s in read)
             {
-                if (read[i] != "" && read[i] != null)
-                    Recipie[0][i] = int.Parse(read[i]);
-
-                if (Recipie[0][i] != null)
-                    deck[0][i] = t[Recipie[0][i].Value];
+                if (s != "" && s != null)
+                    deck.Add(t[int.Parse(s)]);
             }
             return deck;
         }

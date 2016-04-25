@@ -18,12 +18,12 @@ namespace YGOCardGame
     /// </summary>
     class Program
     {
-        Card[] trunk;
+        List<Card> trunk;
         XmlHandler cardDB;
 
         public async void demo()
         {
-            trunk = new Card[12273];
+            trunk = new List<Card>();
             cardDB = new XmlHandler();
             await cardDB.loadXml(trunk);
             var gameOn = new Duel(trunk);

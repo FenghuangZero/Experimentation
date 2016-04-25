@@ -37,7 +37,7 @@ namespace YGOShared
         /// </summary>
         /// <param name="t">The object which will store the database while loaded.</param>
         /// <returns></returns>
-        public async Task<Card[]> loadXml(Card[] t)
+        public async Task<List<Card>> loadXml(List<Card> t)
         {
 #if WINDOWS_UWP
             StorageFile db = await localFolder.GetFileAsync("CardDB.xml");
@@ -54,28 +54,28 @@ namespace YGOShared
             var dbPenScale = doc.Descendants("Pendulum_Scale");
             var dbPenEffect = doc.Descendants("Pendulum_Effect");
             var dbMonType = doc.Descendants("Monster_Type");
-            // var dbCardType = doc.Descendants("Card_Type");
+            var dbCardType = doc.Descendants("Card_Type");
             var dbAttack = doc.Descendants("ATK");
             var dbDefence = doc.Descendants("DEF");
             var dbText = doc.Descendants("Card_Text");
             
-            // Load cards from XML
-            for (var i = 0; i < dbCard.Count(); i++)
+            foreach (var dbc in dbCard)
             {
-                var index = int.Parse(dbCard.ElementAt(i).FirstAttribute.Value);
-                t[index] = new Card();
-                t[index].ID = index;
-                t[index].Name = dbName.ElementAt(i).Value;
-                t[index].Attribute = dbAttribute.ElementAt(i).Value;
-                t[index].Level = int.Parse(dbLevel.ElementAt(i).Value);
-                t[index].Rank = int.Parse(dbRank.ElementAt(i).Value);
-                t[index].PendulumScale = int.Parse(dbPenScale.ElementAt(i).Value);
-                t[index].PendulumEffect = dbPenEffect.ElementAt(i).Value;
-                t[index].MonsterType = dbMonType.ElementAt(i).Value;
-                // t[index].CardType = dbCardType.ElementAt(i).Value;
-                t[index].ATK = int.Parse(dbAttack.ElementAt(i).Value);
-                t[index].DEF = int.Parse(dbDefence.ElementAt(i).Value);
-                t[index].CardText = dbText.ElementAt(i).Value;
+                var i = int.Parse(dbc.FirstAttribute.Value);
+                Card c = new Card();
+                c.ID = i;
+                c.Name = dbName.ElementAt(i).Value;
+                c.Attribute = dbAttribute.ElementAt(i).Value;
+                c.Level = int.Parse(dbLevel.ElementAt(i).Value);
+                c.Rank = int.Parse(dbRank.ElementAt(i).Value);
+                c.PendulumScale = int.Parse(dbPenScale.ElementAt(i).Value);
+                c.PendulumEffect = dbPenEffect.ElementAt(i).Value;
+                c.MonsterType = dbMonType.ElementAt(i).Value;
+                c.CardType = dbCardType.ElementAt(i).Value;
+                c.ATK = int.Parse(dbAttack.ElementAt(i).Value);
+                c.DEF = int.Parse(dbDefence.ElementAt(i).Value);
+                c.CardText = dbText.ElementAt(i).Value;
+                t.Add(c);
             }
             return t;
         }

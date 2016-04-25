@@ -24,7 +24,7 @@ namespace YGOShared
         /// Assigns decks to each player.
         /// </summary>
         /// <param name="t">The card database.</param>
-        public async void loadDeck(Card[] t)
+        public async void loadDeck(List<Card> t)
         {
             var d = new DeckBuilder();
 #if WINDOWS_UWP
@@ -33,27 +33,25 @@ namespace YGOShared
             var deckXml = XDocument.Load(await starterDecks.OpenStreamForReadAsync());
             var kaiba = deckXml.Descendants("STARTER_DECK_KAIBA");
             var yugi = deckXml.Descendants("STARTER_DECK_YUGI");
-            p2.Deck = d.loadDeck(t, kaiba.Single().Value);
-            d.emptyRecipie();
-            p1.Deck = d.loadDeck(t, yugi.Single().Value);
+            List<Card> recipie1 = d.loadDeck(t, kaiba.Single().Value);
+            recipie1.Shuffle();
+            for (var i = 0; i < recipie1.Count; i++)
+                p1.MainDeck.Enqueue(recipie1.ElementAt(i));
+            List<Card> recipie2 = d.loadDeck(t, yugi.Single().Value);
+            recipie2.Shuffle();
+            for (var i = 0; i < recipie1.Count; i++)
+                p2.MainDeck.Enqueue(recipie1.ElementAt(i));
 
 #endif
 #if CONSOLE
-            p2.Deck = d.loadDeck(t, YGOConsole.Properties.Resources.STARTER_DECK_KAIBA);
-            p2.MainDeck.Add(t[4007]);
-            p2.MainDeck.Add(t[4009]);
-            p2.MainDeck.Add(t[4011]);
-            p2.MainDeck.Add(t[4029]);
-            p2.MainDeck.Add(t[4032]);
-            p2.MainDeck.Add(t[4037]);
-            d.emptyRecipie();
-            p1.Deck = d.loadDeck(t, YGOConsole.Properties.Resources.STARTER_DECK_YUGI);
-            p1.MainDeck.Add(t[4008]);
-            p1.MainDeck.Add(t[4012]);
-            p1.MainDeck.Add(t[4013]);
-            p1.MainDeck.Add(t[4028]);
-            p1.MainDeck.Add(t[4033]);
-            p1.MainDeck.Add(t[4041]);
+            List<Card> recipie1 = d.loadDeck(t, YGOConsole.Properties.Resources.STARTER_DECK_KAIBA);
+            recipie1.Shuffle();
+            for (var i = 0; i < recipie1.Count; i++)
+                p1.MainDeck.Enqueue(recipie1.ElementAt(i));
+            List<Card> recipie2 = d.loadDeck(t, YGOConsole.Properties.Resources.STARTER_DECK_KAIBA);
+            recipie2.Shuffle();
+            for (var i = 0; i < recipie1.Count; i++)
+                p2.MainDeck.Enqueue(recipie1.ElementAt(i));
 #endif
             mockDuel();
         }
@@ -63,37 +61,10 @@ namespace YGOShared
         /// </summary>
         public void mockDuel()
         {
-            p1.MainDeck.Shuffle();
-            p2.MainDeck.Shuffle();
+            p2.draw(5);
+            p1.draw(5);
 
-            Queue<Card> p1Deck = new Queue<Card>();
-            for (int i = 0; i < p1.MainDeck.Count; i++)
-                p1Deck.Enqueue(p1.MainDeck.ElementAt(i));
-
-            Queue<Card> p2Deck = new Queue<Card>();
-            for (int i = 0; i < p2.MainDeck.Count; i++)
-                p2Deck.Enqueue(p2.MainDeck.ElementAt(i));
-
-            Debug.WriteLine(p1Deck.Dequeue().Name);
-            Debug.WriteLine(p1Deck.Dequeue().Name);
-            Debug.WriteLine(p1Deck.Dequeue().Name);
-            Debug.WriteLine(p1Deck.Dequeue().Name);
-            Debug.WriteLine(p1Deck.Dequeue().Name);
-            Debug.WriteLine(p2Deck.Dequeue().Name);
-            Debug.WriteLine(p2Deck.Dequeue().Name);
-            Debug.WriteLine(p2Deck.Dequeue().Name);
-            Debug.WriteLine(p2Deck.Dequeue().Name);
-            Debug.WriteLine(p2Deck.Dequeue().Name);
-            /*
-            for (var i = 0; i < 6; i++)
-                p1.draw();
-            for (var i = 0; i < 6; i++)
-                p2.draw();
-            p1.draw();
-            p1.set(p1.Hand, 0);
-            p2.draw();
-            p2.summon(p2.Hand, 1);
-            p2.attackMonster(p2.MonsterZone, 0, p1, p1.MonsterZone, 0);*/
+            
             Debug.WriteLine("Player 1 has drawn Exodia. Player 1 Wins.");
         }
         
@@ -107,7 +78,7 @@ namespace YGOShared
         /// Initializes the object using the card database and begins a duel.
         /// </summary>
         /// <param name="t"></param>
-        public Duel(Card[] t)
+        public Duel(List<Card> t)
         {
             loadDeck(t);
         }
