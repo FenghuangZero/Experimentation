@@ -112,17 +112,17 @@ namespace YGOShared
             for (var i = 0; i < 60; i++)
             {
                 if (Recipie[0][i] != null)
-                    p.Deck[0][i] = t[Recipie[0][i].Value];
+                    p.MainDeck.Enqueue(t[Recipie[0][i].Value]);
             }
             for (var i = 0; i < 15; i++)
             {
                 if (Recipie[1][i] != null)
-                    p.Deck[1][i] = t[Recipie[1][i].Value];
+                    p.ExtraDeck.Add(t[Recipie[1][i].Value]);
             }
             for (var i = 0; i < 15; i++)
             {
                 if (Recipie[2][i] != null)
-                    p.Deck[2][i] = t[Recipie[2][i].Value];
+                    p.SideDeck.Add(t[Recipie[2][i].Value]);
             }
         }
 

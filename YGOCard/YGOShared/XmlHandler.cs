@@ -264,65 +264,10 @@ namespace YGOShared
         }
 
         /// <summary>
-        /// Begins a series of download tasks to put cards into an array.
-        /// </summary>
-        public async void downloadToArray()
-        {
-            var trunk = new Card[12273];
-            for (int i = 0; i < trunk.Length; i++)
-            {
-                trunk[i] = new Card();
-                trunk[i].ID = i;
-            }
-
-            Debug.WriteLine("Start Download");
-            
-            for (int i = 0; i < 5; i++)
-            {
-                var range = 4006;
-                range += i * 100;
-                trunk = await downloadRange(trunk, range, range + 100);
-                
-            }
-            //trunk = await downloadRange(trunk, 4006, 12272);
-
-            Debug.WriteLine("Download Complete.");
-            for (int i = 0; i < trunk.Length; i++)
-            {
-                if (trunk[i] != null)
-                {
-                    if (trunk[i].Name == "")
-                        trunk[i] = null;
-                }
-            }
-            writeXml(trunk);
-        }
-
-        public async Task<Card[]> downloadRange(Card[] trunk, int istart, int iend)
-        {
-
-            Task<Card>[] download = new Task<Card>[12273];
-            foreach (Card c in trunk)
-            {
-                if (c != null)
-                    if (c.ID > istart && c.ID < iend)
-                        download[c.ID] = downloadCard(c.ID);
-            }
-
-            foreach (Card c in trunk)
-            {
-                if (c != null)
-                    if (c.ID > istart && c.ID < iend)
-                        trunk[c.ID] = await download[c.ID];
-            }
-            return trunk;
-        }
-
-        /// <summary>
-        /// Writes a Card array into an XML file.
+        /// Writes a Card list into an XML file.
         /// </summary>
         /// <param name="trunk">Array to be written.</param>
-        public async void writeXml(Card[] trunk)
+        public async void writeXml(List<Card> trunk)
         {
 #if WINDOWS_UWP
             StorageFile db = await localFolder.CreateFileAsync("CardDB.xml", CreationCollisionOption.ReplaceExisting);
@@ -418,6 +363,24 @@ namespace YGOShared
             writer.Flush();
         }
 
+
+        public async Task<List<Card>> downloadtoList(int s, int e)
+        {
+            var c = new Card();
+            var l = new List<Card>();
+            var d = new List<Task<Card>>();
+            for (int i = s; i <= e; i++)
+            {
+                d.Add(downloadCard(i));
+            }
+            foreach (Task<Card> card in d)
+            {
+                c = await card;
+                if (c != null)
+                    l.Add(c);
+            }
+            return l;
+        }
         /// <summary>
         /// Initializes the object.
         /// </summary>
