@@ -45,36 +45,24 @@ namespace YGOShared
 #elif CONSOLE
             var doc = XDocument.Load("CardDB.xml");
 #endif
+            var dbCardDB = doc.Elements();
 
-            var dbCard = doc.Descendants("Card");
-            var dbName = doc.Descendants("Name");
-            var dbAttribute = doc.Descendants("Attribute");
-            var dbLevel = doc.Descendants("Level");
-            var dbRank = doc.Descendants("Rank");
-            var dbPenScale = doc.Descendants("Pendulum_Scale");
-            var dbPenEffect = doc.Descendants("Pendulum_Effect");
-            var dbMonType = doc.Descendants("Monster_Type");
-            var dbCardType = doc.Descendants("Card_Type");
-            var dbAttack = doc.Descendants("ATK");
-            var dbDefence = doc.Descendants("DEF");
-            var dbText = doc.Descendants("Card_Text");
-            
-            foreach (var dbc in dbCard)
+            foreach (var dbc in dbCardDB.Elements())
             {
                 var i = int.Parse(dbc.FirstAttribute.Value);
                 Card c = new Card();
                 c.ID = i;
-                c.Name = dbName.ElementAt(i).Value;
-                c.Attribute = dbAttribute.ElementAt(i).Value;
-                c.Level = int.Parse(dbLevel.ElementAt(i).Value);
-                c.Rank = int.Parse(dbRank.ElementAt(i).Value);
-                c.PendulumScale = int.Parse(dbPenScale.ElementAt(i).Value);
-                c.PendulumEffect = dbPenEffect.ElementAt(i).Value;
-                c.MonsterType = dbMonType.ElementAt(i).Value;
-                c.CardType = dbCardType.ElementAt(i).Value;
-                c.ATK = int.Parse(dbAttack.ElementAt(i).Value);
-                c.DEF = int.Parse(dbDefence.ElementAt(i).Value);
-                c.CardText = dbText.ElementAt(i).Value;
+                c.Name = dbc.Descendants("Name").FirstOrDefault().Value;
+                c.Attribute = dbc.Descendants("Attribute").FirstOrDefault().Value;
+                c.Level = int.Parse(dbc.Descendants("Level").FirstOrDefault().Value);
+                c.Rank = int.Parse(dbc.Descendants("Rank").FirstOrDefault().Value);
+                c.PendulumScale = int.Parse(dbc.Descendants("Pendulum_Scale").FirstOrDefault().Value);
+                c.PendulumEffect = dbc.Descendants("Pendulum_Effect").FirstOrDefault().Value;
+                c.MonsterType = dbc.Descendants("Monster_Type").FirstOrDefault().Value;
+                c.CardType = dbc.Descendants("Card_Type").FirstOrDefault().Value;
+                c.ATK = int.Parse(dbc.Descendants("ATK").FirstOrDefault().Value);
+                c.DEF = int.Parse(dbc.Descendants("DEF").FirstOrDefault().Value);
+                c.CardText = dbc.Descendants("Card_Text").FirstOrDefault().Value;
                 t.Add(c);
             }
             return t;
@@ -364,11 +352,13 @@ namespace YGOShared
         }
 
 
-        public async Task<List<Card>> downloadtoList(int s, int e)
+        public async Task<List<Card>> downloadtoList(List<Card> t, int s, int e)
         {
             var c = new Card();
-            var l = new List<Card>();
             var d = new List<Task<Card>>();
+            var exists = new bool();
+            var l = new List<Card>();
+            l = t;
             for (int i = s; i <= e; i++)
             {
                 d.Add(downloadCard(i));
@@ -376,7 +366,9 @@ namespace YGOShared
             foreach (Task<Card> card in d)
             {
                 c = await card;
-                if (c != null)
+                var query = from exist in l where exist.ID == c.ID select exist;
+                exists = query.Any();
+                if (c != null && exists != true )
                     l.Add(c);
             }
             return l;

@@ -18,30 +18,16 @@ namespace YGOCardGame
     /// </summary>
     class Program
     {
-        List<Card> Trunk;
+        List<Card> trunk;
         XmlHandler cardDB;
-
-        public List<Card> trunk
-        {
-            get
-            {
-                return Trunk;
-            }
-
-            set
-            {
-                Trunk = value;
-            }
-        }
-
+        
         public async void demo()
         {
-            //trunk = new List<Card>();
-            cardDB = new XmlHandler();
-            //await cardDB.loadXml(trunk);
-            //var gameOn = new Duel(trunk);
             trunk = new List<Card>();
-            trunk = await cardDB.downloadtoList(4007, 4107);
+            cardDB = new XmlHandler();
+            trunk = await cardDB.loadXml(trunk);
+            // var gameOn = new Duel(trunk);
+            trunk = await cardDB.downloadtoList(trunk, 4503, 4520);
             foreach (Card c in trunk)
                 Debug.WriteLine(c.Name);
             cardDB.writeXml(trunk);
