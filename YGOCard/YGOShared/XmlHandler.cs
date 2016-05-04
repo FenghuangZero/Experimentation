@@ -147,7 +147,7 @@ namespace YGOShared
                         element = element.Replace("<!--", "");
                         element = element.Replace("-->", "");
                         element = element.Trim();
-                        element = element.Replace(" ", "");
+                        element = new string(element.ToCharArray().Where(c => !char.IsWhiteSpace(c)).ToArray());
                     }
                 }                
             }
@@ -243,10 +243,6 @@ namespace YGOShared
                 catch { }
                 c.CardText = extractElement(page, "<b>Card Text</b>");
                 c.ID = id;
-            }
-            else
-            {
-                c = null;
             }
             return c;
         }
@@ -355,23 +351,22 @@ namespace YGOShared
         public async Task<List<Card>> downloadtoList(List<Card> t, int s, int e)
         {
             var c = new Card();
-            var d = new List<Task<Card>>();
-            var exists = new bool();
-            var l = new List<Card>();
-            l = t;
-            for (int i = s; i <= e; i++)
+            var l = new List<Task<Card>>();
+
+            for (var i = s; i <= e; i++)
             {
-                d.Add(downloadCard(i));
+                if (t.Exists(x => x.ID == i) != true)
+                    l.Add(downloadCard(i));
+                
             }
-            foreach (Task<Card> card in d)
+
+            foreach (var i in l)
             {
-                c = await card;
-                var query = from exist in l where exist.ID == c.ID select exist;
-                exists = query.Any();
-                if (c != null && exists != true )
-                    l.Add(c);
+                c = await i;
+                if (c.Name != "" && c.Name != null)
+                    t.Add(c);
             }
-            return l;
+            return t;
         }
         /// <summary>
         /// Initializes the object.

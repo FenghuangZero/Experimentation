@@ -28,6 +28,8 @@ namespace YGOShared
         public bool Horizontal { get; set; }
         public string Location { get; set; }
 
+
+
         /// <summary>
         /// Initializes the class with default values.
         /// </summary>

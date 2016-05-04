@@ -27,7 +27,8 @@ namespace YGOCardGame
             cardDB = new XmlHandler();
             trunk = await cardDB.loadXml(trunk);
             // var gameOn = new Duel(trunk);
-            trunk = await cardDB.downloadtoList(trunk, 4503, 4520);
+            trunk = await cardDB.downloadtoList(trunk, 4007, 5005);
+            trunk = trunk.OrderBy(c => c.ID).ToList();
             foreach (Card c in trunk)
                 Debug.WriteLine(c.Name);
             cardDB.writeXml(trunk);
