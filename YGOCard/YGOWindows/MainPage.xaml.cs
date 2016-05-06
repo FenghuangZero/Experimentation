@@ -26,7 +26,7 @@ namespace YGOWindows
     public sealed partial class MainPage : Page
     {
         Card[] trunk = new Card[12273];
-        XmlHandler cardDB = new XmlHandler();
+        DBHandler cardDB = new DBHandler();
         
         /// <summary>
         /// Initializes the page.

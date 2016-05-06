@@ -26,9 +26,6 @@ namespace YGOShared
         public string CardText { get; set; }
         public bool FaceUp { get; set; }
         public bool Horizontal { get; set; }
-        public string Location { get; set; }
-
-
 
         /// <summary>
         /// Initializes the class with default values.

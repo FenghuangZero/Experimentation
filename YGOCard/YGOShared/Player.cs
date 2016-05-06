@@ -29,11 +29,8 @@ namespace YGOShared
         {
             Name = "";
             LifePoints = 8000;
-            for (var i = 0; i < 5; i++)
-            {
-                MonsterZone[i] = null;
-                SpellZone[i] = null;
-            }
+            MonsterZone.Clear();
+            SpellZone.Clear();
         }
 
         /// <summary>
@@ -44,11 +41,8 @@ namespace YGOShared
         {
             Name = n;
             LifePoints = 8000;
-            for (var i = 0; i < 5; i++)
-            {
-                MonsterZone[i] = null;
-                SpellZone[i] = null;
-            }
+            MonsterZone.Clear();
+            SpellZone.Clear();
         }
     }
 
@@ -78,15 +72,39 @@ namespace YGOShared
             }
         }
 
+        public static void Shuffle<T>(this Queue<T> queue)
+        {
+            var rng = new Random();
+            var list = new List<T>();
+            for (var i = 0; i < queue.Count; i++)
+                list.Add(queue.Dequeue());
+
+            int n = list.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                T value = list[k];
+                list[k] = list[n];
+                list[n] = value;
+                queue.Enqueue(list[n]);
+            }
+            
+        }
+
         public static void draw(this Player p)
         {
             p.Hand.Add(p.MainDeck.Dequeue());
+            Debug.WriteLine("{0} drew {1}", p.Name, p.Hand.Last().Name);
         }
 
         public static void draw(this Player p, int n)
         {
             for (var i = 0; i < n; i++)
+            {
                 p.Hand.Add(p.MainDeck.Dequeue());
+                Debug.WriteLine("{0} drew {1}", p.Name, p.Hand.Last().Name);
+            }
         }
 
         public static void discard(this Player p, List<Card> source, Card c)

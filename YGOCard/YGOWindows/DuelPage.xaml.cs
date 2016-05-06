@@ -26,7 +26,7 @@ namespace YGOWindows
     public sealed partial class DuelPage : Page
     {
         Card[] trunk = new Card[12273];
-        XmlHandler cardDB = new XmlHandler();
+        DBHandler cardDB = new DBHandler();
         public async void demo()
         {
 

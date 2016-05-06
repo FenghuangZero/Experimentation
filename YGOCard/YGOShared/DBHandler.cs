@@ -18,7 +18,7 @@ namespace YGOShared
     /// <summary>
     /// Creates an object to control the database of cards.
     /// </summary>
-    class XmlHandler
+    class DBHandler
     {
         
         Uri uri = new Uri("http://www.db.yugioh-card.com/yugiohdb/");
@@ -27,7 +27,8 @@ namespace YGOShared
         // http://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=1&sess=1&pid=NUMBER&rp=99999
         // This is the address for a card list. Replace the 'NUMBER' with an 8 digit id.
         // Starter decks use the id format 1330{series}00{set number}
-
+        int openHttpClients;
+            
 #if WINDOWS_UWP
         StorageFolder localFolder = ApplicationData.Current.LocalFolder;
 #endif
@@ -162,38 +163,44 @@ namespace YGOShared
         /// <returns></returns>
         public async Task<string> getWebsiteStringAsync(Uri u)
         {
+            while (openHttpClients > 50)
+            {
+                await Task.Delay(50);
+            }
             var httpclient = new HttpClient();
-            httpclient.Timeout = TimeSpan.FromSeconds(10);
-            string w = "";
+            openHttpClients++;
+            httpclient.Timeout = TimeSpan.FromSeconds(20);
+            var w = "";
+            var id = u.Query;
             try
             {
                 w = await httpclient.GetStringAsync(u);
             }
             catch (TaskCanceledException e)
             {
-                Debug.WriteLine(e.ToString());
-                Debug.WriteLine(u.ToString() + " failed to download. Retrying.");
+                Debug.WriteLine(id + " failed to download. Retrying.");
+                await Task.Delay(50);
                 try
                 {
                     w = await httpclient.GetStringAsync(u);
                 }
                 catch (TaskCanceledException e2)
                 {
-                    Debug.WriteLine(e2.ToString());
-                    Debug.WriteLine(u.ToString() + " failed to download. Retrying a second Time.");
+                    Debug.WriteLine(id + " failed to download. Retrying a second Time.");
+                    await Task.Delay(50);
                     try
                     {
                         w = await httpclient.GetStringAsync(u);
                     }
                     catch (TaskCanceledException e3)
                     {
-                        Debug.WriteLine(e3.ToString());
-                        Debug.WriteLine(u.ToString() + " failed to download. Skipping");
+                        Debug.WriteLine(id + " failed to download. Skipping");
                     }
                 }
             } 
             
             httpclient.Dispose();
+            openHttpClients--;
             return w;
         }
 
@@ -207,7 +214,8 @@ namespace YGOShared
             var c = new Card();
             var iuri = new Uri(uri + "card_search.action?ope=2&cid=" + id);
             var page = await getWebsiteStringAsync(iuri);
-
+            if (page != "")
+                c.ID = id;
             c.Name = extractName(page);
             if (c.Name != "")
             {
@@ -242,7 +250,6 @@ namespace YGOShared
                 }
                 catch { }
                 c.CardText = extractElement(page, "<b>Card Text</b>");
-                c.ID = id;
             }
             return c;
         }
@@ -257,7 +264,7 @@ namespace YGOShared
             StorageFile db = await localFolder.CreateFileAsync("CardDB.xml", CreationCollisionOption.ReplaceExisting);
             var database = await db.OpenStreamForWriteAsync();
 #elif CONSOLE
-            var database = new FileStream("CardDB.xml", FileMode.OpenOrCreate);
+            var database = new FileStream("CardDB.xml", FileMode.Create);
 #endif
             var writerSettings = new XmlWriterSettings();
             writerSettings.Indent = true;
@@ -352,12 +359,16 @@ namespace YGOShared
         {
             var c = new Card();
             var l = new List<Task<Card>>();
+            var dummy = new List<int>();
+            dummy = await loadDummyCardList();
 
             for (var i = s; i <= e; i++)
             {
-                if (t.Exists(x => x.ID == i) != true)
+                if (t.Exists(x => x.ID == i) != true && dummy.Exists(x => x == i) != true)
+                {
                     l.Add(downloadCard(i));
-                
+                    await Task.Delay(50);
+                }                    
             }
 
             foreach (var i in l)
@@ -365,14 +376,54 @@ namespace YGOShared
                 c = await i;
                 if (c.Name != "" && c.Name != null)
                     t.Add(c);
+                else
+                {
+                    if (c.ID != 0)
+                        dummy.Add(c.ID);
+                }
+                    
             }
+            addToDummyCardList(dummy);
             return t;
         }
+
+        private async void addToDummyCardList(List<int> dummy)
+        {
+            var name = "DummyCardList.txt";
+            var recipie = new FileStream(name, FileMode.Open);
+            var writer = new StreamWriter(recipie);
+            dummy.Sort();
+            foreach (var i in dummy)
+            {
+                await writer.WriteAsync(i.ToString());
+                await writer.WriteAsync(',');
+            }
+            writer.Flush();
+            writer.Close();
+            recipie.Close();
+        }
+
+        private async Task<List<int>> loadDummyCardList()
+        {
+            var list = new FileStream("DummyCardList.txt", FileMode.Open);
+            var reader = new StreamReader(list);
+            var read = (await reader.ReadToEndAsync()).Split(',');
+            var dummy = new List<int>();
+            foreach (var s in read)
+                if (s != "" && s != null)
+                    dummy.Add(int.Parse(s));
+            reader.Close();
+            list.Close();
+            return dummy;
+
+        }
+
         /// <summary>
         /// Initializes the object.
         /// </summary>
-        public XmlHandler()
+        public DBHandler()
         {
+            openHttpClients = 0;
         }
     }
 }

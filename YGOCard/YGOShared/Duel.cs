@@ -42,16 +42,11 @@ namespace YGOShared
             for (var i = 0; i < recipie1.Count; i++)
                 p2.MainDeck.Enqueue(recipie1.ElementAt(i));
 
-#endif
-#if CONSOLE
-            List<Card> recipie1 = d.loadDeck(t, YGOConsole.Properties.Resources.STARTER_DECK_KAIBA);
-            recipie1.Shuffle();
-            for (var i = 0; i < recipie1.Count; i++)
-                p1.MainDeck.Enqueue(recipie1.ElementAt(i));
-            List<Card> recipie2 = d.loadDeck(t, YGOConsole.Properties.Resources.STARTER_DECK_KAIBA);
-            recipie2.Shuffle();
-            for (var i = 0; i < recipie1.Count; i++)
-                p2.MainDeck.Enqueue(recipie1.ElementAt(i));
+#elif CONSOLE
+            d.saveDeck(p1, t, YGOConsole.Properties.Resources.STARTER_DECK_KAIBA);
+            d.saveDeck(p2, t, YGOConsole.Properties.Resources.STARTER_DECK_YUGI);
+            p1.MainDeck.Shuffle();
+            p2.MainDeck.Shuffle();
 #endif
             mockDuel();
         }

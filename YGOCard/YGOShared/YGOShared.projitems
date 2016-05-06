@@ -14,7 +14,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)DeckBuilder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Duel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Player.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)XmlHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DBHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)CardDB.xml">
