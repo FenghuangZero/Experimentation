@@ -21,6 +21,8 @@ namespace YGOShared
         public List<Card> MonsterZone = new List<Card>();
         public List<Card> SpellZone = new List<Card>();
         public Queue<Card> Graveyard = new Queue<Card>();
+        public bool canAttack = false;
+        public bool canSummon = false;
         
         /// <summary>
         /// Creates a new player with default life points and an empty field.
@@ -44,6 +46,7 @@ namespace YGOShared
             MonsterZone.Clear();
             SpellZone.Clear();
         }
+        
     }
 
     public static class ThreadSafeRandom
@@ -74,22 +77,12 @@ namespace YGOShared
 
         public static void Shuffle<T>(this Queue<T> queue)
         {
-            var rng = new Random();
             var list = new List<T>();
-            for (var i = 0; i < queue.Count; i++)
-                list.Add(queue.Dequeue());
-
-            int n = list.Count;
-            while (n > 1)
-            {
-                n--;
-                int k = rng.Next(n + 1);
-                T value = list[k];
-                list[k] = list[n];
-                list[n] = value;
-                queue.Enqueue(list[n]);
-            }
-            
+            list = queue.ToList();
+            list.Shuffle();
+            queue.Clear();
+            for (int i = 0; i < list.Count; i++)
+                queue.Enqueue(list.ElementAt(i));
         }
 
         public static void draw(this Player p)
@@ -119,6 +112,7 @@ namespace YGOShared
             c.FaceUp = true;
             c.Horizontal = false;
             p.MonsterZone.Add(c);
+            Debug.WriteLine("{0} has summoned {1}.", p.Name, c.Name);
         }
 
         public static void set(this Player p, List<Card> source, Card c)
@@ -127,6 +121,7 @@ namespace YGOShared
             c.FaceUp = false;
             c.Horizontal = true;
             p.MonsterZone.Add(c);
+            Debug.WriteLine("{0} has summoned a monster face down.", p.Name);
         }
 
         public static void switchPosition(this Card c)
@@ -142,28 +137,33 @@ namespace YGOShared
             }
         }
 
-        public static void attackPlayer(this Player p, Card a, Card d, Player dp)
+        public static void attackPlayer(this Player p, Card a, Player dp)
         {
             dp.LifePoints -= a.ATK;
+            Debug.WriteLine("{0} attacks {1} directly with {2}", p.Name, dp.Name, a.Name);
         }
 
         public static void attackMonster(this Player p, Card a, Card d, Player dp)
         {
+            Debug.WriteLine("{0} attacks {1} with {2}", p.Name, d.Name, a.Name);
             switch (d.Horizontal)
             {
                 case false:
                     if (a.ATK > d.ATK)
                     {
+                        Debug.WriteLine("{0} was destroyed.", d);
                         dp.LifePoints -= a.ATK - d.ATK;
                         dp.discard(dp.MonsterZone, d);
                     }
                     else if (a.ATK == d.ATK)
                     {
+                        Debug.WriteLine("Both monsters were destroyed.");
                         p.discard(p.MonsterZone, a);
                         dp.discard(dp.MonsterZone, d);
                     }
                     else
                     {
+                        Debug.WriteLine("{0} was destroyed.", a);
                         p.LifePoints -= d.ATK - a.ATK;
                         p.discard(p.MonsterZone, a);
                     }
@@ -171,12 +171,16 @@ namespace YGOShared
                 case true:
                     if (a.ATK > d.DEF)
                     {
+                        Debug.WriteLine("{0} was destroyed.", d);
                         p.discard(p.MonsterZone, d);
                     }
                     else if (a.ATK == d.DEF)
-                    { }
+                    {
+                        Debug.WriteLine("{0} survived the attack.", d);
+                    }
                     else
                     {
+                        Debug.WriteLine("{0} survived the attack.", d);
                         p.LifePoints -= d.DEF - a.ATK;
                     }
                     break;

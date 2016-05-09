@@ -17,8 +17,10 @@ namespace YGOShared
     /// </summary>
     class Duel
     {
-        Player p1 = new Player("Player 1");
-        Player p2 = new Player("Player 2");
+        Player p1 = new Player("Kaiba");
+        Player p2 = new Player("Yugi");
+        int Turns = 0;
+        string Phase = "";
 
         /// <summary>
         /// Assigns decks to each player.
@@ -56,13 +58,70 @@ namespace YGOShared
         /// </summary>
         public void mockDuel()
         {
-            p2.draw(5);
             p1.draw(5);
-
+            p2.draw(5);
+            turn(p1, p2);
+            turn(p2, p1);
             
-            Debug.WriteLine("Player 1 has drawn Exodia. Player 1 Wins.");
+            Debug.WriteLine("{0} has drawn Exodia.{0} Wins.", p2.Name);
         }
         
+        public void turn(Player p, Player o)
+        {
+            Turns++;
+            Debug.WriteLine("{0}'s turn.", p.Name);
+            if (Turns > 1)
+                p.canAttack = true;
+            Phase = "Draw Phase";
+            Debug.WriteLine(Phase);
+            p.draw();
+            Phase = "Standby Phase";
+            Debug.WriteLine(Phase);
+            Phase = "Main Phase 1";
+            Debug.WriteLine(Phase);
+            p.canSummon = true;
+            var normalSummonable = p.Hand.Where(m => m.MonsterType != "" && m.Level < 5);
+            var tributeSummonable = p.Hand.Where(m => m.MonsterType != "" && m.Level > 4);
+            Debug.WriteLine("{0} can summon: ", p.Name);
+            foreach (var m in normalSummonable)
+                Debug.WriteLine(m.Name);
+            if (p.canAttack == true)
+            {
+                normalSummonable.OrderBy(m => m.ATK);
+                p.summon(p.Hand, normalSummonable.First());
+                p.canSummon = false;
+            }
+            else
+            {
+                normalSummonable.OrderBy(m => m.DEF);
+                p.set(p.Hand, normalSummonable.First());
+                p.canSummon = false;
+            }
+            Phase = "Battle Phase";
+            
+            if (p.canAttack == true)
+            {                
+                foreach (var m in p.MonsterZone)
+                {
+                    var weakerAtkPosOpp = o.MonsterZone.Where(x => x.ATK < m.ATK && x.Horizontal == false);
+                    var weakerDefPosOpp = o.MonsterZone.Where(x => x.DEF < m.ATK && x.Horizontal == true);
+                    weakerAtkPosOpp.OrderBy(x => x.ATK);
+                    weakerAtkPosOpp.OrderBy(x => x.DEF);
+                    if (weakerAtkPosOpp.Any())
+                        p.attackMonster(m, weakerAtkPosOpp.First(), o);
+                    else if (weakerDefPosOpp.Any())
+                        p.attackMonster(m, weakerDefPosOpp.First(), o);
+                    else if (o.MonsterZone.Any() == false)
+                        p.attackPlayer(m, o);
+                }
+            }
+            Phase = "Main Phase 2";
+            Debug.WriteLine(Phase);
+            Phase = "End Phase";
+            Debug.WriteLine(Phase);
+        }
+
+
         /// <summary>
         /// Initializes the object.
         /// </summary>

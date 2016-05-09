@@ -21,7 +21,7 @@ namespace YGOShared
     class DBHandler
     {
         
-        Uri uri = new Uri("http://www.db.yugioh-card.com/yugiohdb/");
+        static Uri uri = new Uri("http://www.db.yugioh-card.com/yugiohdb/");
         // http://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=NUMBER
         // This is the address to list individual cards. Replace 'NUMBER' with any int from 4007 to 12272 inclusive
         // http://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=1&sess=1&pid=NUMBER&rp=99999
@@ -38,7 +38,7 @@ namespace YGOShared
         /// </summary>
         /// <param name="t">The object which will store the database while loaded.</param>
         /// <returns></returns>
-        public async Task<List<Card>> loadXml(List<Card> t)
+        /*public async Task<List<Card>> loadXmlAsync(List<Card> t)
         {
 #if WINDOWS_UWP
             StorageFile db = await localFolder.GetFileAsync("CardDB.xml");
@@ -67,7 +67,35 @@ namespace YGOShared
                 t.Add(c);
             }
             return t;
+        }*/
+
+        public List<Card> loadXml()
+        {
+            var t = new List<Card>();
+            var doc = XDocument.Load("CardDB.xml");
+            var dbCardDB = doc.Elements();
+
+            foreach (var dbc in dbCardDB.Elements())
+            {
+                var i = int.Parse(dbc.FirstAttribute.Value);
+                Card c = new Card();
+                c.ID = i;
+                c.Name = dbc.Descendants("Name").FirstOrDefault().Value;
+                c.Attribute = dbc.Descendants("Attribute").FirstOrDefault().Value;
+                c.Level = int.Parse(dbc.Descendants("Level").FirstOrDefault().Value);
+                c.Rank = int.Parse(dbc.Descendants("Rank").FirstOrDefault().Value);
+                c.PendulumScale = int.Parse(dbc.Descendants("Pendulum_Scale").FirstOrDefault().Value);
+                c.PendulumEffect = dbc.Descendants("Pendulum_Effect").FirstOrDefault().Value;
+                c.MonsterType = dbc.Descendants("Monster_Type").FirstOrDefault().Value;
+                c.CardType = dbc.Descendants("Card_Type").FirstOrDefault().Value;
+                c.ATK = int.Parse(dbc.Descendants("ATK").FirstOrDefault().Value);
+                c.DEF = int.Parse(dbc.Descendants("DEF").FirstOrDefault().Value);
+                c.CardText = dbc.Descendants("Card_Text").FirstOrDefault().Value;
+                t.Add(c);
+            }
+            return t;
         }
+        
 
         /// <summary>
         /// Reads the HTML page and extracts the header.
