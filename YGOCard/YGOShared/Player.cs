@@ -88,7 +88,7 @@ namespace YGOShared
         public static void draw(this Player p)
         {
             p.Hand.Add(p.MainDeck.Dequeue());
-            Debug.WriteLine("{0} drew {1}", p.Name, p.Hand.Last().Name);
+            Debug.WriteLine("{0} drew {1}", p.Name, p.Hand.Last().nameOnField);
         }
 
         public static void draw(this Player p, int n)
@@ -96,7 +96,7 @@ namespace YGOShared
             for (var i = 0; i < n; i++)
             {
                 p.Hand.Add(p.MainDeck.Dequeue());
-                Debug.WriteLine("{0} drew {1}", p.Name, p.Hand.Last().Name);
+                Debug.WriteLine("{0} drew {1}", p.Name, p.Hand.Last().nameOnField);
             }
         }
 
@@ -112,7 +112,7 @@ namespace YGOShared
             c.FaceUp = true;
             c.Horizontal = false;
             p.MonsterZone.Add(c);
-            Debug.WriteLine("{0} has summoned {1}.", p.Name, c.Name);
+            Debug.WriteLine("{0} has summoned {1}.", p.Name, c.nameOnField);
         }
 
         public static void set(this Player p, List<Card> source, Card c)
@@ -139,23 +139,24 @@ namespace YGOShared
 
         public static void attackPlayer(this Player p, Card a, Player dp)
         {
-            dp.LifePoints -= a.ATK;
-            Debug.WriteLine("{0} attacks {1} directly with {2}", p.Name, dp.Name, a.Name);
+            dp.LifePoints -= a.atkOnField;
+            Debug.WriteLine("{0} attacks {1} directly with {2}", p.Name, dp.Name, a.nameOnField);
         }
 
         public static void attackMonster(this Player p, Card a, Card d, Player dp)
         {
-            Debug.WriteLine("{0} attacks {1} with {2}", p.Name, d.Name, a.Name);
+            Debug.WriteLine("{0} attacks {1} with {2}", p.Name, d.nameOnField, a.nameOnField);
+            d.Flip();
             switch (d.Horizontal)
             {
                 case false:
-                    if (a.ATK > d.ATK)
+                    if (a.atkOnField > d.atkOnField)
                     {
-                        Debug.WriteLine("{0} was destroyed.", d);
-                        dp.LifePoints -= a.ATK - d.ATK;
+                        Debug.WriteLine("{0} was destroyed.", d.nameOnField);
+                        dp.LifePoints -= a.atkOnField - d.atkOnField;
                         dp.discard(dp.MonsterZone, d);
                     }
-                    else if (a.ATK == d.ATK)
+                    else if (a.atkOnField == d.atkOnField)
                     {
                         Debug.WriteLine("Both monsters were destroyed.");
                         p.discard(p.MonsterZone, a);
@@ -163,30 +164,38 @@ namespace YGOShared
                     }
                     else
                     {
-                        Debug.WriteLine("{0} was destroyed.", a);
-                        p.LifePoints -= d.ATK - a.ATK;
+                        Debug.WriteLine("{0} was destroyed.", a.nameOnField);
+                        p.LifePoints -= d.atkOnField - a.atkOnField;
                         p.discard(p.MonsterZone, a);
                     }
                     break;
                 case true:
-                    if (a.ATK > d.DEF)
+                    if (a.atkOnField > d.defOnField)
                     {
-                        Debug.WriteLine("{0} was destroyed.", d);
+                        Debug.WriteLine("{0} was destroyed.", d.nameOnField);
                         p.discard(p.MonsterZone, d);
                     }
-                    else if (a.ATK == d.DEF)
+                    else if (a.atkOnField == d.defOnField)
                     {
-                        Debug.WriteLine("{0} survived the attack.", d);
+                        Debug.WriteLine("{0} survived the attack.", d.nameOnField);
                     }
                     else
                     {
-                        Debug.WriteLine("{0} survived the attack.", d);
-                        p.LifePoints -= d.DEF - a.ATK;
+                        Debug.WriteLine("{0} survived the attack.", d.nameOnField);
+                        p.LifePoints -= d.atkOnField - a.atkOnField;
                     }
                     break;
             }
         }
 
+        public static void Flip(this Card c)
+        {
+            if (c.FaceUp == false)
+            {
+                c.FaceUp = true;
+                Debug.WriteLine("{0} was flipped face up.", c.nameOnField);
+            }
+        }
     }
 
 }

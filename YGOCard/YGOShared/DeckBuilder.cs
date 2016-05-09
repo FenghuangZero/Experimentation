@@ -13,12 +13,12 @@ namespace YGOShared
         
         public void addCardtoDeck(Card c)
         {
-            Recipie.Add(c.ID);
+            Recipie.Add(c.id);
         }
 
         public void removeCardfromDeck(Card c)
         {
-            Recipie.Remove(c.ID);
+            Recipie.Remove(c.id);
         }
 
         public void emptyRecipie()
@@ -67,9 +67,9 @@ namespace YGOShared
         {
             foreach (int i in Recipie)
             {
-                var query = from c in t where c.ID == i select c;
+                var query = from c in t where c.id == i select c;
                 var card = query.FirstOrDefault();
-                if (card.CardType.Contains("Fusion") || card.CardType.Contains("Syncro") || card.CardType.Contains("Xyz"))
+                if (card.cardType.Contains("Fusion") || card.cardType.Contains("Syncro") || card.cardType.Contains("Xyz"))
                     p.ExtraDeck.Add(card);
                 else
                     p.MainDeck.Enqueue(card);

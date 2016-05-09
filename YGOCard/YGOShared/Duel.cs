@@ -80,20 +80,20 @@ namespace YGOShared
             Phase = "Main Phase 1";
             Debug.WriteLine(Phase);
             p.canSummon = true;
-            var normalSummonable = p.Hand.Where(m => m.MonsterType != "" && m.Level < 5);
-            var tributeSummonable = p.Hand.Where(m => m.MonsterType != "" && m.Level > 4);
+            var normalSummonable = p.Hand.Where(m => m.monsterType != "" && m.level < 5);
+            var tributeSummonable = p.Hand.Where(m => m.monsterType != "" && m.level > 4);
             Debug.WriteLine("{0} can summon: ", p.Name);
             foreach (var m in normalSummonable)
-                Debug.WriteLine(m.Name);
+                Debug.WriteLine(m.nameOnField);
             if (p.canAttack == true)
             {
-                normalSummonable.OrderBy(m => m.ATK);
+                normalSummonable.OrderBy(m => m.atkOnField);
                 p.summon(p.Hand, normalSummonable.First());
                 p.canSummon = false;
             }
             else
             {
-                normalSummonable.OrderBy(m => m.DEF);
+                normalSummonable.OrderBy(m => m.defOnField);
                 p.set(p.Hand, normalSummonable.First());
                 p.canSummon = false;
             }
@@ -103,10 +103,10 @@ namespace YGOShared
             {                
                 foreach (var m in p.MonsterZone)
                 {
-                    var weakerAtkPosOpp = o.MonsterZone.Where(x => x.ATK < m.ATK && x.Horizontal == false);
-                    var weakerDefPosOpp = o.MonsterZone.Where(x => x.DEF < m.ATK && x.Horizontal == true);
-                    weakerAtkPosOpp.OrderBy(x => x.ATK);
-                    weakerAtkPosOpp.OrderBy(x => x.DEF);
+                    var weakerAtkPosOpp = o.MonsterZone.Where(x => x.atkOnField < m.atkOnField && x.Horizontal == false);
+                    var weakerDefPosOpp = o.MonsterZone.Where(x => x.defOnField < m.defOnField && x.Horizontal == true);
+                    weakerAtkPosOpp.OrderBy(x => x.atkOnField);
+                    weakerAtkPosOpp.OrderBy(x => x.defOnField);
                     if (weakerAtkPosOpp.Any())
                         p.attackMonster(m, weakerAtkPosOpp.First(), o);
                     else if (weakerDefPosOpp.Any())

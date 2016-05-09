@@ -77,20 +77,20 @@ namespace YGOShared
 
             foreach (var dbc in dbCardDB.Elements())
             {
-                var i = int.Parse(dbc.FirstAttribute.Value);
-                Card c = new Card();
-                c.ID = i;
-                c.Name = dbc.Descendants("Name").FirstOrDefault().Value;
-                c.Attribute = dbc.Descendants("Attribute").FirstOrDefault().Value;
-                c.Level = int.Parse(dbc.Descendants("Level").FirstOrDefault().Value);
-                c.Rank = int.Parse(dbc.Descendants("Rank").FirstOrDefault().Value);
-                c.PendulumScale = int.Parse(dbc.Descendants("Pendulum_Scale").FirstOrDefault().Value);
-                c.PendulumEffect = dbc.Descendants("Pendulum_Effect").FirstOrDefault().Value;
-                c.MonsterType = dbc.Descendants("Monster_Type").FirstOrDefault().Value;
-                c.CardType = dbc.Descendants("Card_Type").FirstOrDefault().Value;
-                c.ATK = int.Parse(dbc.Descendants("ATK").FirstOrDefault().Value);
-                c.DEF = int.Parse(dbc.Descendants("DEF").FirstOrDefault().Value);
-                c.CardText = dbc.Descendants("Card_Text").FirstOrDefault().Value;
+                var id /*c.ID*/ = int.Parse(dbc.FirstAttribute.Value); ;
+                var name /*c.Name*/ = dbc.Descendants("Name").FirstOrDefault().Value;
+                var attribute /*c.Attribute*/ = dbc.Descendants("Attribute").FirstOrDefault().Value;
+                var icon /*Icon*/ = dbc.Descendants("Icon").FirstOrDefault().Value;
+                var level /*c.Level*/ = int.Parse(dbc.Descendants("Level").FirstOrDefault().Value);
+                var rank /*c.Rank*/ = int.Parse(dbc.Descendants("Rank").FirstOrDefault().Value);
+                var penScale /*c.PendulumScale*/ = int.Parse(dbc.Descendants("Pendulum_Scale").FirstOrDefault().Value);
+                var penEff /*c.PendulumEffect*/ = dbc.Descendants("Pendulum_Effect").FirstOrDefault().Value;
+                var monType /*c.MonsterType*/ = dbc.Descendants("Monster_Type").FirstOrDefault().Value;
+                var cardType /*c.CardType*/ = dbc.Descendants("Card_Type").FirstOrDefault().Value;
+                var atk /*c.ATK*/ = int.Parse(dbc.Descendants("ATK").FirstOrDefault().Value);
+                var def /*c.DEF*/ = int.Parse(dbc.Descendants("DEF").FirstOrDefault().Value);
+                var cardText /*c.CardText*/ = dbc.Descendants("Card_Text").FirstOrDefault().Value;
+                Card c = new Card(id,name,attribute,icon,level,rank,penScale,penEff,monType,cardType,atk,def,cardText);
                 t.Add(c);
             }
             return t;
@@ -239,47 +239,58 @@ namespace YGOShared
         /// <returns></returns>
         public async Task<Card> downloadCard(int id)
         {
-            var c = new Card();
+            
             var iuri = new Uri(uri + "card_search.action?ope=2&cid=" + id);
             var page = await getWebsiteStringAsync(iuri);
-            if (page != "")
-                c.ID = id;
-            c.Name = extractName(page);
-            if (c.Name != "")
+            //if (page != "")
+                /*c.ID = id;*/
+            var name /*c.Name*/ = extractName(page);
+            if (name != "")
             {
-                c.Attribute = extractElement(page, "<b>Attribute</b>");
-                c.Icon = extractElement(page, "<b>Icon</b>");
+                var attribute /*c.Attribute*/ = extractElement(page, "<b>Attribute</b>");
+                var icon /*c.Icon*/ = extractElement(page, "<b>Icon</b>");
+                var level = 0;
                 try
                 {
-                    c.Level = int.Parse(extractElement(page, "<b>Level</b>"));
+                    level /*c.Level*/ = int.Parse(extractElement(page, "<b>Level</b>"));
                 }
                 catch { }
+                var rank = 0;
                 try
                 {
-                    c.Rank = int.Parse(extractElement(page, "<b>Rank</b>"));
+                    rank /*c.Rank*/ = int.Parse(extractElement(page, "<b>Rank</b>"));
                 }
                 catch { }
+                var penScale = 0;
                 try
                 {
-                    c.PendulumScale = int.Parse(extractElement(page, "<b>Pendulum Scale</b>"));
+                    penScale /*c.PendulumScale*/ = int.Parse(extractElement(page, "<b>Pendulum Scale</b>"));
                 }
                 catch { }
-                c.PendulumEffect = extractElement(page, "<b>Pendulum Effect</b>");
-                c.MonsterType = extractElement(page, "<b>Monster Type</b>");
-                c.CardType = extractElement(page, "<b>Card Type</b>");
+                var penEff /*c.PendulumEffect*/ = extractElement(page, "<b>Pendulum Effect</b>");
+                var monType /*c.MonsterType*/ = extractElement(page, "<b>Monster Type</b>");
+                var cardType /*c.CardType*/ = extractElement(page, "<b>Card Type</b>");
+                var atk = 0;
                 try
                 {
-                    c.ATK = int.Parse(extractElement(page, "<b>ATK</b>"));
+                    atk /*c.ATK*/ = int.Parse(extractElement(page, "<b>ATK</b>"));
                 }
                 catch { }
+                var def = 0;
                 try
                 {
-                    c.DEF = int.Parse(extractElement(page, "<b>DEF</b>"));
+                    def /*c.DEF*/ = int.Parse(extractElement(page, "<b>DEF</b>"));
                 }
                 catch { }
-                c.CardText = extractElement(page, "<b>Card Text</b>");
+                var cardText /*c.CardText*/ = extractElement(page, "<b>Card Text</b>");
+                return new Card(id, name, attribute, icon, level, rank, penScale, penEff, monType, cardType, atk, def, cardText);
             }
-            return c;
+            else
+            {
+                if (page != "")
+                    return new Card(id);
+                else return new Card();
+            }
         }
 
         /// <summary>
@@ -308,19 +319,19 @@ namespace YGOShared
                 if (c != null)
                 {
                     writer.WriteStartElement("Card");
-                    writer.WriteAttributeString("id", c.ID.ToString());
-                    writer.WriteElementString("Name", c.Name);
-                    writer.WriteElementString("Attribute", c.Attribute);
-                    writer.WriteElementString("Icon", c.Icon);
-                    writer.WriteElementString("Level", c.Level.ToString());
-                    writer.WriteElementString("Rank", c.Rank.ToString());
-                    writer.WriteElementString("Pendulum_Scale", c.PendulumScale.ToString());
-                    writer.WriteElementString("Pendulum_Effect", c.PendulumEffect);
-                    writer.WriteElementString("Monster_Type", c.MonsterType);
-                    writer.WriteElementString("Card_Type", c.CardType);
-                    writer.WriteElementString("ATK", c.ATK.ToString());
-                    writer.WriteElementString("DEF", c.DEF.ToString());
-                    writer.WriteElementString("Card_Text", c.CardText);
+                    writer.WriteAttributeString("id", c.id.ToString());
+                    writer.WriteElementString("Name", c.nameOnField);
+                    writer.WriteElementString("Attribute", c.attribute);
+                    writer.WriteElementString("Icon", c.icon);
+                    writer.WriteElementString("Level", c.level.ToString());
+                    writer.WriteElementString("Rank", c.rank.ToString());
+                    writer.WriteElementString("Pendulum_Scale", c.pendulumScale.ToString());
+                    writer.WriteElementString("Pendulum_Effect", c.pendulumEffect);
+                    writer.WriteElementString("Monster_Type", c.monsterType);
+                    writer.WriteElementString("Card_Type", c.cardType);
+                    writer.WriteElementString("ATK", c.atkOnField.ToString());
+                    writer.WriteElementString("DEF", c.defOnField.ToString());
+                    writer.WriteElementString("Card_Text", c.cardText);
                     writer.WriteEndElement();
                 }
 
@@ -392,7 +403,7 @@ namespace YGOShared
 
             for (var i = s; i <= e; i++)
             {
-                if (t.Exists(x => x.ID == i) != true && dummy.Exists(x => x == i) != true)
+                if (t.Exists(x => x.id == i) != true && dummy.Exists(x => x == i) != true)
                 {
                     l.Add(downloadCard(i));
                     await Task.Delay(50);
@@ -402,12 +413,12 @@ namespace YGOShared
             foreach (var i in l)
             {
                 c = await i;
-                if (c.Name != "" && c.Name != null)
+                if (c.nameOnField != "" && c.nameOnField != null)
                     t.Add(c);
                 else
                 {
-                    if (c.ID != 0)
-                        dummy.Add(c.ID);
+                    if (c.id != 0)
+                        dummy.Add(c.id);
                 }
                     
             }
