@@ -15,23 +15,20 @@ using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using Windows.Storage;
 using YGOShared;
+using YGOWindows;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace YGOCardGame
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// A page which displays the current status of a duel in progress.
     /// </summary>
     public sealed partial class DuelPage : Page
     {
-        Card[] trunk = new Card[12273];
-        DBHandler cardDB = new DBHandler();
         public async void demo()
         {
-
-            await cardDB.loadXml(trunk);
-            var gameOn = new Duel(trunk);
+            var awr = new AppwideResources();
+            var gameOn = new Duel(awr.trunk);
         }
         public DuelPage()
         {

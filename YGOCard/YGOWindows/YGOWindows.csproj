@@ -96,6 +96,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AppwideResources.cs" />
     <Compile Include="DeckBuilder.xaml.cs">
       <DependentUpon>DeckBuilder.xaml</DependentUpon>
     </Compile>

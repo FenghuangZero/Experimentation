@@ -23,9 +23,9 @@ namespace YGOShared
         string Phase = "";
 
         /// <summary>
-        /// Assigns decks to each player.
+        /// Assigns prebuilt decks to each player, for use in the AI demonstration.
         /// </summary>
-        /// <param name="t">The card database.</param>
+        /// <param name="t">The masterlist of Cards loaded from the Xml database.</param>
         public async void loadDeck(List<Card> t)
         {
             var d = new DeckBuilder();
@@ -54,7 +54,7 @@ namespace YGOShared
         }
 
         /// <summary>
-        /// Performs an example duel for test purposes.
+        /// Performs an example duel for test purposes, using AI controlled players.
         /// </summary>
         public void mockDuel()
         {
@@ -66,6 +66,11 @@ namespace YGOShared
             Debug.WriteLine("{0} has drawn Exodia.{0} Wins.", p2.Name);
         }
         
+        /// <summary>
+        /// Carries out a single turn.
+        /// </summary>
+        /// <param name="p">The player whose turn is currently in progress.</param>
+        /// <param name="o">The opponent of the player who is currently taking their turn.</param>
         public void turn(Player p, Player o)
         {
             Turns++;
@@ -123,15 +128,15 @@ namespace YGOShared
 
 
         /// <summary>
-        /// Initializes the object.
+        /// Initializes the class.
         /// </summary>
         public Duel()
         { }
 
         /// <summary>
-        /// Initializes the object using the card database and begins a duel.
+        /// Initializes the class using the card database and begins a demonstration duel.
         /// </summary>
-        /// <param name="t"></param>
+        /// <param name="t">The masterlist of Cards loaded from the Xml database.</param>
         public Duel(List<Card> t)
         {
             loadDeck(t);

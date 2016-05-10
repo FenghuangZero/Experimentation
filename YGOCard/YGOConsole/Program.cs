@@ -21,7 +21,7 @@ namespace YGOCardGame
     {
         private static DBHandler cardDB = new DBHandler();
         List<Card> Trunk = new List<Card>(cardDB.loadXml());
-        public List<Card> trunk { get { return Trunk; } set { Trunk = value; } }
+        public List<Card> trunk { get { return Trunk; } }
         
         /// <summary>
         /// Runs a series of test methods.

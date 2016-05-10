@@ -16,18 +16,14 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using YGOShared;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace YGOCardGame
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// The main menu page of the App.
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        Card[] trunk = new Card[12273];
-        DBHandler cardDB = new DBHandler();
-        
         /// <summary>
         /// Initializes the page.
         /// </summary>
@@ -35,12 +31,10 @@ namespace YGOCardGame
         {
             InitializeComponent();
         }
-
+        
         private void campaign_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(DuelPage));
-            // await cardDB.loadXml(trunk);
-            // var gameOn = new Duel(trunk);
         }
 
 
