@@ -45,8 +45,8 @@ namespace YGOShared
                 p2.MainDeck.Enqueue(recipie1.ElementAt(i));
 
 #elif CONSOLE
-            d.saveDeck(p1, t, YGOConsole.Properties.Resources.STARTER_DECK_KAIBA);
-            d.saveDeck(p2, t, YGOConsole.Properties.Resources.STARTER_DECK_YUGI);
+            d.saveDeck(p1, t, YGOCardGame.Properties.Resources.STARTER_DECK_KAIBA);
+            d.saveDeck(p2, t, YGOCardGame.Properties.Resources.STARTER_DECK_YUGI);
             p1.MainDeck.Shuffle();
             p2.MainDeck.Shuffle();
 #endif

@@ -14,7 +14,8 @@ using System.IO;
 namespace YGOCardGame
 {
     /// <summary>
-    /// Provides application-specific behavior to supplement the default Program class.
+    /// Provides application-specific behavior to supplement the default Program class. This is primariliy for feature testing in a linear fashion before
+    /// implementation of a graphical user interface. Creates a list of Card objects from an Xml file, to be used throughout the program.
     /// </summary>
     class Program
     {
@@ -22,6 +23,9 @@ namespace YGOCardGame
         List<Card> Trunk = new List<Card>(cardDB.loadXml());
         public List<Card> trunk { get { return Trunk; } set { Trunk = value; } }
         
+        /// <summary>
+        /// Runs a series of test methods.
+        /// </summary>
         public void demo()
         {
             var gameOn = new Duel(trunk);
@@ -33,7 +37,7 @@ namespace YGOCardGame
         }
 
         /// <summary>
-        /// Initializes the program. This is the first line of authored code executed.
+        /// Initializes the program with a windows console.
         /// </summary>
         static void Main()
         {

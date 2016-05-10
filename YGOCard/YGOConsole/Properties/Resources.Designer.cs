@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace YGOConsole.Properties {
+namespace YGOCardGame.Properties {
     using System;
     
     

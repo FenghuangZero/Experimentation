@@ -34,11 +34,11 @@ namespace YGOShared
 #endif
       
         /// <summary>
+        /// An asyncronous implementation of the loadXML() method made for Universal Windows App compatability.
         /// Loads the database from a pre-existing Xml file.
         /// </summary>
-        /// <param name="t">The object which will store the database while loaded.</param>
         /// <returns></returns>
-        /*public async Task<List<Card>> loadXmlAsync(List<Card> t)
+        public async Task<List<Card>> loadXmlAsync()
         {
 #if WINDOWS_UWP
             StorageFile db = await localFolder.GetFileAsync("CardDB.xml");
@@ -46,28 +46,29 @@ namespace YGOShared
 #elif CONSOLE
             var doc = XDocument.Load("CardDB.xml");
 #endif
+            var t = new List<Card>();
             var dbCardDB = doc.Elements();
 
             foreach (var dbc in dbCardDB.Elements())
             {
-                var i = int.Parse(dbc.FirstAttribute.Value);
-                Card c = new Card();
-                c.ID = i;
-                c.Name = dbc.Descendants("Name").FirstOrDefault().Value;
-                c.Attribute = dbc.Descendants("Attribute").FirstOrDefault().Value;
-                c.Level = int.Parse(dbc.Descendants("Level").FirstOrDefault().Value);
-                c.Rank = int.Parse(dbc.Descendants("Rank").FirstOrDefault().Value);
-                c.PendulumScale = int.Parse(dbc.Descendants("Pendulum_Scale").FirstOrDefault().Value);
-                c.PendulumEffect = dbc.Descendants("Pendulum_Effect").FirstOrDefault().Value;
-                c.MonsterType = dbc.Descendants("Monster_Type").FirstOrDefault().Value;
-                c.CardType = dbc.Descendants("Card_Type").FirstOrDefault().Value;
-                c.ATK = int.Parse(dbc.Descendants("ATK").FirstOrDefault().Value);
-                c.DEF = int.Parse(dbc.Descendants("DEF").FirstOrDefault().Value);
-                c.CardText = dbc.Descendants("Card_Text").FirstOrDefault().Value;
+                var id = int.Parse(dbc.FirstAttribute.Value); ;
+                var name = dbc.Descendants("Name").FirstOrDefault().Value;
+                var attribute = dbc.Descendants("Attribute").FirstOrDefault().Value;
+                var icon = dbc.Descendants("Icon").FirstOrDefault().Value;
+                var level = int.Parse(dbc.Descendants("Level").FirstOrDefault().Value);
+                var rank = int.Parse(dbc.Descendants("Rank").FirstOrDefault().Value);
+                var penScale = int.Parse(dbc.Descendants("Pendulum_Scale").FirstOrDefault().Value);
+                var penEff = dbc.Descendants("Pendulum_Effect").FirstOrDefault().Value;
+                var monType = dbc.Descendants("Monster_Type").FirstOrDefault().Value;
+                var cardType = dbc.Descendants("Card_Type").FirstOrDefault().Value;
+                var atk = int.Parse(dbc.Descendants("ATK").FirstOrDefault().Value);
+                var def = int.Parse(dbc.Descendants("DEF").FirstOrDefault().Value);
+                var cardText = dbc.Descendants("Card_Text").FirstOrDefault().Value;
+                Card c = new Card(id, name, attribute, icon, level, rank, penScale, penEff, monType, cardType, atk, def, cardText);
                 t.Add(c);
             }
             return t;
-        }*/
+        }
 
         public List<Card> loadXml()
         {
@@ -77,20 +78,20 @@ namespace YGOShared
 
             foreach (var dbc in dbCardDB.Elements())
             {
-                var id /*c.ID*/ = int.Parse(dbc.FirstAttribute.Value); ;
-                var name /*c.Name*/ = dbc.Descendants("Name").FirstOrDefault().Value;
-                var attribute /*c.Attribute*/ = dbc.Descendants("Attribute").FirstOrDefault().Value;
-                var icon /*Icon*/ = dbc.Descendants("Icon").FirstOrDefault().Value;
-                var level /*c.Level*/ = int.Parse(dbc.Descendants("Level").FirstOrDefault().Value);
-                var rank /*c.Rank*/ = int.Parse(dbc.Descendants("Rank").FirstOrDefault().Value);
-                var penScale /*c.PendulumScale*/ = int.Parse(dbc.Descendants("Pendulum_Scale").FirstOrDefault().Value);
-                var penEff /*c.PendulumEffect*/ = dbc.Descendants("Pendulum_Effect").FirstOrDefault().Value;
-                var monType /*c.MonsterType*/ = dbc.Descendants("Monster_Type").FirstOrDefault().Value;
-                var cardType /*c.CardType*/ = dbc.Descendants("Card_Type").FirstOrDefault().Value;
-                var atk /*c.ATK*/ = int.Parse(dbc.Descendants("ATK").FirstOrDefault().Value);
-                var def /*c.DEF*/ = int.Parse(dbc.Descendants("DEF").FirstOrDefault().Value);
-                var cardText /*c.CardText*/ = dbc.Descendants("Card_Text").FirstOrDefault().Value;
-                Card c = new Card(id,name,attribute,icon,level,rank,penScale,penEff,monType,cardType,atk,def,cardText);
+                var id = int.Parse(dbc.FirstAttribute.Value); ;
+                var name = dbc.Descendants("Name").FirstOrDefault().Value;
+                var attribute = dbc.Descendants("Attribute").FirstOrDefault().Value;
+                var icon = dbc.Descendants("Icon").FirstOrDefault().Value;
+                var level = int.Parse(dbc.Descendants("Level").FirstOrDefault().Value);
+                var rank = int.Parse(dbc.Descendants("Rank").FirstOrDefault().Value);
+                var penScale = int.Parse(dbc.Descendants("Pendulum_Scale").FirstOrDefault().Value);
+                var penEff = dbc.Descendants("Pendulum_Effect").FirstOrDefault().Value;
+                var monType = dbc.Descendants("Monster_Type").FirstOrDefault().Value;
+                var cardType = dbc.Descendants("Card_Type").FirstOrDefault().Value;
+                var atk = int.Parse(dbc.Descendants("ATK").FirstOrDefault().Value);
+                var def = int.Parse(dbc.Descendants("DEF").FirstOrDefault().Value);
+                var cardText = dbc.Descendants("Card_Text").FirstOrDefault().Value;
+                Card c = new Card(id, name, attribute, icon, level, rank, penScale, penEff, monType, cardType, atk, def, cardText);
                 t.Add(c);
             }
             return t;
@@ -185,7 +186,8 @@ namespace YGOShared
         }
 
         /// <summary>
-        /// Queries website.
+        /// Queries website and returns a string representation of that website. Delays and a limit to the number of active queries are in place to prevent
+        /// overtaxing the website.
         /// </summary>
         /// <param name="u">Uri of the website.</param>
         /// <returns></returns>
@@ -233,7 +235,9 @@ namespace YGOShared
         }
 
         /// <summary>
-        /// Asyncronously downloads a single webpage of a card and extracts the elements into a Card object.
+        /// Asyncronously downloads a single webpage of a card and extracts the elements into a Card object. If the download of the webpage fails, a blank
+        /// card is returned. If the download succeeds but the page is empty, a blank card with the id used is returned, so that the id number can be added
+        /// to a blacklist.
         /// </summary>
         /// <param name="id">Identification number of the card.</param>
         /// <returns></returns>
@@ -242,47 +246,45 @@ namespace YGOShared
             
             var iuri = new Uri(uri + "card_search.action?ope=2&cid=" + id);
             var page = await getWebsiteStringAsync(iuri);
-            //if (page != "")
-                /*c.ID = id;*/
-            var name /*c.Name*/ = extractName(page);
+            var name = extractName(page);
             if (name != "")
             {
-                var attribute /*c.Attribute*/ = extractElement(page, "<b>Attribute</b>");
-                var icon /*c.Icon*/ = extractElement(page, "<b>Icon</b>");
+                var attribute = extractElement(page, "<b>Attribute</b>");
+                var icon = extractElement(page, "<b>Icon</b>");
                 var level = 0;
                 try
                 {
-                    level /*c.Level*/ = int.Parse(extractElement(page, "<b>Level</b>"));
+                    level = int.Parse(extractElement(page, "<b>Level</b>"));
                 }
                 catch { }
                 var rank = 0;
                 try
                 {
-                    rank /*c.Rank*/ = int.Parse(extractElement(page, "<b>Rank</b>"));
+                    rank = int.Parse(extractElement(page, "<b>Rank</b>"));
                 }
                 catch { }
                 var penScale = 0;
                 try
                 {
-                    penScale /*c.PendulumScale*/ = int.Parse(extractElement(page, "<b>Pendulum Scale</b>"));
+                    penScale = int.Parse(extractElement(page, "<b>Pendulum Scale</b>"));
                 }
                 catch { }
-                var penEff /*c.PendulumEffect*/ = extractElement(page, "<b>Pendulum Effect</b>");
-                var monType /*c.MonsterType*/ = extractElement(page, "<b>Monster Type</b>");
-                var cardType /*c.CardType*/ = extractElement(page, "<b>Card Type</b>");
+                var penEff = extractElement(page, "<b>Pendulum Effect</b>");
+                var monType = extractElement(page, "<b>Monster Type</b>");
+                var cardType = extractElement(page, "<b>Card Type</b>");
                 var atk = 0;
                 try
                 {
-                    atk /*c.ATK*/ = int.Parse(extractElement(page, "<b>ATK</b>"));
+                    atk = int.Parse(extractElement(page, "<b>ATK</b>"));
                 }
                 catch { }
                 var def = 0;
                 try
                 {
-                    def /*c.DEF*/ = int.Parse(extractElement(page, "<b>DEF</b>"));
+                    def = int.Parse(extractElement(page, "<b>DEF</b>"));
                 }
                 catch { }
-                var cardText /*c.CardText*/ = extractElement(page, "<b>Card Text</b>");
+                var cardText = extractElement(page, "<b>Card Text</b>");
                 return new Card(id, name, attribute, icon, level, rank, penScale, penEff, monType, cardType, atk, def, cardText);
             }
             else
@@ -294,7 +296,7 @@ namespace YGOShared
         }
 
         /// <summary>
-        /// Writes a Card list into an XML file.
+        /// Writes a list of Cards into an XML file. Asyncronous parameter used for Universal Windows App compatability.
         /// </summary>
         /// <param name="trunk">Array to be written.</param>
         public async void writeXml(List<Card> trunk)
@@ -342,6 +344,10 @@ namespace YGOShared
             Debug.WriteLine("Database Complete");
         }
 
+        /// <summary>
+        /// Downloads a card list (A series of card identifer numbers that can be used for a variety of purposes, such as pre-built decks).
+        /// </summary>
+        /// <param name="id"></param>
         public async void downloadCardList(int id)
         {
             var iuri = new Uri(uri + "card_search.action?ope=1&sess=1&pid=" + id + "&rp=99999");
@@ -371,6 +377,11 @@ namespace YGOShared
             writeRecipie(cardArray, listName);
         }
 
+        /// <summary>
+        /// Returns the identifier number of an individual card from a list of cards.
+        /// </summary>
+        /// <param name="webOut"></param>
+        /// <returns></returns>
         public int extractCardFromList(string webOut)
         {
             var start = webOut.IndexOf("cid=");
@@ -379,6 +390,11 @@ namespace YGOShared
             return int.Parse(webOut);
         }
 
+        /// <summary>
+        /// Writes a card list to a text file for later use.
+        /// </summary>
+        /// <param name="cards">An array of the unique identifiers of the cards to be used in the list.</param>
+        /// <param name="name">The file name of the newly created .txt file.</param>
         public void writeRecipie(int[] cards, string name)
         {
             name = name + ".txt";
@@ -393,7 +409,14 @@ namespace YGOShared
             writer.Flush();
         }
 
-
+        /// <summary>
+        /// Creates a series of tasks to download cards within a given range, to be used to update an existing database. Does not download
+        /// cards that already exist in the database or blacklist. Adds card ids to blacklist if a page returns empty.
+        /// </summary>
+        /// <param name="t">The card database to be updated.</param>
+        /// <param name="s">The lower bounds of the range of cards to be downloaded.</param>
+        /// <param name="e">The upper bounds of the range of cards to be downloaded.</param>
+        /// <returns></returns>
         public async Task<List<Card>> downloadtoList(List<Card> t, int s, int e)
         {
             var c = new Card();
@@ -426,6 +449,10 @@ namespace YGOShared
             return t;
         }
 
+        /// <summary>
+        /// Adds id numbers to a blacklist of cards.
+        /// </summary>
+        /// <param name="dummy"></param>
         private async void addToDummyCardList(List<int> dummy)
         {
             var name = "DummyCardList.txt";
@@ -442,6 +469,10 @@ namespace YGOShared
             recipie.Close();
         }
 
+        /// <summary>
+        /// Loads a blaclist of cards
+        /// </summary>
+        /// <returns>An integer list representing the blacklist.</returns>
         private async Task<List<int>> loadDummyCardList()
         {
             var list = new FileStream("DummyCardList.txt", FileMode.Open);
