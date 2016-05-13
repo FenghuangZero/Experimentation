@@ -28,10 +28,10 @@ namespace YGOShared
         // This is the address for a card list. Replace the 'NUMBER' with an 8 digit id.
         // Starter decks use the id format 1330{series}00{set number}
         int openHttpClients;
-            
+
 #if WINDOWS_UWP
         StorageFolder localFolder = ApplicationData.Current.LocalFolder;
-#endif
+
       
         /// <summary>
         /// An asyncronous implementation of the loadXML() method made for Universal Windows App compatability.
@@ -40,12 +40,10 @@ namespace YGOShared
         /// <returns></returns>
         public async Task<List<Card>> loadXmlAsync()
         {
-#if WINDOWS_UWP
+
             StorageFile db = await localFolder.GetFileAsync("CardDB.xml");
             XDocument doc = XDocument.Load(await db.OpenStreamForReadAsync());
-#elif CONSOLE
-            var doc = XDocument.Load("CardDB.xml");
-#endif
+
             var t = new List<Card>();
             var dbCardDB = doc.Elements();
 
@@ -69,6 +67,7 @@ namespace YGOShared
             }
             return t;
         }
+#endif
 
         public List<Card> loadXml()
         {
@@ -206,7 +205,7 @@ namespace YGOShared
             {
                 w = await httpclient.GetStringAsync(u);
             }
-            catch (TaskCanceledException e)
+            catch
             {
                 Debug.WriteLine(id + " failed to download. Retrying.");
                 await Task.Delay(50);
@@ -214,7 +213,7 @@ namespace YGOShared
                 {
                     w = await httpclient.GetStringAsync(u);
                 }
-                catch (TaskCanceledException e2)
+                catch
                 {
                     Debug.WriteLine(id + " failed to download. Retrying a second Time.");
                     await Task.Delay(50);
@@ -222,7 +221,7 @@ namespace YGOShared
                     {
                         w = await httpclient.GetStringAsync(u);
                     }
-                    catch (TaskCanceledException e3)
+                    catch
                     {
                         Debug.WriteLine(id + " failed to download. Skipping");
                     }
@@ -296,7 +295,7 @@ namespace YGOShared
         }
 
         /// <summary>
-        /// Writes a list of Cards into an XML file. Asyncronous parameter used for Universal Windows App compatability.
+        /// Writes a list of Cards into an XML file.
         /// </summary>
         /// <param name="trunk">Array to be written.</param>
         public async void writeXml(List<Card> trunk)
@@ -306,6 +305,7 @@ namespace YGOShared
             var database = await db.OpenStreamForWriteAsync();
 #elif CONSOLE
             var database = new FileStream("CardDB.xml", FileMode.Create);
+            await Task.Delay(1);
 #endif
             var writerSettings = new XmlWriterSettings();
             writerSettings.Indent = true;
@@ -465,8 +465,6 @@ namespace YGOShared
                 await writer.WriteAsync(',');
             }
             writer.Flush();
-            writer.Close();
-            recipie.Close();
         }
 
         /// <summary>
@@ -482,8 +480,6 @@ namespace YGOShared
             foreach (var s in read)
                 if (s != "" && s != null)
                     dummy.Add(int.Parse(s));
-            reader.Close();
-            list.Close();
             return dummy;
 
         }

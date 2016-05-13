@@ -21,6 +21,9 @@ namespace YGOCardGame
     /// </summary>
     public sealed partial class DeckBuilder : Page
     {
+        /// <summary>
+        /// Initialises the page.
+        /// </summary>
         public DeckBuilder()
         {
             this.InitializeComponent();

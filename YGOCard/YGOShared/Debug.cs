@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace YGOShared
 {
@@ -17,6 +18,7 @@ namespace YGOShared
         {
 #if CONSOLE
             Console.WriteLine(s);
+            await Task.Delay(1);
 #elif WINDOWS_UWP
             var messageDialog = new Windows.UI.Popups.MessageDialog(s);
             await messageDialog.ShowAsync();
@@ -32,6 +34,7 @@ namespace YGOShared
         {
 #if CONSOLE
             Console.WriteLine(s, a);
+            await Task.Delay(1);
 #elif WINDOWS_UWP
             s = s.Replace("{0}", a.ToString());
             var messageDialog = new Windows.UI.Popups.MessageDialog(s);
@@ -49,6 +52,7 @@ namespace YGOShared
         {
 #if CONSOLE
             Console.WriteLine(s, a, b);
+            await Task.Delay(1);
 #elif WINDOWS_UWP
             s = s.Replace("{0}", a.ToString());
             s = s.Replace("{1}", b.ToString());
@@ -68,6 +72,7 @@ namespace YGOShared
         {
 #if CONSOLE
             Console.WriteLine(s, a, b, c);
+            await Task.Delay(1);
 #elif WINDOWS_UWP
             s = s.Replace("{0}", a.ToString());
             s = s.Replace("{1}", b.ToString());
@@ -89,6 +94,7 @@ namespace YGOShared
         {
 #if CONSOLE
             Console.WriteLine(s, a, b, c, d);
+            await Task.Delay(1);
 #elif WINDOWS_UWP
             s = s.Replace("{0}", a.ToString());
             s = s.Replace("{1}", b.ToString());

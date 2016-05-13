@@ -6,6 +6,7 @@ using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
 using YGOShared;
+using System.Threading.Tasks;
 #if WINDOWS_UWP
 using Windows.Storage;
 #endif
@@ -45,6 +46,7 @@ namespace YGOShared
                 p2.MainDeck.Enqueue(recipie1.ElementAt(i));
 
 #elif CONSOLE
+            await Task.Delay(1);
             d.saveDeck(p1, t, YGOCardGame.Properties.Resources.STARTER_DECK_KAIBA);
             d.saveDeck(p2, t, YGOCardGame.Properties.Resources.STARTER_DECK_YUGI);
             p1.MainDeck.Shuffle();
@@ -60,8 +62,12 @@ namespace YGOShared
         {
             p1.draw(5);
             p2.draw(5);
-            turn(p1, p2);
-            turn(p2, p1);
+            do
+            {
+                turn(p1, p2);
+                turn(p2, p1);
+            }
+            while (Turns < 20);
             
             Debug.WriteLine("{0} has drawn Exodia.{0} Wins.", p2.Name);
         }
@@ -77,35 +83,69 @@ namespace YGOShared
             Debug.WriteLine("{0}'s turn.", p.Name);
             if (Turns > 1)
                 p.canAttack = true;
+            drawPhase(p);
+            standbyPhase(p);
+            mainPhase1(p, o);
+            battlePhase(p, o);
+            mainPhase2(p);
+            endPhase(p);
+        }
+
+        public void drawPhase(Player p)
+        {
             Phase = "Draw Phase";
             Debug.WriteLine(Phase);
-            p.draw();
+            if (p.canDraw)
+                p.draw();
+        }
+
+        public void standbyPhase(Player p)
+        {
             Phase = "Standby Phase";
             Debug.WriteLine(Phase);
+        }
+
+        public void mainPhase1(Player p, Player o)
+        {
             Phase = "Main Phase 1";
             Debug.WriteLine(Phase);
             p.canSummon = true;
             var normalSummonable = p.Hand.Where(m => m.monsterType != "" && m.level < 5);
             var tributeSummonable = p.Hand.Where(m => m.monsterType != "" && m.level > 4);
+            var oppsAtkPosMons = o.MonsterZone.Where(m => m.monsterType != "" && m.Horizontal == false);
+            var oppsDefPosMons = o.MonsterZone.Where(m => m.monsterType != "" && m.Horizontal);
             Debug.WriteLine("{0} can summon: ", p.Name);
             foreach (var m in normalSummonable)
                 Debug.WriteLine(m.nameOnField);
-            if (p.canAttack == true)
+            if (p.MonsterZone.Count < 5 && p.canSummon)
             {
-                normalSummonable.OrderBy(m => m.atkOnField);
-                p.summon(p.Hand, normalSummonable.First());
-                p.canSummon = false;
+                if (oppsAtkPosMons.Any())
+                {
+                    oppsAtkPosMons.OrderBy(m => m.atkOnField);
+                    normalSummonable.OrderBy(m => m.atkOnField);
+                    if (oppsAtkPosMons.First().atkOnField < normalSummonable.First().atkOnField)
+                        p.summon(p.Hand, normalSummonable.First());
+                    else if (oppsAtkPosMons.First().atkOnField >= normalSummonable.First().atkOnField)
+                    {
+                        normalSummonable.OrderBy(m => m.defOnField);
+                        if (normalSummonable.First().defOnField >= oppsAtkPosMons.First().atkOnField)
+                            p.summon(p.Hand, normalSummonable.First());
+                        else
+                        {
+                            if (normalSummonable.OrderBy(m => m.atkOnField).First().atkOnField > normalSummonable.OrderBy(m => m.defOnField).First().defOnField)
+                            { }
+                        }
+                    }
+                }
             }
-            else
-            {
-                normalSummonable.OrderBy(m => m.defOnField);
-                p.set(p.Hand, normalSummonable.First());
-                p.canSummon = false;
-            }
+        }
+
+        public void battlePhase(Player p, Player o)
+        {
             Phase = "Battle Phase";
-            
+            Debug.WriteLine(Phase);
             if (p.canAttack == true)
-            {                
+            {
                 foreach (var m in p.MonsterZone)
                 {
                     var weakerAtkPosOpp = o.MonsterZone.Where(x => x.atkOnField < m.atkOnField && x.Horizontal == false);
@@ -120,12 +160,19 @@ namespace YGOShared
                         p.attackPlayer(m, o);
                 }
             }
+        }
+
+        public void mainPhase2(Player p)
+        {
             Phase = "Main Phase 2";
-            Debug.WriteLine(Phase);
-            Phase = "End Phase";
             Debug.WriteLine(Phase);
         }
 
+        public void endPhase(Player p)
+        {
+            Phase = "End Phase";
+            Debug.WriteLine(Phase);
+        }
 
         /// <summary>
         /// Initializes the class.

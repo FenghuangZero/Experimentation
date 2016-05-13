@@ -25,11 +25,18 @@ namespace YGOCardGame
     /// </summary>
     public sealed partial class DuelPage : Page
     {
-        public async void demo()
+        /// <summary>
+        /// Runs a demonstration
+        /// </summary>
+        public void demo()
         {
             var awr = new AppwideResources();
             var gameOn = new Duel(awr.trunk);
         }
+
+        /// <summary>
+        /// Initialises the page
+        /// </summary>
         public DuelPage()
         {
             this.InitializeComponent();

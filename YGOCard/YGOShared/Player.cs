@@ -22,6 +22,7 @@ namespace YGOShared
         public List<Card> SpellZone = new List<Card>();
         public Queue<Card> Graveyard = new Queue<Card>();
         public bool canAttack = false;
+        public bool canDraw = true;
         public bool canSummon = false;
         
         /// <summary>
@@ -52,15 +53,34 @@ namespace YGOShared
     /// <summary>
     /// A method of generating a random number in a thread-safe manner.
     /// </summary>
-    public static class ThreadSafeRandom
+    public class ThreadSafeRandom
     {
+        private static readonly Random Global = new Random();
         [ThreadStatic]
         private static Random Local;
-
-        public static Random ThisThreadsRandom
+        
+        /// <summary>
+        /// Initialises the random generator
+        /// </summary>
+        public ThreadSafeRandom()
         {
-            get { return Local ?? (Local = new Random(unchecked(Environment.TickCount * 31 + Thread.CurrentThread.ManagedThreadId))); }
+            if (Local == null)
+            {
+                int seed;
+                lock (Global)
+                {
+                    seed = Global.Next();
+                }
+                Local = new Random(seed);
+            }
         }
+        /// <summary>
+        /// Returns a nonnegative random integer that is less than the specified maximum.
+        /// </summary>
+        /// <param name="n">Maximum</param>
+        /// <returns></returns>
+        public int Next(int n)
+        { return Local.Next(n); }
     }
 
     /// <summary>
@@ -75,11 +95,12 @@ namespace YGOShared
         /// <param name="list">The list to be randomised.</param>
         public static void Shuffle<T>(this List<T> list)
         {
+            var rand = new ThreadSafeRandom();
             int n = list.Count;
             while (n > 1)
             {
                 n--;
-                int k = ThreadSafeRandom.ThisThreadsRandom.Next(n + 1);
+                int k = rand.Next(n + 1);
                 T value = list[k];
                 list[k] = list[n];
                 list[n] = value;
@@ -149,6 +170,7 @@ namespace YGOShared
             c.FaceUp = true;
             c.Horizontal = false;
             p.MonsterZone.Add(c);
+            p.canSummon = false;
             Debug.WriteLine("{0} has summoned {1}.", p.Name, c.nameOnField);
         }
 
