@@ -10,7 +10,7 @@ namespace YGOShared
     /// <summary>
     /// Provides behaivour for players and allows interaction with cards.
     /// </summary>
-    class Player
+    public class Player
     {
         public string Name { get; set; }
         public int LifePoints { get; set; }

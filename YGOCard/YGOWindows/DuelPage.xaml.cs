@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -28,10 +29,9 @@ namespace YGOCardGame
         /// <summary>
         /// Runs a demonstration
         /// </summary>
-        public void demo()
+        public async void demo()
         {
-            var awr = new AppwideResources();
-            var gameOn = new Duel(awr.trunk);
+            
         }
 
         /// <summary>

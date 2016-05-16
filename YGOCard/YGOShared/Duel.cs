@@ -36,22 +36,24 @@ namespace YGOShared
             var deckXml = XDocument.Load(await starterDecks.OpenStreamForReadAsync());
             var kaiba = deckXml.Descendants("STARTER_DECK_KAIBA");
             var yugi = deckXml.Descendants("STARTER_DECK_YUGI");
-            List<Card> recipie1 = d.loadDeck(t, kaiba.Single().Value);
-            recipie1.Shuffle();
-            for (var i = 0; i < recipie1.Count; i++)
-                p1.MainDeck.Enqueue(recipie1.ElementAt(i));
-            List<Card> recipie2 = d.loadDeck(t, yugi.Single().Value);
-            recipie2.Shuffle();
-            for (var i = 0; i < recipie1.Count; i++)
-                p2.MainDeck.Enqueue(recipie1.ElementAt(i));
+            d.saveDeck(p1, t, kaiba.Single().Value);
+            d.saveDeck(p2, t, yugi.Single().Value);
+            // List<Card> recipie1 = d.loadDeck(t, kaiba.Single().Value);
+            // recipie1.Shuffle();
+            // for (var i = 0; i < recipie1.Count; i++)
+            //     p1.MainDeck.Enqueue(recipie1.ElementAt(i));
+            //  List<Card> recipie2 = d.loadDeck(t, yugi.Single().Value);
+            // recipie2.Shuffle();
+            // for (var i = 0; i < recipie1.Count; i++)
+            //     p2.MainDeck.Enqueue(recipie1.ElementAt(i));
 
 #elif CONSOLE
             await Task.Delay(1);
             d.saveDeck(p1, t, YGOCardGame.Properties.Resources.STARTER_DECK_KAIBA);
             d.saveDeck(p2, t, YGOCardGame.Properties.Resources.STARTER_DECK_YUGI);
+#endif
             p1.MainDeck.Shuffle();
             p2.MainDeck.Shuffle();
-#endif
             mockDuel();
         }
 

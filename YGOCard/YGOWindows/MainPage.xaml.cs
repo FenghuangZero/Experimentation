@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using YGOShared;
+using YGOWindows;
 
 
 namespace YGOCardGame
@@ -40,7 +41,7 @@ namespace YGOCardGame
 
         private void deckEditor_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(DeckBuilder));
+            this.Frame.Navigate(typeof(DeckManager));
         }
 
         private void multiplayer_Click(object sender, RoutedEventArgs e)

@@ -97,8 +97,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppwideResources.cs" />
-    <Compile Include="DeckBuilder.xaml.cs">
-      <DependentUpon>DeckBuilder.xaml</DependentUpon>
+    <Compile Include="DeckManager.xaml.cs">
+      <DependentUpon>DeckManager.xaml</DependentUpon>
     </Compile>
     <Compile Include="DuelPage.xaml.cs">
       <DependentUpon>DuelPage.xaml</DependentUpon>
@@ -130,7 +130,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="DeckBuilder.xaml">
+    <Page Include="DeckManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

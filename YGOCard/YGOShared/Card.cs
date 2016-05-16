@@ -193,4 +193,65 @@ namespace YGOShared
             CardText = txt;
         }
     }
+
+    public class CardReader
+    {
+        string CardText;
+        string[] parseables = new string[] { "this", "card", "monster", "when", "for each", "gains",
+                                             "you", "your", "opponent", "control", "controls", "ATK", "DEF",
+                                             "Once per turn", "can", "toss a coin", "if", "have", "hand",
+                                             "win the duel", "always", "treated as", "face-up", "on the field"};
+
+        List<string> split = new List<string>();
+
+        public void parseCard(Player p, Card c)
+        {
+            split = CardText.Split(' ').ToList();
+            var i = 0;
+            var modifier = "";
+            var value = 0;
+            if (split.Contains("gains"))
+            {
+                i = split.FindIndex(x => x == "gains");
+                if (int.TryParse(split[i + 1], out value))
+                {
+                    value = int.Parse(split[i + 1]);
+                    modifier = split[i + 2]; if (split[i + 3] == "and")
+                        modifier = split[i + 2] + split[i + 3] + split[i + 4];
+                }
+                else
+                {
+                    value = int.Parse(split[i + 2]);
+                    modifier = split[i + 1];                }
+                if (modifier == "ATK" || modifier == "DEF")
+                    value = int.Parse(split[i + 2]);
+                gain(p, c, modifier, value);
+            }
+        }
+
+        public void gain(Player p, Card c, string gainer, int amount)
+        {
+            if (gainer == "ATK")
+                c.atkChanges += amount;
+            if (gainer == "DEF")
+                c.defChanges += amount;
+            if (gainer == "ATKandDEF")
+            {
+                c.atkChanges += amount;
+                c.defChanges += amount;
+            }
+            if (gainer == "Life")
+                p.LifePoints += amount;
+        }
+
+        public CardReader()
+        {
+            CardText = "";
+        }
+
+        public CardReader(Card c)
+        {
+            CardText = c.cardText;
+        }
+    }
 }

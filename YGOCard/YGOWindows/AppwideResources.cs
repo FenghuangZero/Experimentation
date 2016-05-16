@@ -7,13 +7,17 @@ using YGOShared;
 
 namespace YGOWindows
 {
-    class AppwideResources
+    public class AppwideResources
     {
         private static DBHandler cardDB = new DBHandler();
-        private List<Card> Trunk = new List<Card>(cardDB.loadXml());
+        private List<Card> Trunk = new List<Card>();
         public List<Card> trunk { get { return Trunk; } }
 
+        public async void loadTrunkAsync()
+        {
+            Trunk = await cardDB.loadXmlAsync();
+        }
         public AppwideResources()
-        { }
+        {}
     }
 }

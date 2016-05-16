@@ -19,12 +19,12 @@ namespace YGOCardGame
     /// <summary>
     /// A page on which the player can build a deck.
     /// </summary>
-    public sealed partial class DeckBuilder : Page
+    public sealed partial class DeckManager : Page
     {
         /// <summary>
         /// Initialises the page.
         /// </summary>
-        public DeckBuilder()
+        public DeckManager()
         {
             this.InitializeComponent();
         }
