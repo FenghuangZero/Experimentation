@@ -166,12 +166,17 @@ namespace YGOShared
         /// <param name="c">The card to be played.</param>
         public static void summon(this Player p, List<Card> source, Card c)
         {
-            source.Remove(c);
-            c.FaceUp = true;
-            c.Horizontal = false;
-            p.MonsterZone.Add(c);
-            p.canSummon = false;
-            Debug.WriteLine("{0} has summoned {1}.", p.Name, c.nameOnField);
+            if (p.MonsterZone.Count < 6)
+            {
+                source.Remove(c);
+                c.FaceUp = true;
+                c.Horizontal = false;
+                p.MonsterZone.Add(c);
+                    p.canSummon = false;
+                Debug.WriteLine("{0} has summoned {1}.", p.Name, c.nameOnField);
+            }
+            else
+                throw new MonsterZoneFullException("The monster zone is full.");
         }
 
         /// <summary>

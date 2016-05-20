@@ -66,12 +66,18 @@ namespace YGOShared
             p2.draw(5);
             do
             {
+                if (p1.LifePoints <= 0 || p2.LifePoints <= 0)
+                    break;
                 turn(p1, p2);
+                if (p1.LifePoints <= 0 || p2.LifePoints <= 0)
+                    break;
                 turn(p2, p1);
             }
             while (Turns < 20);
-            
-            Debug.WriteLine("{0} has drawn Exodia.{0} Wins.", p2.Name);
+            if (p1.LifePoints <= 0)
+                Debug.WriteLine("{0}'s life points are reduced to zero. {1} wins!", p1.Name, p2.Name);
+            if (p2.LifePoints <= 0)
+                Debug.WriteLine("{0}'s life points are reduced to zero. {1} wins!", p2.Name, p1.Name);
         }
         
         /// <summary>
@@ -111,35 +117,22 @@ namespace YGOShared
         {
             Phase = "Main Phase 1";
             Debug.WriteLine(Phase);
+            var d = new DecisionMaking(p,o);
             p.canSummon = true;
-            var normalSummonable = p.Hand.Where(m => m.monsterType != "" && m.level < 5);
-            var tributeSummonable = p.Hand.Where(m => m.monsterType != "" && m.level > 4);
-            var oppsAtkPosMons = o.MonsterZone.Where(m => m.monsterType != "" && m.Horizontal == false);
-            var oppsDefPosMons = o.MonsterZone.Where(m => m.monsterType != "" && m.Horizontal);
-            Debug.WriteLine("{0} can summon: ", p.Name);
-            foreach (var m in normalSummonable)
-                Debug.WriteLine(m.nameOnField);
-            if (p.MonsterZone.Count < 5 && p.canSummon)
+
+            if (p.canSummon)
             {
-                if (oppsAtkPosMons.Any())
+                try { p.summon(p.Hand, d.bestAttacker()); }
+                catch (NoMonsterinHandException e)
                 {
-                    oppsAtkPosMons.OrderBy(m => m.atkOnField);
-                    normalSummonable.OrderBy(m => m.atkOnField);
-                    if (oppsAtkPosMons.First().atkOnField < normalSummonable.First().atkOnField)
-                        p.summon(p.Hand, normalSummonable.First());
-                    else if (oppsAtkPosMons.First().atkOnField >= normalSummonable.First().atkOnField)
-                    {
-                        normalSummonable.OrderBy(m => m.defOnField);
-                        if (normalSummonable.First().defOnField >= oppsAtkPosMons.First().atkOnField)
-                            p.summon(p.Hand, normalSummonable.First());
-                        else
-                        {
-                            if (normalSummonable.OrderBy(m => m.atkOnField).First().atkOnField > normalSummonable.OrderBy(m => m.defOnField).First().defOnField)
-                            { }
-                        }
-                    }
+                }
+                catch (MonsterZoneFullException e)
+                {
+                    Debug.WriteLine(e.ToString());
+                    Debug.WriteLine("Only 5 monsters can be on the field at a time.");
                 }
             }
+
         }
 
         public void battlePhase(Player p, Player o)

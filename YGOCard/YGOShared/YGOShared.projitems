@@ -12,7 +12,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Card.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Debug.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DeckBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DecisionMaking.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Duel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Player.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DBHandler.cs" />
   </ItemGroup>
