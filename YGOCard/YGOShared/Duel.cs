@@ -120,7 +120,7 @@ namespace YGOShared
             var d = new DecisionMaking(p,o);
             p.canSummon = true;
 
-            if (p.canSummon)
+            if (p.canSummon && d.shouldAttack())
             {
                 try { p.summon(p.Hand, d.bestAttacker()); }
                 catch (NoMonsterinHandException e)
@@ -130,6 +130,18 @@ namespace YGOShared
                 {
                     Debug.WriteLine(e.ToString());
                     Debug.WriteLine("Only 5 monsters can be on the field at a time.");
+                }
+            }
+            else if (p.canSummon && !d.shouldAttack())
+            {
+                try { p.set(p.Hand, d.bestDefender()); }
+                catch (NoMonsterinHandException e)
+                {
+                    Debug.WriteLine(e.Message);
+                }
+                catch (MonsterZoneFullException e)
+                {
+                    Debug.WriteLine(e.Message);
                 }
             }
 
