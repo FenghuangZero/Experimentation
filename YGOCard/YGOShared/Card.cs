@@ -196,17 +196,100 @@ namespace YGOShared
 
     public class CardReader
     {
-        string CardText;
-        string[] parseables = new string[] { "this", "card", "monster", "when", "for each", "gains",
-                                             "you", "your", "opponent", "control", "controls", "ATK", "DEF",
-                                             "Once per turn", "can", "toss a coin", "if", "have", "hand",
-                                             "win the duel", "always", "treated as", "face-up", "on the field"};
-
+        static string[] parseables = new string[] { "This card", "gains", "for each"};
+        bool[] present = new bool[parseables.Count()];
         List<string> split = new List<string>();
-
+        bool targetSelf;
+        Card targetCard;
+        bool targetGainsATK;
+        bool targetGainsDef;
+        bool targetGainsLifePoints;
+        int value;
+        int count;
+        string effect;
+        string condition;
         public void parseCard(Player p, Card c)
         {
-            split = CardText.Split(' ').ToList();
+            // split = CardText.Split(' ').ToList();
+            foreach (var s in parseables)
+            {
+                if (c.cardText.Contains(s))
+                {
+                    var i = Array.IndexOf(parseables, s);
+                    present[i] = true;
+                    Debug.WriteLine("Card contains: {0}", s);                   
+                }
+            }
+
+            Debug.WriteLine("present[0]: {0}", present[0]);
+            Debug.WriteLine("present[1]: {0}", present[1]);
+            Debug.WriteLine("present[2]: {0}", present[2]);
+
+            if (present[0])
+            {
+                targetSelf = true;
+                Debug.WriteLine("Target self");
+            }
+
+            if (present[1])
+            {
+                Debug.WriteLine("Increase ATK or DEF");
+                var i = c.cardText.IndexOf(parseables[1]);
+                var subText = c.cardText.Substring(i, c.cardText.IndexOf('.') - i);
+                if (subText.IndexOf(',') != -1)
+                    subText = subText.Substring(0, subText.IndexOf(','));
+                if (subText.IndexOf("for each") != -1)
+                    subText = subText.Substring(0, subText.IndexOf("for"));
+
+                var words = subText.Split(' ');
+                bool first = int.TryParse(words[1], out value);
+                Debug.WriteLine("By {0}", value);
+                if (first)
+                {
+                    if (words[2] == "ATK" && (words[3] != "and" || words[3] != "or"))
+                    {
+                        targetGainsATK = true;
+                        Debug.WriteLine("Increase attack.");
+                    }
+                    else if (words[2] == "DEF" && (words[3] != "and" || words[3] != "or"))
+                        targetGainsDef = true;
+                    else if (words[2] == "ATK" && words[3] == "and" && words[4] == "DEF")
+                    {
+                        targetGainsATK = true;
+                        targetGainsDef = true;
+                    }
+                    else if (words[2] == "life")
+                        targetGainsLifePoints = true;
+                }
+                if (words[1] == "ATK" && (words[2] != "and" || words[2] != "or"))
+                    targetGainsATK = true;
+                else if (words[1] == "DEF" && (words[2] != "and" || words[3] != "or"))
+                    targetGainsDef = true;
+                else if (words[1] == "ATK" && words[2] == "and" && words[3] == "DEF")
+                {
+                    targetGainsATK = true;
+                    targetGainsDef = true;
+                }
+                else if (words[1] == "life")
+                    targetGainsLifePoints = true;
+            }
+
+            if (present[2])
+            {
+                var i = c.cardText.IndexOf(parseables[2]);
+                var subText = c.cardText.Substring(i, c.cardText.IndexOf('.') - i);
+                var cardName = subText.Substring(subText.IndexOf('"') + 1, subText.LastIndexOf('"') - subText.IndexOf('"') - 1);
+                
+                if (subText.Contains("you control"))
+                {
+                    var num = p.MonsterZone.FindAll(n => n.nameOnField == cardName);
+                    count = num.Count;
+                }
+            }
+
+            if (targetGainsATK && targetSelf)
+                c.atkChanges += value * count;
+            /*
             var i = 0;
             var modifier = "";
             var value = 0;
@@ -227,6 +310,7 @@ namespace YGOShared
                     value = int.Parse(split[i + 2]);
                 gain(p, c, modifier, value);
             }
+            */
         }
 
         public void gain(Player p, Card c, string gainer, int amount)
@@ -246,12 +330,6 @@ namespace YGOShared
 
         public CardReader()
         {
-            CardText = "";
-        }
-
-        public CardReader(Card c)
-        {
-            CardText = c.cardText;
         }
     }
 }

@@ -29,11 +29,16 @@ namespace YGOCardGame
         public void demo()
         {
             var gameOn = new Duel(trunk);
-            /*trunk = await cardDB.downloadtoList(trunk, 4000, 5200);
-            trunk = trunk.OrderBy(c => c.ID).ToList();
-            // foreach (Card c in trunk)
-                // Debug.WriteLine(c.Name);
-            cardDB.writeXml(trunk); */
+        }
+
+        /// <summary>
+        /// Adds new cards to the database.
+        /// </summary>
+        public async void update()
+        {
+            Trunk = await cardDB.downloadtoList(Trunk, 4000, 5200);
+            Trunk = trunk.OrderBy(c => c.id).ToList();
+            cardDB.writeXml(trunk);
         }
 
         /// <summary>

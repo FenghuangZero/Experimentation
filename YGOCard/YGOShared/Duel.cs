@@ -55,6 +55,20 @@ namespace YGOShared
             p1.MainDeck.Shuffle();
             p2.MainDeck.Shuffle();
             mockDuel();
+            p1.MonsterZone.Clear();
+            var query = from c in t where c.id == 4018 select c;
+            var card = query.FirstOrDefault();
+            p1.MonsterZone.Add(card);
+            p1.MonsterZone[0].Flip();
+            query = from c in t where c.id == 4560 select c;
+            card = query.FirstOrDefault();
+            p1.MonsterZone.Add(card);
+            p1.MonsterZone[1].Flip();
+            var cr = new CardReader();
+            cr.parseCard(p1, p1.MonsterZone[0]);
+            cr.parseCard(p1, p1.MonsterZone[1]);
+            Debug.WriteLine("Swamp Battleguard's attack increases by {0}", p1.MonsterZone[0].atkChanges);
+            Debug.WriteLine("Swamp Battleguard's attack is {0}", p1.MonsterZone[0].atkOnField);
         }
 
         /// <summary>
