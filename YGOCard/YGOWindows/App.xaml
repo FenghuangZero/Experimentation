@@ -4,5 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:YGOWindows"
     RequestedTheme="Light">
-    
+    <Application.Resources>
+        <x:Double x:Key="DBProgress">0</x:Double>
+    </Application.Resources>
+
 </Application>

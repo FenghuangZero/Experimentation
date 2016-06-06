@@ -424,6 +424,11 @@ namespace YGOShared
             var l = new List<Task<Card>>();
             var dummy = new List<int>();
             dummy = await loadDummyCardList();
+#if WINDOWS_UWP
+            var keys = YGOWindows.App.Current.Resources.Keys.Single(x => x.Equals("DBProgress"));
+            // YGOWindows.App.Current.Resources.SetValue(keys);
+            Debug.WriteLine(keys.ToString());
+#endif
 
             for (var i = s; i <= e; i++)
             {

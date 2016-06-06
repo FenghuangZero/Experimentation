@@ -32,8 +32,10 @@ namespace YGOWindows
 
         private async void button_Click(object sender, RoutedEventArgs e)
         {
+            DBDownloadProgress.Visibility = Visibility.Visible;
             trunk = await db.downloadtoList(trunk, 4000, 4060);
             db.writeXml(trunk);
         }
+        
     }
 }
