@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using YGOShared;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -22,9 +23,17 @@ namespace YGOWindows
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        List<Card> trunk = new List<Card>();
+        DBHandler db = new DBHandler();
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private async void button_Click(object sender, RoutedEventArgs e)
+        {
+            trunk = await db.downloadtoList(trunk, 4000, 4060);
+            db.writeXml(trunk);
         }
     }
 }

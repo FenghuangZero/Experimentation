@@ -69,6 +69,7 @@ namespace YGOShared
         }
 #endif
 
+#if CONSOLE
         public List<Card> loadXml()
         {
             var t = new List<Card>();
@@ -95,7 +96,7 @@ namespace YGOShared
             }
             return t;
         }
-        
+#endif
 
         /// <summary>
         /// Reads the HTML page and extracts the header.
@@ -456,8 +457,12 @@ namespace YGOShared
         private async void addToDummyCardList(List<int> dummy)
         {
             var name = "DummyCardList.txt";
-            var recipie = new FileStream(name, FileMode.Open);
-            var writer = new StreamWriter(recipie);
+#if WINDOWS_UWP
+            var list = await localFolder.OpenStreamForWriteAsync(name, CreationCollisionOption.ReplaceExisting);
+#elif CONSOLE            
+            var list = new FileStream(name, FileMode.Open);
+#endif
+            var writer = new StreamWriter(list);
             dummy.Sort();
             foreach (var i in dummy)
             {
@@ -473,7 +478,16 @@ namespace YGOShared
         /// <returns>An integer list representing the blacklist.</returns>
         private async Task<List<int>> loadDummyCardList()
         {
-            var list = new FileStream("DummyCardList.txt", FileMode.Open);
+#if WINDOWS_UWP
+            if (await localFolder.TryGetItemAsync("DummyCardList.txt") == null)
+            {
+                StorageFile file = await localFolder.CreateFileAsync("DummyCardList.txt");
+            }
+            var list = await localFolder.OpenStreamForReadAsync("DummyCardList.txt");
+#elif CONSOLE
+            var list = new FileStream("DummyCardList.txt", FileMode.OpenOrCreate);
+#endif
+
             var reader = new StreamReader(list);
             var read = (await reader.ReadToEndAsync()).Split(',');
             var dummy = new List<int>();

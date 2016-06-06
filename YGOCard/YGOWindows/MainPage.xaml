@@ -8,6 +8,9 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="button" Content="Update Database" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="button_Click"/>
+        </StackPanel>
 
     </Grid>
 </Page>

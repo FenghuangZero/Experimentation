@@ -93,7 +93,7 @@ namespace YGOShared
         {
             get
             {
-                if (FaceUp == true)
+                if (FaceUp)
                     return ATK + atkChanges;
                 else
                     return 0;
@@ -110,7 +110,7 @@ namespace YGOShared
         {
             get
             {
-                if (FaceUp == true)
+                if (FaceUp)
                     return DEF + defChanges;
                 else
                     return 0;
@@ -147,7 +147,7 @@ namespace YGOShared
             ATK = 0;
             DEF = 0;
             CardText = "";
-            FaceUp = false;
+            FaceUp = true;
             Horizontal = false;
         }
 
@@ -158,6 +158,7 @@ namespace YGOShared
         public Card(int id)
         {
             ID = id;
+            FaceUp = true;
         }
 
         /// <summary>
@@ -191,6 +192,7 @@ namespace YGOShared
             ATK = atk;
             DEF = def;
             CardText = txt;
+            FaceUp = true;
         }
     }
 
