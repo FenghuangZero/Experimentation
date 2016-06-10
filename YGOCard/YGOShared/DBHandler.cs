@@ -20,7 +20,7 @@ namespace YGOShared
     /// </summary>
     class DBHandler
     {
-        
+        Double Value;
         static Uri uri = new Uri("http://www.db.yugioh-card.com/yugiohdb/");
         // http://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=2&cid=NUMBER
         // This is the address to list individual cards. Replace 'NUMBER' with any int from 4007 to 12272 inclusive
@@ -424,11 +424,6 @@ namespace YGOShared
             var l = new List<Task<Card>>();
             var dummy = new List<int>();
             dummy = await loadDummyCardList();
-#if WINDOWS_UWP
-            var keys = YGOWindows.App.Current.Resources.Keys.Single(x => x.Equals("DBProgress"));
-            // YGOWindows.App.Current.Resources.SetValue(keys);
-            Debug.WriteLine(keys.ToString());
-#endif
 
             for (var i = s; i <= e; i++)
             {
