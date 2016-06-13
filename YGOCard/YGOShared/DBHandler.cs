@@ -425,12 +425,16 @@ namespace YGOShared
             var dummy = new List<int>();
             dummy = await loadDummyCardList();
 
+            var range = e - s;
+            float increment = 100 / range;
+
             for (var i = s; i <= e; i++)
             {
                 if (t.Exists(x => x.id == i) != true && dummy.Exists(x => x == i) != true)
                 {
                     l.Add(downloadCard(i));
                     await Task.Delay(50);
+                    Value += increment;
                 }                    
             }
 
@@ -496,6 +500,11 @@ namespace YGOShared
                     dummy.Add(int.Parse(s));
             return dummy;
 
+        }
+
+        public double progress()
+        {
+            return this.Value;
         }
 
         /// <summary>

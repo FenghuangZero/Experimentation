@@ -25,6 +25,7 @@ namespace YGOWindows
     {
         List<Card> trunk = new List<Card>();
         DBHandler db = new DBHandler();
+        Double downloadProgress = new Double();
         public MainPage()
         {
             this.InitializeComponent();
@@ -33,8 +34,22 @@ namespace YGOWindows
         private async void button_Click(object sender, RoutedEventArgs e)
         {
             DBDownloadProgress.Visibility = Visibility.Visible;
-            trunk = await db.downloadtoList(trunk, 4000, 4060);
+            var download = db.downloadtoList(trunk, 4000, 4400);
+            for (Double i = 0; i < 100; i = downloadProgress)
+            {
+                updateProgressBar();
+                await System.Threading.Tasks.Task.Delay(100);
+            }
+
+            trunk = await download;
+
             db.writeXml(trunk);
+        }
+
+        private void updateProgressBar()
+        {
+            downloadProgress = db.progress();
+            DBDownloadProgress.Value = downloadProgress;
         }
         
     }
